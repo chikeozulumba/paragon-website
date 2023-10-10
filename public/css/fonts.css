@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'FamiljenGrotesk';
+    font-style: normal;
+    font-weight: normal;
+    src: url('/fonts/FamiljenGrotesk-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'FamiljenGrotesk';
+    font-style: normal;
+    font-weight: 600;
+    src: url('/fonts/FamiljenGrotesk-Bold.otf') format('opentype');
+}

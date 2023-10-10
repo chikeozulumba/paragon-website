@@ -1,0 +1,52 @@
+---
+import { DEFAULT_PAGE_TITLE } from '../constants/site';
+
+interface Props {
+	title?: string;
+	page?: string;
+}
+
+const { title = DEFAULT_PAGE_TITLE, page = 'Home' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="stylesheet" href="/css/fonts.css" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+  
+<style is:global>
+	@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@100;300;400;500;700&display=swap');
+	:root {
+		--accent: 136, 58, 234;
+		--accent-light: 224, 204, 250;
+		--accent-dark: 49, 10, 101;
+		--accent-gradient: linear-gradient(
+			45deg,
+			rgb(var(--accent)),
+			rgb(var(--accent-light)) 30%,
+			white 60%
+		);
+		--primary-color: #4130BA;
+		--primary-color-1: #2D1CA8;
+		--secondary-color: #E68832;
+	}
+
+	body {
+		padding: 0px;
+		margin: 0px;
+		box-sizing: border-box;
+		font-family: Epilogue;
+		background: #ffffff;
+	}
+</style>

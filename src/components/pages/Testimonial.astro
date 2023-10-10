@@ -1,0 +1,123 @@
+---
+import { Image } from "astro:assets";
+import TestimonialImage from "../../assets/images/testimonials/01.svg";
+const {} = Astro.props;
+---
+
+<section id="home-testimonial-section">
+  <div>
+    <div class="image">
+      <Image src={TestimonialImage} alt={""} />
+    </div>
+    <div class="text">
+      <h3>“The best HR Support out there”</h3>
+      <p>
+        Exceptional HR support! Their expertise streamlined our HR processes,
+        saving time and ensuring compliance. A true partner in managing our
+        workforce effectively. Highly recommend!
+      </p>
+
+      <div class="bio">
+        <h5>Timmy Godinez</h5>
+        <p>HR Lead</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media screen and (max-width: 1440px) {
+    #home-testimonial-section {
+      padding-left: 159px;
+      padding-right: 158px;
+      padding-top: 210px;
+      padding-bottom: 210px;
+    }
+  }
+
+  #home-testimonial-section {
+    padding-left: 199px;
+    padding-right: 197.5px;
+    padding-top: 263px;
+    padding-bottom: 263px;
+  }
+
+  #home-testimonial-section > div {
+    display: flex;
+    align-items: flex-start;
+    gap: 85px;
+    width: 100%;
+  }
+
+  #home-testimonial-section div.image {
+    width: 645px;
+    display: flex;
+    justify-content: center;
+  }
+
+  #home-testimonial-section div.text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 650px;
+    gap: 24px;
+  }
+
+  #home-testimonial-section div.text h3 {
+    color: #000;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family: Epilogue;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px; /* 100% */
+    margin: 0;
+    margin-top: 72px;
+  }
+
+  #home-testimonial-section div.text p {
+    color: #000;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family: Epilogue;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px; /* 140% */
+    margin: 0;
+  }
+
+  #home-testimonial-section div.text div.bio {
+    margin-top: 64px;
+  }
+
+  #home-testimonial-section div.text div.bio h5 {
+    color: #000;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family: Epilogue;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px; /* 116.667% */
+    margin: 0;
+  }
+
+  #home-testimonial-section div.text div.bio p {
+    color: #000;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family: Epilogue;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px; /* 140% */
+    margin: 0;
+    margin-top: 8px;
+  }
+</style>

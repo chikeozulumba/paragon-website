@@ -1,0 +1,141 @@
+---
+import { Image } from "astro:assets";
+import NewsletterImage from "../../assets/images/newsletter/01.svg";
+
+const { color: backgroundColor = `#E6883299` } = Astro.props;
+---
+
+<section id="home-newsletter-section">
+  <div>
+    <div class="image">
+      <Image src={NewsletterImage} alt={""} />
+    </div>
+    <div class="text">
+      <h3>Subscribe to HR Weekly</h3>
+      <p>
+        HR Weekly is a series of regular articles raising topical issues
+        relevant<br />to anyone in human resources, operations,<br />management
+        and people rewards.
+      </p>
+
+      <div class="action">
+        <input type="email" placeholder="Enter your email address*" />
+        <button>Subscribe</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style define:vars={{ backgroundColor }}>
+  @media screen and (max-width: 1440px) {
+    #home-newsletter-section {
+      padding-left: 142px;
+      padding-right: 142px;
+    }
+  }
+
+  #home-newsletter-section {
+    padding-left: 177.5px;
+    padding-right: 177.5px;
+    padding-top: 144px;
+    padding-bottom: 144px;
+    background: var(--backgroundColor);
+  }
+
+  #home-newsletter-section > div {
+    display: flex;
+    align-items: center;
+    gap: 73.75px;
+    width: 100%;
+  }
+
+  #home-newsletter-section div.image {
+    width: 371px;
+    display: flex;
+    justify-content: center;
+  }
+
+  #home-newsletter-section div.text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 907.5px;
+    width: 100%;
+    gap: 24px;
+  }
+
+  #home-newsletter-section div.text h3 {
+    color: #000;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family: Epilogue;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0;
+  }
+
+  #home-newsletter-section div.text p {
+    color: #000;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family: Epilogue;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px; /* 130% */
+    max-width: 782.5px;
+    margin: 0;
+    margin-top: 46px;
+  }
+
+  #home-newsletter-section div.text div.action {
+    margin-top: 64px;
+    width: 100%;
+    display: flex;
+    flex: 1 0;
+  }
+
+  #home-newsletter-section div.text div.action input {
+    width: 100%;
+    max-width: 542px;
+    padding: 24px;
+    background: #f8f9fb;
+    border: none;
+    color: #58647d;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family: FamiljenGrotesk;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  #home-newsletter-section div.text div.action button {
+    color: #fff;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family: FamiljenGrotesk;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    padding: 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: #4130ba;
+    border: none;
+  }
+
+  #home-newsletter-section div.text div.action input:focus {
+    outline: none;
+  }
+</style>

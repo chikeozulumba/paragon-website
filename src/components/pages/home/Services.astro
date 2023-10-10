@@ -1,0 +1,216 @@
+---
+import { Image } from "astro:assets";
+import HRImage from "../../../assets/images/services/hr.svg";
+import RecruitmentImage from "../../../assets/images/services/recruitment.svg";
+import PeopleImage from "../../../assets/images/services/people.svg";
+import DiversityImage from "../../../assets/images/services/diversity.svg";
+import SoultionsImage from "../../../assets/images/services/solutions.svg";
+import StarImage from "../../../assets/images/star.svg";
+
+const {} = Astro.props;
+
+const SERVICE_ITEMS = [
+  {
+    title: `Fractional HR Support`,
+    description: `Become effective at HR management and establish systems and structure for your business`,
+    url: `/services/fractional-hr-support`,
+    icon: HRImage,
+  },
+  {
+    title: `Recruitment`,
+    description: `Unique approaches to finding the right people via skills-based recruitment`,
+    url: `/services/recruitment`,
+    icon: RecruitmentImage,
+  },
+  {
+    title: `People Ops Strategy`,
+    description: `Want to level up your people operations internally, but need a roadmap?`,
+    url: `/services/people-ops-strategy`,
+    icon: PeopleImage,
+  },
+  {
+    title: `Diversity, Equity, and Inclusion`,
+    description: `Program design support and strategy to build an inclusive workplace`,
+    url: `/services/diveristy-equity-and-inclusion`,
+    icon: DiversityImage,
+  },
+  {
+    title: `Bespoke HR Solutions`,
+    description: `Support with employee relations, disputes, or crisis management.`,
+    url: `/services/bespoke-hr-solutions`,
+    icon: SoultionsImage,
+    style: {
+      p: `327.5px`
+    }
+  },
+];
+---
+
+<section id="home-services-section">
+  <div>
+    <div class="heading">
+      <h6>Services</h6>
+
+      <h1>How we empower businesses</h1>
+    </div>
+    <div class="content">
+      {
+        SERVICE_ITEMS.map((item) => {
+          return (
+            <div class="content-item">
+              <Image
+                src={item.icon}
+                alt={`${item.title} - ${item.description}`}
+              />
+              <h4>{item.title}</h4>
+              <p style={{ width: item?.style?.p }}>{item.description}</p>
+              <a href={item.url}>Learn more</a>
+            </div>
+          );
+        })
+      }
+    </div>
+    <Image src={StarImage} alt={""} />
+  </div>
+</section>
+
+<style>
+  #home-services-section {
+    padding: 0 120px;
+  }
+
+  #home-services-section > div {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 84px;
+    column-gap: 84px;
+    padding: 120px 80px;
+    background: #f8f9fb;
+  }
+
+  #home-services-section div.heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+  }
+
+  #home-services-section div.heading > h6 {
+    display: flex;
+    padding: 10px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: #4130ba;
+    color: #fff;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family: Epilogue;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2px;
+    width: fit-content;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  #home-services-section div.heading > h1 {
+    color: #0f1221;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family: Epilogue;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+  }
+
+  #home-services-section div.content {
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+    align-self: stretch;
+    flex-wrap: wrap;
+    width: 1400px;
+  }
+
+  #home-services-section > div > img {
+    position: absolute;
+    bottom: -39px;
+    right: 57px;
+  }
+
+  #home-services-section div.content .content-item {
+    width: calc((100% - 45px) / 2);
+    box-sizing: border-box;
+    border-radius: 12px;
+    border: 2px solid #4130ba;
+    background: #fff;
+    box-shadow: 1px 1px 15px 0px rgba(0, 0, 0, 0.05);
+    padding: 42px 37.5px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 64px;
+  }
+
+  #home-services-section .content-item h4 {
+    color: #000;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family: Epilogue;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    margin-top: 64px;
+    margin-left: 12.5px;
+  }
+
+  #home-services-section .content-item p {
+    color: #58657d;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family: Epilogue;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px;
+    margin-top: 23px;
+    margin-bottom: 0;
+    margin-left: 12.5px;
+  }
+
+  #home-services-section .content-item a {
+    margin-top: 64px;
+    display: flex;
+    padding: 12px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 100px;
+    border: 1px solid #4130ba;
+    background: #fff;
+    color: #4130ba;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family: FamiljenGrotesk;
+    font-size: 17.5px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    width: fit-content;
+    text-decoration: none;
+  }
+</style>
