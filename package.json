@@ -14,5 +14,8 @@
     "@astrojs/netlify": "^3.0.2",
     "astro": "^3.2.2"
   },
-  "packageManager": "yarn@3.6.4"
+  "packageManager": "yarn@3.6.4",
+  "engines" : { 
+    "node" : ">=20.5.1"
+  }
 }
