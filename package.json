@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "^7.5.2",
+    "@astrojs/netlify": "^3.0.2",
     "astro": "^3.2.2"
   },
   "packageManager": "yarn@3.6.4"
