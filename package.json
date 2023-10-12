@@ -1,5 +1,5 @@
 {
-  "name": "website",
+  "name": "paragon-website",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -12,5 +12,6 @@
   "dependencies": {
     "@astrojs/cloudflare": "^7.5.2",
     "astro": "^3.2.2"
-  }
+  },
+  "packageManager": "yarn@3.6.4"
 }
