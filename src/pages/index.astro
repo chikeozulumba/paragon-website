@@ -1,10 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Hero from "../components/hero/Home.astro";
+import Hero from "../components/pages/home/Hero.astro";
 import About from "../components/pages/home/About.astro";
 import Services from "../components/pages/home/Services.astro";
 import Testimonial from "../components/pages/Testimonial.astro";
 import Newsletter from "../components/pages/Newsletter.astro";
+import Blog from "../components/pages/blog/index.astro";
+import Footer from "../components/pages/Footer.astro";
 ---
 
 <Layout>
@@ -13,4 +15,6 @@ import Newsletter from "../components/pages/Newsletter.astro";
   <Services />
   <Testimonial />
   <Newsletter />
+  <Blog />
+  <Footer />
 </Layout>

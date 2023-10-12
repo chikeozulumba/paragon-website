@@ -1,0 +1,166 @@
+---
+import { Image } from "astro:assets";
+import { DEFAULT_LOGO_ALT_DESC } from "../../constants/site";
+import { HERO_NAVIGATION_ITEMS } from "../../constants/links";
+import LogoImage from "../../assets/images/logos/primary.svg";
+import FacebookImage from "../../assets/images/social/facebook.svg";
+import TwitterImage from "../../assets/images/social/twitter.svg";
+import LinkedInImage from "../../assets/images/social/linkedin.svg";
+import InstagramImage from "../../assets/images/social/instagram.svg";
+import CircleArrowUpImage from "../../assets/images/circle-arrow-up.svg";
+
+const {} = Astro.props;
+const SOCIAL_LINKS = [
+  {
+    name: `Facebook`,
+    url: `https://facebook.com/paragon`,
+    image: FacebookImage,
+  },
+  {
+    name: `Twitter`,
+    url: `https://twitter.com/paragon`,
+    image: TwitterImage,
+  },
+  {
+    name: `LinkedIn`,
+    url: `https://www.linkedin.com/company/paragon-consulting-global/`,
+    image: LinkedInImage,
+  },
+  {
+    name: `Instagram`,
+    url: `https://instagram.com/paragon-consulting`,
+    image: InstagramImage,
+  },
+];
+---
+
+<script>
+  document.querySelectorAll("[data-scroll-top]")?.forEach((button) => {
+    button.addEventListener("click", () => window.scrollTo({ top: 0 }));
+  });
+</script>
+
+<footer>
+  <div class="logo">
+    <a href="/">
+      <Image src={LogoImage} alt={DEFAULT_LOGO_ALT_DESC} />
+    </a>
+  </div>
+  <div class="links">
+    <ul class="social">
+      {
+        SOCIAL_LINKS.map((link) => (
+          <li>
+            <a href={link.url} target="__blank">
+              <Image
+                src={link.image}
+                alt={DEFAULT_LOGO_ALT_DESC + "-" + link.name}
+              />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <ul class="href">
+      {
+        HERO_NAVIGATION_ITEMS.map((link, i) => {
+          const url = `/${link.toLowerCase().replaceAll(" ", "-")}`;
+          return (
+            <li>
+              <a href={url}>{link}</a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+  <div class="scroll">
+    <a data-scroll-top>
+      <Image src={CircleArrowUpImage} alt={DEFAULT_LOGO_ALT_DESC} />
+    </a>
+  </div>
+
+  <p>©Paragon Consulting 2023. All rights reserved.</p>
+</footer>
+
+<style>
+  footer {
+    display: flex;
+    padding: 64px 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    background: #4130ba;
+  }
+
+  footer > p {
+    color: #fff;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family: Epilogue;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  .logo img {
+    width: 180px;
+    height: 100%;
+  }
+
+  div.links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 36px;
+  }
+
+  ul.social {
+    display: flex;
+    list-style: none;
+    gap: 24px;
+    padding-left: 0px;
+    margin: 0;
+  }
+
+  ul.social img {
+    height: 100%;
+    width: 20px;
+  }
+
+  ul.social a {
+    display: block;
+  }
+
+  ul.href {
+    list-style: none;
+    padding-left: 0px;
+    margin: 0;
+    color: white;
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  ul.href a {
+    color: #fff;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family: Epilogue;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration: none;
+    letter-spacing: 1px;
+  }
+
+  a {
+    cursor: pointer;
+  }
+</style>

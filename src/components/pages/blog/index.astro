@@ -1,0 +1,188 @@
+---
+import Card from "./Card.astro";
+
+const {} = Astro.props;
+
+const ITEMS: any[] = [
+  {
+    title: `How can HR recruit and retain over 50s`,
+    image: ``,
+    tag: `Recruitment,Operations`,
+    description: `Become effective at HR management and establish systems and structure for your business`,
+  },
+  {
+    title: `How can HR recruit and retain over 50s`,
+    image: ``,
+    tag: `Operations,Recruitment`,
+    description: `Become effective at HR management and establish systems and structure for your business`,
+  },
+  {
+    title: `How can HR recruit and retain over 50s`,
+    image: ``,
+    tag: `Operations,Recruitment`,
+    description: `Become effective at HR management and establish systems and structure for your business`,
+  },
+  {
+    title: `How can HR recruit and retain over 50s`,
+    image: ``,
+    tag: `Recruitment,Operations`,
+    description: `Become effective at HR management and establish systems and structure for your business`,
+  },
+];
+---
+
+<section id="blog-section">
+  <div class="heading">
+    <h6>Blog</h6>
+    <h1>Our latest articles on HR</h1>
+    <p>Eight word description or tagline for our articles at Paragon</p>
+  </div>
+
+  <div class="blog-content">
+    {
+      ITEMS.map((item) => {
+        return <Card item={item} style={{ flex: `22.9%` }} />;
+      })
+    }
+  </div>
+
+  <button>View All</button>
+</section>
+
+<style>
+  #blog-section {
+    padding: 160px 185px;
+    position: relative;
+    row-gap: 84px;
+    column-gap: 84px;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (max-width: 450px) {
+      padding: 80px 20px;
+      column-gap: 28px;
+    }
+  }
+
+  #blog-section button {
+    width: fit-content;
+    margin: 0 auto;
+    border-radius: 100px;
+    border: 1px solid #4130ba;
+    background: #fff;
+    display: flex;
+    padding: 12px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #4130ba;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family: Typo Grotesk;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  #blog-section .blog-content {
+    margin-top: 64px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 40px;
+    row-gap: 32px;
+
+    @media screen and (max-width: 450px) {
+      margin-top: 0;
+    }
+  }
+
+  #blog-section div.heading {
+    gap: 24px;
+  }
+
+  #blog-section div.heading > p {
+    color: #58647d;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family: Epilogue;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+    margin: 0;
+  }
+
+  #blog-section div.heading > h6 {
+    display: flex;
+    padding: 10px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: #8add8f;
+    color: #000;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family: Epilogue;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2px;
+    width: fit-content;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  #blog-section div.heading > h1 {
+    color: #0f1221;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family: Epilogue;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    margin-top: 24px;
+  }
+
+  #blog-section > div > img {
+    position: absolute;
+    bottom: -39px;
+    right: 57px;
+  }
+
+  #blog-section div.blog-content .content-item {
+    width: calc((100% - 45px) / 2);
+    box-sizing: border-box;
+    border-radius: 12px;
+    border: 2px solid #4130ba;
+    background: #fff;
+    box-shadow: 1px 1px 15px 0px rgba(0, 0, 0, 0.05);
+    padding: 42px 37.5px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 64px;
+  }
+
+  #blog-section .content-item h4 {
+    color: #000;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family: Epilogue;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    margin-top: 64px;
+    margin-left: 12.5px;
+  }
+</style>

@@ -26,20 +26,21 @@ const {} = Astro.props;
 </section>
 
 <style>
-  @media screen and (max-width: 1440px) {
-    #home-testimonial-section {
-      padding-left: 159px;
-      padding-right: 158px;
-      padding-top: 210px;
-      padding-bottom: 210px;
-    }
-  }
-
   #home-testimonial-section {
     padding-left: 199px;
     padding-right: 197.5px;
     padding-top: 263px;
     padding-bottom: 263px;
+    @media screen and (max-width: 1440px) {
+      padding-left: 159px;
+      padding-right: 158px;
+      padding-top: 210px;
+      padding-bottom: 210px;
+    }
+
+    @media screen and (max-width: 450px) {
+      padding: 80px 20px;
+    }
   }
 
   #home-testimonial-section > div {
@@ -53,6 +54,10 @@ const {} = Astro.props;
     width: 645px;
     display: flex;
     justify-content: center;
+
+    @media screen and (max-width: 450px) {
+      display: none;
+    }
   }
 
   #home-testimonial-section div.text {

@@ -1,13 +1,13 @@
 @font-face {
-    font-family: 'FamiljenGrotesk';
+    font-family: 'Typo Grotesk';
     font-style: normal;
     font-weight: normal;
-    src: url('/fonts/FamiljenGrotesk-Regular.otf') format('opentype');
+    src: local('Typo Grotesk'), url('/fonts/Typo Grotesk.otf') format('opentype');
 }
 
 @font-face {
-    font-family: 'FamiljenGrotesk';
+    font-family: 'Typo Grotesk';
     font-style: normal;
     font-weight: 600;
-    src: url('/fonts/FamiljenGrotesk-Bold.otf') format('opentype');
+    src: local('Typo Grotesk'), url('/fonts/Typo Grotesk Bold.otf') format('opentype');
 }

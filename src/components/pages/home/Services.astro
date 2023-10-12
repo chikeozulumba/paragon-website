@@ -40,8 +40,8 @@ const SERVICE_ITEMS = [
     url: `/services/bespoke-hr-solutions`,
     icon: SoultionsImage,
     style: {
-      p: `327.5px`
-    }
+      p: ``,
+    },
   },
 ];
 ---
@@ -53,11 +53,11 @@ const SERVICE_ITEMS = [
 
       <h1>How we empower businesses</h1>
     </div>
-    <div class="content">
+    <div class="services-content">
       {
         SERVICE_ITEMS.map((item) => {
           return (
-            <div class="content-item">
+            <div class="services-content-item">
               <Image
                 src={item.icon}
                 alt={`${item.title} - ${item.description}`}
@@ -77,6 +77,10 @@ const SERVICE_ITEMS = [
 <style>
   #home-services-section {
     padding: 0 120px;
+    @media screen and (max-width: 450px) {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 
   #home-services-section > div {
@@ -88,6 +92,9 @@ const SERVICE_ITEMS = [
     column-gap: 84px;
     padding: 120px 80px;
     background: #f8f9fb;
+    @media screen and (max-width: 450px) {
+      padding: 120px 0px;
+    }
   }
 
   #home-services-section div.heading {
@@ -118,6 +125,10 @@ const SERVICE_ITEMS = [
     width: fit-content;
     text-transform: uppercase;
     margin: 0;
+    @media screen and (max-width: 450px) {
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
   }
 
   #home-services-section div.heading > h1 {
@@ -131,15 +142,28 @@ const SERVICE_ITEMS = [
     font-weight: 600;
     line-height: normal;
     margin: 0;
+
+    @media screen and (max-width: 450px) {
+      font-size: 32px;
+      padding: 0 30px;
+      text-align: center;
+    }
   }
 
-  #home-services-section div.content {
+  #home-services-section div.services-content {
     display: flex;
-    justify-content: center;
     gap: 45px;
-    align-self: stretch;
     flex-wrap: wrap;
-    width: 1400px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (max-width: 450px) {
+      flex-direction: column;
+      gap: 0;
+      row-gap: 45px;
+      padding: 0;
+    }
   }
 
   #home-services-section > div > img {
@@ -148,7 +172,7 @@ const SERVICE_ITEMS = [
     right: 57px;
   }
 
-  #home-services-section div.content .content-item {
+  #home-services-section div.services-content .services-content-item {
     width: calc((100% - 45px) / 2);
     box-sizing: border-box;
     border-radius: 12px;
@@ -159,9 +183,14 @@ const SERVICE_ITEMS = [
     flex-direction: column;
     align-items: flex-start;
     gap: 64px;
+
+    @media screen and (max-width: 450px) {
+      width: calc((100% - 45px));
+      padding: 14px 12.5px;
+    }
   }
 
-  #home-services-section .content-item h4 {
+  #home-services-section .services-content-item h4 {
     color: #000;
     font-feature-settings:
       "clig" off,
@@ -176,7 +205,7 @@ const SERVICE_ITEMS = [
     margin-left: 12.5px;
   }
 
-  #home-services-section .content-item p {
+  #home-services-section .services-content-item p {
     color: #58657d;
     font-feature-settings:
       "clig" off,
@@ -191,7 +220,7 @@ const SERVICE_ITEMS = [
     margin-left: 12.5px;
   }
 
-  #home-services-section .content-item a {
+  #home-services-section .services-content-item a {
     margin-top: 64px;
     display: flex;
     padding: 12px 20px;
@@ -205,7 +234,7 @@ const SERVICE_ITEMS = [
     font-feature-settings:
       "clig" off,
       "liga" off;
-    font-family: FamiljenGrotesk;
+    font-family: Typo Grotesk;
     font-size: 17.5px;
     font-style: normal;
     font-weight: 700;

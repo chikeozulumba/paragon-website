@@ -1,0 +1,100 @@
+---
+import { __astro_tag_component__ } from "astro/runtime/server/index.js";
+import { Image } from "astro:assets";
+const { item, style, className = "child" } = Astro.props;
+---
+
+<div class={"blog-card-item " + className} style={style}>
+  {
+    item.image ? (
+      <Image src={item.image} alt={item.title} />
+    ) : (
+      <div class="no-image" />
+    )
+  }
+  <h4>{item.title}</h4>
+  <div class="tags">
+    {
+      item.tag
+        ?.split(",")
+        .map((tag: string) => <span class="tag-item">{tag}</span>)
+    }
+  </div>
+  <h6>{item.description}</h6>
+</div>
+
+<style>
+  .blog-card-item img {
+    height: 173px;
+  }
+
+  .blog-card-item img {
+    height: 173px;
+  }
+
+  .blog-card-item .tags {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .blog-card-item .tags .tag-item {
+    background: #306CC7;
+    display: flex;
+    padding: 6px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family: Epilogue;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 0px;
+    border-radius: 2px;
+  }
+
+  .blog-card-item h4 {
+    color: #000;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family: Epilogue;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 26px; /* 130% */
+    max-width: 226px;
+    margin-top: 16px;
+    margin-bottom: 0;
+  }
+
+  .blog-card-item h6 {
+    color: #58657d;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family: Epilogue;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 125% */
+    max-width: 262px;
+    margin: 0;
+    margin-top: 24px;
+    
+    @media screen and (max-width: 450px) {
+    max-width: 100%;
+    }
+  }
+
+  .blog-card-item .no-image {
+    background: #d9d9d9;
+    height: 173px;
+    border-radius: 10px;
+  }
+</style>

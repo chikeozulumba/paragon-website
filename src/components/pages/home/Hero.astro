@@ -1,0 +1,311 @@
+---
+import { Image } from "astro:assets";
+import MenuOpen from "../../buttons/MenuOpen.astro";
+import MenuClose from "../../buttons/MenuClose.astro";
+import { DEFAULT_LOGO_ALT_DESC } from "../../../constants/site";
+import { HERO_NAVIGATION_ITEMS } from "../../../constants/links";
+import LogoImage from "../../../assets/images/logos/primary.svg";
+import TextUnderlineImage from "../../../assets/images/text-underline.svg";
+import OvalBottomImage from "../../../assets/images/oval-bottom.svg";
+import OvalRightImage from "../../../assets/images/oval-right.svg";
+
+const {} = Astro.props;
+const links = HERO_NAVIGATION_ITEMS;
+---
+
+<script>
+  let isMobileMenuOpen = false;
+  function toggleMobileNavigation(evt: HTMLButtonElement) {
+    isMobileMenuOpen = !isMobileMenuOpen;
+  }
+
+  document.querySelectorAll("[data-mobile-toggle]")?.forEach((button) => {
+    button.addEventListener("click", (el) => {
+      el.stopPropagation();
+      button.classList.toggle("open");
+    });
+  });
+</script>
+
+<section id="hero">
+  <nav>
+    <a href="/">
+      <Image src={LogoImage} alt={DEFAULT_LOGO_ALT_DESC} />
+    </a>
+
+    <ul>
+      {
+        links.map((link, i) => {
+          const url = `/${link.toLowerCase().replaceAll(" ", "-")}`;
+          return (
+            <li>
+              <a href={url}>{link}</a>
+            </li>
+          );
+        })
+      }
+      <li>
+        <a class="cta">Let's talk</a>
+      </li>
+    </ul>
+
+    <div role="button" class="mobile-menu cta closed" data-mobile-toggle>
+      <span class="open-icon"><MenuOpen /></span>
+      <span class="close-icon"><MenuClose /></span>
+
+      <ul id="mobile-nav">
+        {
+          links.map((link, i) => {
+            const url = `/${link.toLowerCase().replaceAll(" ", "-")}`;
+            return (
+              <li>
+                <a href={url}>{link}</a>
+              </li>
+            );
+          })
+        }
+        <li>
+          <a class="mobile-cta">Let's talk</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="leading-area">
+    <h3>
+      <span class="pre-text">Navigating</span>{" "}<span class="underline"
+        ><span class="text">people</span>
+        <Image src={TextUnderlineImage} alt={""} /></span
+      > Nurturing potential
+    </h3>
+
+    <p>We are your stand in People Operations and HR team</p>
+
+    <button class="cta"> Our services</button>
+  </div>
+
+  <Image class={"oval-right"} src={OvalRightImage} alt="" />
+  <Image class={"oval-bottom"} src={OvalBottomImage} alt="" />
+</section>
+
+<style>
+  #hero {
+    background-color: var(--primary-color);
+    height: 813px;
+    padding: 0 120px;
+    position: relative;
+
+    @media screen and (max-width: 450px) {
+      padding: 0 20px;
+    }
+  }
+
+  #hero > nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 90.96px;
+  }
+
+  #hero > nav ul {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    list-style-type: none;
+
+    @media screen and (max-width: 450px) {
+      display: none;
+    }
+  }
+
+  #hero > nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    line-height: 16.4px;
+  }
+
+  #hero > nav ul li a.cta {
+    padding: 12px 20px;
+    border: 1px solid #ffffff;
+    border-radius: 100px;
+    font-weight: 500;
+    display: block;
+    line-height: 14.35px;
+  }
+
+  .leading-area {
+    margin-top: 100.04px;
+    padding-left: 60px;
+
+    @media screen and (max-width: 450px) {
+      padding-left: 0px;
+    }
+  }
+
+  .leading-area > h3 {
+    font-weight: 600;
+    font-size: 64px;
+    max-width: 711px;
+    line-height: 72px;
+    min-height: 144px;
+    color: white;
+    position: relative;
+    z-index: 9999;
+    margin: 0;
+
+    @media screen and (max-width: 450px) {
+      position: initial;
+    }
+  }
+
+  .leading-area > h3 > span.underline {
+    position: relative;
+    z-index: 10;
+  }
+
+  .leading-area > h3 > span.pre-text {
+    position: relative;
+    z-index: 19;
+  }
+
+  .leading-area > h3 > span.underline > span.text {
+    z-index: inherit;
+  }
+
+  .leading-area > h3 > span.underline > img {
+    position: absolute;
+    bottom: 2px;
+    left: -25px;
+    z-index: -1;
+  }
+
+  .leading-area > p {
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 300;
+    color: #ffffff;
+    margin-top: 16px;
+    margin-bottom: 0px;
+  }
+
+  .leading-area .cta {
+    padding: 18px 32px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color-1);
+    border: none;
+    margin-top: 73px;
+    border-radius: 100px;
+    font-size: 24px;
+    line-height: 28.58px;
+    font-family: Epilogue;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family: Typo Grotesk;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  #hero .oval-right {
+    top: 162px;
+    right: 0;
+    position: absolute;
+
+    @media screen and (max-width: 450px) {
+      display: none;
+    }
+  }
+
+  #hero .oval-bottom {
+    left: 176px;
+    bottom: 0;
+    position: absolute;
+
+    @media screen and (max-width: 450px) {
+      display: none;
+    }
+  }
+
+  .mobile-menu {
+    display: none;
+
+    @media screen and (max-width: 450px) {
+      display: block;
+    }
+  }
+
+  .mobile-menu {
+    background: transparent;
+    border: none;
+    color: white;
+    stroke: white;
+    position: relative;
+  }
+
+  .mobile-menu > svg {
+    color: white;
+    height: 24px;
+    width: 24px;
+  }
+
+  .mobile-menu.cta > * {
+    /* pointer-events: none; */
+  }
+
+  .mobile-menu.closed > span.open-icon {
+    display: block;
+  }
+
+  .mobile-menu.closed > span.close-icon {
+    display: none;
+  }
+
+  .mobile-menu.open > span.open-icon {
+    display: none;
+  }
+
+  .mobile-menu.open > span.close-icon {
+    display: block;
+  }
+
+  .mobile-menu ul#mobile-nav {
+    display: none;
+  }
+
+  .mobile-menu.open ul#mobile-nav {
+    display: flex !important;
+    position: absolute;
+    right: 0px;
+    top: 40px;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    color: var(--primary-color);
+    z-index: 9999;
+    padding: 15px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 150px;
+    margin: 0;
+    border-radius: 20px;
+    box-shadow: 1px 1px 15px 0px rgba(0, 0, 0, 0.05);
+  }
+
+  .mobile-menu.open ul#mobile-nav li {
+    text-align: left !important;
+    width: 100%;
+  }
+
+  .mobile-menu.open ul#mobile-nav li:not(:last-child) {
+    border-bottom: 1px solid var(--secondary-color);
+    padding-bottom: 10px;
+  }
+
+  .mobile-menu.open ul#mobile-nav a {
+    color: var(--primary-color) !important;
+    font-weight: 600;
+  }
+</style>

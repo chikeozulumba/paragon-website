@@ -8,13 +8,18 @@ const {} = Astro.props;
   <h1>About Us</h1>
   <div>
     <div class="image">
-      <Image src={OvalImage} alt={''} />
+      <Image src={OvalImage} alt={""} />
     </div>
     <div class="text">
-      <p>Paragon is a people operations agency helping business leaders prioritise their workforce and unlock team potential. 
-      <br />
-      <br />
-      As an HR resource, we collaborate with you to save time and scale your teams. From employee engagement to crisis management, we are your partner in creating structures and processes that work for your company.</p>
+      <p>
+        Paragon is a people operations agency helping business leaders
+        prioritise their workforce and unlock team potential.
+        <br />
+        <br />
+         As an HR resource, we collaborate with you to save time and scale your
+        teams. From employee engagement to crisis management, we are your
+        partner in creating structures and processes that work for your company.
+      </p>
 
       <button>Make an appointment</button>
     </div>
@@ -27,12 +32,19 @@ const {} = Astro.props;
     padding-right: 182px;
     padding-top: 93px;
     padding-bottom: 155.8px;
+
+    @media screen and (max-width: 450px) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
   }
 
   #home-about-section > h1 {
-    color: #4130BA;
+    color: #4130ba;
     text-align: center;
-    font-feature-settings: 'clig' off, 'liga' off;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
     font-family: Epilogue;
     font-size: 48px;
     font-style: normal;
@@ -50,27 +62,40 @@ const {} = Astro.props;
   }
 
   #home-about-section div.image {
-   width: 645px;
-   display: flex;
-   justify-content: center;
+    width: 645px;
+    display: flex;
+    justify-content: center;
+    @media screen and (max-width: 450px) {
+      display: none;
+     }
   }
 
   #home-about-section div.text {
-   display: flex;
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 67px;
   }
 
   #home-about-section div.text p {
-    color: #0F1221;
-    font-feature-settings: 'clig' off, 'liga' off;
+    color: #0f1221;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
     font-family: Epilogue;
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
     line-height: 30px;
-    width: 586px;
+    max-width: 586px;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    @media screen and (max-width: 450px) {
+      /* padding-left: 20px;
+      padding-right: 20px; */
+    }
   }
 
   #home-about-section div.text button {
@@ -80,10 +105,12 @@ const {} = Astro.props;
     align-items: center;
     gap: 10px;
     border-radius: 100px;
-    background: #4130BA;
-    color: #FFF;
-    font-feature-settings: 'clig' off, 'liga' off;
-    font-family: FamiljenGrotesk;
+    background: #4130ba;
+    color: #fff;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family: Typo Grotesk;
     font-size: 24px;
     font-style: normal;
     font-weight: 700;

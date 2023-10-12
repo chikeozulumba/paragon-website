@@ -14,7 +14,7 @@ const { color: backgroundColor = `#E6883299` } = Astro.props;
       <h3>Subscribe to HR Weekly</h3>
       <p>
         HR Weekly is a series of regular articles raising topical issues
-        relevant<br />to anyone in human resources, operations,<br />management
+        relevant <br />to anyone in human resources, operations, <br /> management
         and people rewards.
       </p>
 
@@ -27,19 +27,20 @@ const { color: backgroundColor = `#E6883299` } = Astro.props;
 </section>
 
 <style define:vars={{ backgroundColor }}>
-  @media screen and (max-width: 1440px) {
-    #home-newsletter-section {
-      padding-left: 142px;
-      padding-right: 142px;
-    }
-  }
-
   #home-newsletter-section {
     padding-left: 177.5px;
     padding-right: 177.5px;
     padding-top: 144px;
     padding-bottom: 144px;
     background: var(--backgroundColor);
+    @media screen and (max-width: 1440px) {
+      padding-left: 142px;
+      padding-right: 142px;
+    }
+
+    @media screen and (max-width: 450px) {
+      padding: 80px 20px;
+    }
   }
 
   #home-newsletter-section > div {
@@ -50,9 +51,13 @@ const { color: backgroundColor = `#E6883299` } = Astro.props;
   }
 
   #home-newsletter-section div.image {
-    width: 371px;
+    width: 464px;
     display: flex;
     justify-content: center;
+
+    @media screen and (max-width: 450px) {
+      display: none;
+    }
   }
 
   #home-newsletter-section div.text {
@@ -92,6 +97,12 @@ const { color: backgroundColor = `#E6883299` } = Astro.props;
     margin-top: 46px;
   }
 
+  #home-newsletter-section div.text br {
+    @media screen and (max-width: 450px) {
+      display: none;
+    }
+  }
+
   #home-newsletter-section div.text div.action {
     margin-top: 64px;
     width: 100%;
@@ -109,7 +120,7 @@ const { color: backgroundColor = `#E6883299` } = Astro.props;
     font-feature-settings:
       "clig" off,
       "liga" off;
-    font-family: FamiljenGrotesk;
+    font-family: Typo Grotesk;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
@@ -121,7 +132,7 @@ const { color: backgroundColor = `#E6883299` } = Astro.props;
     font-feature-settings:
       "clig" off,
       "liga" off;
-    font-family: FamiljenGrotesk;
+    font-family: Typo Grotesk;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
@@ -133,6 +144,7 @@ const { color: backgroundColor = `#E6883299` } = Astro.props;
     gap: 10px;
     background: #4130ba;
     border: none;
+    cursor: pointer;
   }
 
   #home-newsletter-section div.text div.action input:focus {
