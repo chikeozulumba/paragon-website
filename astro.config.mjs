@@ -6,7 +6,8 @@ import netlify from '@astrojs/netlify/functions';
 // https://astro.build/config
 export default defineConfig({
   output: "server",
-  adapter: netlify({
-    edgeMiddleware: true
-  })
+//   adapter: netlify({
+//     edgeMiddleware: true
+//   }),
+  adapter: cloudflare()
 });
