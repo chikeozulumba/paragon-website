@@ -1,0 +1,100 @@
+---
+import { Image } from "astro:assets";
+import MetaImage from "../../assets/images/brands/meta.svg";
+import NinthGridImage from "../../assets/images/brands/ninthgrid.svg";
+
+const {} = Astro.props;
+
+const BRANDS = [
+    { title: 'Meta', image: MetaImage },
+    { title: 'NinthGrid', image: NinthGridImage },
+]
+
+---
+
+<section id="brands-section">
+  <h1>Trusted by great companies</h1>
+  <h5>Our clients represent people passionate and committed to positive employee experiences. They come from a wide array of companies and teams.</h5>
+  <div class="divider"></div>
+  <div class="images">
+    {BRANDS.map((brand) =>  <Image src={brand.image} alt={brand.title + ' - Paragon Consulting'} />)}
+  </div>
+</section>
+
+<style>
+  #brands-section {
+    padding-left: 234px;
+    padding-right: 182px;
+    padding-top: 204px;
+    padding-bottom: 155.8px;
+
+    @media screen and (max-width: 450px) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  #brands-section > h1 {
+    color: #4130ba;
+    text-align: center;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family: Epilogue;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    @media screen and (max-width: 450px) {
+    }
+  }
+
+  #brands-section > h5 {
+    color: #0f1221;
+
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family: Epilogue;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+    max-width: 816px;
+    margin: 0 auto !important;
+    text-align: center;
+    @media screen and (max-width: 450px) {
+    }
+  }
+
+  #brands-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #brands-section .divider {
+    margin: 50px 0 !important;
+  }
+
+  #brands-section .divider {
+    width: 360px;
+    height: 1px;
+    stroke-width: 0.8px;
+    background: #0f1221;
+    margin: 21px 0;
+  }
+
+  .images {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .images > img {
+    height: 48px;
+    width: fit-content;
+  }
+
+</style>

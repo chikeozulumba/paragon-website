@@ -4,20 +4,26 @@ import OvalImage from "../../../assets/images/oval.svg";
 const {} = Astro.props;
 ---
 
-<section id="page-about-section">
-  <h1>About Us</h1>
+<section id="page-advisory-booking-section">
+  <h1>Schedule a session with Us</h1>
   <div>
     <div class="image">
       <Image src={OvalImage} alt={""} />
     </div>
     <div class="text">
       <p>
-        Paragon is a people operations agency helping business leaders
-        prioritize their workforce and unlock team potential.
+        Need quick advice and want to talk out a challenge or an idea? Schedule
+        an <a target="_blank" href="https://1sh2o0w6yoa.typeform.com/to/OxgLgwY4">Advisory chat for 30 minutes</a> or an <a target="_blank" href="https://1sh2o0w6yoa.typeform.com/to/OxgLgwY4">advisory discussion for 1 hour</a>
+
         <br />
         <br />
-         We are your partner in creating environments, structures, and processes
-        that work for your company to save time and scale your teams.
+         Trying to get a new people operations and HR initiative off the ground
+        or need more comprehensive support, consider joining the people leaders
+        coaching program.
+
+        <br />
+        <br />
+        It’s a 6-week program where we meet weekly to up your people operations game. <a target="_blank" href="https://1sh2o0w6yoa.typeform.com/to/OxgLgwY4">Apply here</a> or book a 15-minute discovery call to find out more.
       </p>
 
       <a class="cta" target="_blank" href="https://1sh2o0w6yoa.typeform.com/to/OxgLgwY4">Make an appointment</a>
@@ -26,7 +32,7 @@ const {} = Astro.props;
 </section>
 
 <style>
-  #page-about-section {
+  #page-advisory-booking-section {
     padding-left: 154px;
     padding-right: 182px;
     padding-top: 93px;
@@ -38,7 +44,7 @@ const {} = Astro.props;
     }
   }
 
-  #page-about-section > h1 {
+  #page-advisory-booking-section > h1 {
     color: #4130ba;
     text-align: center;
     font-feature-settings:
@@ -51,7 +57,7 @@ const {} = Astro.props;
     line-height: normal;
   }
 
-  #page-about-section > div {
+  #page-advisory-booking-section > div {
     margin-top: 99px;
     display: flex;
     flex-direction: row-reverse;
@@ -61,7 +67,7 @@ const {} = Astro.props;
     width: 100%;
   }
 
-  #page-about-section div.image {
+  #page-advisory-booking-section div.image {
     width: 645px;
     display: flex;
     justify-content: center;
@@ -70,14 +76,14 @@ const {} = Astro.props;
     }
   }
 
-  #page-about-section div.text {
+  #page-advisory-booking-section div.text {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 67px;
   }
 
-  #page-about-section div.text p {
+  #page-advisory-booking-section div.text p {
     color: #0f1221;
     font-feature-settings:
       "clig" off,
@@ -98,7 +104,13 @@ const {} = Astro.props;
     }
   }
 
-  #page-about-section div.text a.cta {
+  #page-advisory-booking-section div.text p>a {
+    text-decoration: underline;
+    color: #4130ba;
+    cursor: pointer;
+  }
+
+  #page-advisory-booking-section div.text a.cta {
     display: flex;
     padding: 18px 32px;
     justify-content: center;

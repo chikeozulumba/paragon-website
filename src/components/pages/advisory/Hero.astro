@@ -1,40 +1,47 @@
-                        ---
+---
 import { Image } from "astro:assets";
 import MenuOpen from "../../buttons/MenuOpen.astro";
 import MenuClose from "../../buttons/MenuClose.astro";
-import { ServicesContent } from "../../../data/services";
 import { DEFAULT_LOGO_ALT_DESC } from "../../../constants/site";
 import { ALT_HERO_NAVIGATION_ITEMS } from "../../../constants/links";
-import LogoImage from "../../../assets/images/logos/secondary.svg";
-import Large01Image from "../../../assets/images/services/large-01.svg";
-import Large02Image from "../../../assets/images/services/large-02.svg";
+import LogoImage from "../../../assets/images/logos/primary.svg";
+import TextUnderlineImage from "../../../assets/images/text-underline.svg";
+import OvalBottomImage from "../../../assets/images/oval-bottom.svg";
+import OvalRightImage from "../../../assets/images/oval-right.svg";
 
-const { searchParams } = Astro.url;
-const slug = searchParams.get("service");
-
+const {} = Astro.props;
 const links = ALT_HERO_NAVIGATION_ITEMS;
-
-const defaultPretext = `Our Services`;
-const defaultTitle = `Access experts and transform your People Operations`;
-const defaultDescription = `Want your company to be effective at HR management and establish systems and structure for your business, but don’t know where to start?`;
-
-const service = ServicesContent.find((s) => s.slug === slug);
-
-const pretext = service?.pre || defaultPretext;
-const title = service?.title || defaultTitle;
-const description = service?.description || defaultDescription;
 ---
 
 <script>
-  let isMobileMenuOpen = false;
-  function toggleMobileNavigation(evt: HTMLButtonElement) {
-    isMobileMenuOpen = !isMobileMenuOpen;
-  }
-
   document.querySelectorAll("[data-mobile-toggle]")?.forEach((button) => {
     button.addEventListener("click", (el) => {
       el.stopPropagation();
       button.classList.toggle("open");
+    });
+  });
+
+  document.querySelectorAll("[data-target-section]")?.forEach(function (button) {
+    button.addEventListener("click", function (el) {
+      const target = (el.target as any).dataset.targetSection
+      if (!target) return
+
+      el.stopPropagation();
+      el.preventDefault();
+
+      const targetEl = document.querySelector(target)
+      targetEl?.scrollIntoView()
+    });
+  });
+
+  document.querySelectorAll("[data-advisory-chat]")?.forEach(function (button) {
+    button.addEventListener("click", function (el) {
+      const target = `#page-advisory-booking-section`
+      el.stopPropagation();
+      el.preventDefault();
+
+      const targetEl = document.querySelector(target)
+      targetEl?.scrollIntoView()
     });
   });
 </script>
@@ -51,7 +58,7 @@ const description = service?.description || defaultDescription;
           const url = defaultUrl || `/${title.toLowerCase().replaceAll(" ", "-")}`;
           return (
             <li>
-              <a data-target-section={targetSection} href={url}>{title}</a>
+              <a href={url}>{title}</a>
             </li>
           );
         })
@@ -71,7 +78,7 @@ const description = service?.description || defaultDescription;
           const url = defaultUrl || `/${title.toLowerCase().replaceAll(" ", "-")}`;
             return (
               <li>
-                <a data-target-section={targetSection} href={url}>{title}</a>
+                <a href={url}>{title}</a>
               </li>
             );
           })
@@ -84,28 +91,22 @@ const description = service?.description || defaultDescription;
   </nav>
 
   <div class="leading-area">
-    <h6>{pretext}</h6>
     <h3>
-      {title}
+      Express Advisory{" "}<br />Sessions
     </h3>
 
-    <p>{description}</p>
+    <p>Need quick advice and want to talk out a challenge or an idea?</p>
 
-    <a class="cta" href="/advisory"> Schedule a call with us</a>
+    <button data-advisory-chat class="cta">Schedule an Advisory Chat</button>
   </div>
 
-  {
-    service && (service?.index & 1) === 0 ? (
-      <Image class={"bg-img-right"} src={Large01Image} alt="" />
-    ) : (
-      <Image class={"bg-img-right"} src={Large02Image} alt="" />
-    )
-  }
+  <Image class={"oval-right"} src={OvalRightImage} alt="" />
+  <Image class={"oval-bottom"} src={OvalBottomImage} alt="" />
 </section>
 
 <style>
   #hero {
-    background-color: white;
+    background-color: var(--primary-color);
     height: 813px;
     padding: 0 120px;
     position: relative;
@@ -135,14 +136,14 @@ const description = service?.description || defaultDescription;
 
   #hero > nav ul li a {
     text-decoration: none;
-    color: var(--primary-color);
+    color: white;
     font-size: 14px;
     line-height: 16.4px;
   }
 
   #hero > nav ul li a.cta {
     padding: 12px 20px;
-    border: 1px solid var(--primary-color);
+    border: 1px solid #ffffff;
     border-radius: 100px;
     font-weight: 500;
     display: block;
@@ -158,35 +159,16 @@ const description = service?.description || defaultDescription;
     }
   }
 
-  .leading-area > h6 {
-    color: #4130ba;
-    font-feature-settings:
-      "clig" off,
-      "liga" off;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 30px; /* 187.5% */
-    letter-spacing: 0.32px;
-    text-transform: uppercase;
-    margin-top: 0;
-    margin-bottom: 20px;
-
-    @media screen and (max-width: 450px) {
-      position: initial;
-    }
-  }
-
   .leading-area > h3 {
     font-weight: 600;
     font-size: 64px;
     max-width: 711px;
     line-height: 72px;
-    color: var(--primary-color);
+    min-height: 144px;
+    color: white;
     position: relative;
     z-index: 9999;
     margin: 0;
-    max-width: 752px;
 
     @media screen and (max-width: 450px) {
       position: initial;
@@ -218,16 +200,15 @@ const description = service?.description || defaultDescription;
     font-size: 24px;
     line-height: 36px;
     font-weight: 300;
-    color: var(--primary-color);
-    margin-top: 32px;
+    color: #ffffff;
+    margin-top: 16px;
     margin-bottom: 0px;
-    max-width: 752px;
   }
 
-  .leading-area a.cta {
+  .leading-area .cta {
     padding: 18px 32px;
-    background-color: var(--primary-color);
-    color: #fff;
+    background-color: var(--secondary-color);
+    color: var(--primary-color-1);
     border: none;
     margin-top: 73px;
     border-radius: 100px;
@@ -242,14 +223,15 @@ const description = service?.description || defaultDescription;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    display: block;
-    width: fit-content;
-    text-decoration: none;
+     @media screen and (max-width: 450px) {
+      font-size: 16px;
+    }
+    cursor: pointer;
   }
 
-  #hero .bg-img-right {
-    bottom: 0px;
-    right: 30px;
+  #hero .oval-right {
+    top: 162px;
+    right: 0;
     position: absolute;
 
     @media screen and (max-width: 450px) {
