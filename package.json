@@ -13,7 +13,9 @@
     "@astrojs/cloudflare": "^7.5.2",
     "@astrojs/netlify": "^3.0.2",
     "@astrojs/vercel": "^5.0.2",
-    "astro": "^3.2.2"
+    "astro": "^3.2.2",
+    "purchasing-power-parity": "^2.0.2",
+    "svg-country-flags": "^1.2.10"
   },
   "packageManager": "yarn@3.6.4"
 }

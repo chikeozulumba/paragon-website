@@ -1,0 +1,346 @@
+---
+import { Image } from "astro:assets";
+import MenuOpen from "../../buttons/MenuOpen.astro";
+import MenuClose from "../../buttons/MenuClose.astro";
+import { ServicesContent } from "../../../data/services";
+import { DEFAULT_LOGO_ALT_DESC } from "../../../constants/site";
+import { ALT_HERO_NAVIGATION_ITEMS } from "../../../constants/links";
+import LogoImage from "../../../assets/images/logos/secondary.svg";
+import Large01Image from "../../../assets/images/services/large-01.svg";
+import Large02Image from "../../../assets/images/services/large-02.svg";
+
+const { searchParams } = Astro.url;
+const slug = searchParams.get("service");
+
+const links = ALT_HERO_NAVIGATION_ITEMS;
+
+const defaultPretext = `Our Services`;
+const defaultTitle = `Access experts and transform your People Operations`;
+const defaultDescription = `Want your company to be effective at HR management and establish systems and structure for your business, but don’t know where to start?`;
+
+const service = ServicesContent.find((s) => s.slug === slug);
+
+const pretext = service?.pre || defaultPretext;
+const title = service?.title || defaultTitle;
+const description = service?.description || defaultDescription;
+---
+
+<script>
+  let isMobileMenuOpen = false;
+  function toggleMobileNavigation(evt: HTMLButtonElement) {
+    isMobileMenuOpen = !isMobileMenuOpen;
+  }
+
+  document.querySelectorAll("[data-mobile-toggle]")?.forEach((button) => {
+    button.addEventListener("click", (el) => {
+      el.stopPropagation();
+      button.classList.toggle("open");
+    });
+  });
+</script>
+
+<section id="hero">
+  <nav>
+    <a href="/">
+      <Image src={LogoImage} alt={DEFAULT_LOGO_ALT_DESC} />
+    </a>
+
+    <ul>
+      {
+        links.map(({ title, targetSection, url: defaultUrl }, i) => {
+          const url = defaultUrl || `/${title.toLowerCase().replaceAll(" ", "-")}`;
+          return (
+            <li>
+              <a data-target-section={targetSection} href={url}>{title}</a>
+            </li>
+          );
+        })
+      }
+      <li>
+        <a class="cta">Let's talk</a>
+      </li>
+    </ul>
+
+    <div role="button" class="mobile-menu cta closed" data-mobile-toggle>
+      <span class="open-icon"><MenuOpen /></span>
+      <span class="close-icon"><MenuClose /></span>
+
+      <ul id="mobile-nav">
+        {
+          links.map(({ title, targetSection, url: defaultUrl }, i) => {
+          const url = defaultUrl || `/${title.toLowerCase().replaceAll(" ", "-")}`;
+            return (
+              <li>
+                <a data-target-section={targetSection} href={url}>{title}</a>
+              </li>
+            );
+          })
+        }
+        <li>
+          <a class="mobile-cta">Let's talk</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="leading-area">
+    <h6>{pretext}</h6>
+    <h3>
+      {title}
+    </h3>
+
+    <p>{description}</p>
+
+    <button class="cta"> Schedule a call with us</button>
+  </div>
+
+  {
+    service && (service?.index & 1) === 0 ? (
+      <Image class={"bg-img-right"} src={Large01Image} alt="" />
+    ) : (
+      <Image class={"bg-img-right"} src={Large02Image} alt="" />
+    )
+  }
+</section>
+
+<style>
+  #hero {
+    background-color: white;
+    height: 813px;
+    padding: 0 120px;
+    position: relative;
+
+    @media screen and (max-width: 450px) {
+      padding: 0 20px;
+    }
+  }
+
+  #hero > nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 90.96px;
+  }
+
+  #hero > nav ul {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    list-style-type: none;
+
+    @media screen and (max-width: 450px) {
+      display: none;
+    }
+  }
+
+  #hero > nav ul li a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 14px;
+    line-height: 16.4px;
+  }
+
+  #hero > nav ul li a.cta {
+    padding: 12px 20px;
+    border: 1px solid var(--primary-color);
+    border-radius: 100px;
+    font-weight: 500;
+    display: block;
+    line-height: 14.35px;
+  }
+
+  .leading-area {
+    margin-top: 100.04px;
+    padding-left: 60px;
+
+    @media screen and (max-width: 450px) {
+      padding-left: 0px;
+    }
+  }
+
+  .leading-area > h6 {
+    color: #4130ba;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px; /* 187.5% */
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 20px;
+
+    @media screen and (max-width: 450px) {
+      position: initial;
+    }
+  }
+
+  .leading-area > h3 {
+    font-weight: 600;
+    font-size: 64px;
+    max-width: 711px;
+    line-height: 72px;
+    color: var(--primary-color);
+    position: relative;
+    z-index: 9999;
+    margin: 0;
+    max-width: 752px;
+
+    @media screen and (max-width: 450px) {
+      position: initial;
+    }
+  }
+
+  .leading-area > h3 > span.underline {
+    position: relative;
+    z-index: 10;
+  }
+
+  .leading-area > h3 > span.pre-text {
+    position: relative;
+    z-index: 19;
+  }
+
+  .leading-area > h3 > span.underline > span.text {
+    z-index: inherit;
+  }
+
+  .leading-area > h3 > span.underline > img {
+    position: absolute;
+    bottom: 2px;
+    left: -25px;
+    z-index: -1;
+  }
+
+  .leading-area > p {
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 300;
+    color: var(--primary-color);
+    margin-top: 32px;
+    margin-bottom: 0px;
+    max-width: 752px;
+  }
+
+  .leading-area .cta {
+    padding: 18px 32px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    margin-top: 73px;
+    border-radius: 100px;
+    font-size: 24px;
+    line-height: 28.58px;
+    font-family: Epilogue;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family: Typo Grotesk;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  #hero .bg-img-right {
+    bottom: 0px;
+    right: 30px;
+    position: absolute;
+
+    @media screen and (max-width: 450px) {
+      display: none;
+    }
+  }
+
+  #hero .oval-bottom {
+    left: 176px;
+    bottom: 0;
+    position: absolute;
+
+    @media screen and (max-width: 450px) {
+      display: none;
+    }
+  }
+
+  .mobile-menu {
+    display: none;
+
+    @media screen and (max-width: 450px) {
+      display: block;
+    }
+  }
+
+  .mobile-menu {
+    background: transparent;
+    border: none;
+    color: white;
+    stroke: white;
+    position: relative;
+  }
+
+  .mobile-menu > svg {
+    color: white;
+    height: 24px;
+    width: 24px;
+  }
+
+  .mobile-menu.cta > * {
+    /* pointer-events: none; */
+  }
+
+  .mobile-menu.closed > span.open-icon {
+    display: block;
+  }
+
+  .mobile-menu.closed > span.close-icon {
+    display: none;
+  }
+
+  .mobile-menu.open > span.open-icon {
+    display: none;
+  }
+
+  .mobile-menu.open > span.close-icon {
+    display: block;
+  }
+
+  .mobile-menu ul#mobile-nav {
+    display: none;
+  }
+
+  .mobile-menu.open ul#mobile-nav {
+    display: flex !important;
+    position: absolute;
+    right: 0px;
+    top: 40px;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    color: var(--primary-color);
+    z-index: 9999;
+    padding: 15px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 150px;
+    margin: 0;
+    border-radius: 20px;
+    box-shadow: 1px 1px 15px 0px rgba(0, 0, 0, 0.05);
+  }
+
+  .mobile-menu.open ul#mobile-nav li {
+    text-align: left !important;
+    width: 100%;
+  }
+
+  .mobile-menu.open ul#mobile-nav li:not(:last-child) {
+    border-bottom: 1px solid var(--secondary-color);
+    padding-bottom: 10px;
+  }
+
+  .mobile-menu.open ul#mobile-nav a {
+    color: var(--primary-color) !important;
+    font-weight: 600;
+  }
+</style>

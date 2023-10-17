@@ -1,0 +1,12 @@
+---
+import { ServicesList } from "../../../../data/services.ts"
+import ServiceGroupItem from "./Item.astro"
+
+const {} = Astro.props;
+---
+<section id="services-group-section">
+  {ServicesList.map((item, i) => {
+    return <ServiceGroupItem item={item} position={i + 1} />
+  })}
+</section>
+

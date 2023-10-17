@@ -1,49 +1,9 @@
 ---
 import { Image } from "astro:assets";
-import HRImage from "../../../assets/images/services/hr.svg";
-import RecruitmentImage from "../../../assets/images/services/recruitment.svg";
-import PeopleImage from "../../../assets/images/services/people.svg";
-import DiversityImage from "../../../assets/images/services/diversity.svg";
-import SoultionsImage from "../../../assets/images/services/solutions.svg";
+import { ServicesContent } from "../../../data/services";
 import StarImage from "../../../assets/images/star.svg";
 
 const {} = Astro.props;
-
-const SERVICE_ITEMS = [
-  {
-    title: `Fractional HR Support`,
-    description: `Become effective at HR management and establish systems and structure for your business`,
-    url: `/services/fractional-hr-support`,
-    icon: HRImage,
-  },
-  {
-    title: `Recruitment`,
-    description: `Unique approaches to finding the right people via skills-based recruitment`,
-    url: `/services/recruitment`,
-    icon: RecruitmentImage,
-  },
-  {
-    title: `People Ops Strategy`,
-    description: `Want to level up your people operations internally, but need a roadmap?`,
-    url: `/services/people-ops-strategy`,
-    icon: PeopleImage,
-  },
-  {
-    title: `Diversity, Equity, and Inclusion`,
-    description: `Program design support and strategy to build an inclusive workplace`,
-    url: `/services/diveristy-equity-and-inclusion`,
-    icon: DiversityImage,
-  },
-  {
-    title: `Bespoke HR Solutions`,
-    description: `Support with employee relations, disputes, or crisis management.`,
-    url: `/services/bespoke-hr-solutions`,
-    icon: SoultionsImage,
-    style: {
-      p: ``,
-    },
-  },
-];
 ---
 
 <section id="home-services-section">
@@ -55,7 +15,7 @@ const SERVICE_ITEMS = [
     </div>
     <div class="services-content">
       {
-        SERVICE_ITEMS.map((item) => {
+        ServicesContent.map((item) => {
           return (
             <div class="services-content-item">
               <Image
@@ -63,7 +23,7 @@ const SERVICE_ITEMS = [
                 alt={`${item.title} - ${item.description}`}
               />
               <h4>{item.title}</h4>
-              <p style={{ width: item?.style?.p }}>{item.description}</p>
+              <p style={{}}>{item.description}</p>
               <a href={item.url}>Learn more</a>
             </div>
           );

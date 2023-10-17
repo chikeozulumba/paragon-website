@@ -1,0 +1,127 @@
+---
+import { Image } from "astro:assets";
+import CheckIcon from "../../../../assets/images/check.svg";
+import AltCheckIcon from "../../../../assets/images/check-alt.svg";
+import ItemImage from "../../../../assets/images/services/items/01.svg";
+const { item, position } = Astro.props;
+
+const isMidClass = position % 2 == 0;
+---
+
+<section
+  class={["services-group-item-section", isMidClass ? "mid-item" : ""].join(" ")}
+>
+  <h1>{item.title}</h1>
+  <div class="content">
+    <ul class="list">
+      {
+        item.items.map((subContent) => (
+          <li>
+            <span>
+              <Image
+                src={isMidClass ? AltCheckIcon : CheckIcon}
+                alt={item.title + " " + subContent}
+              />
+            </span>
+            {subContent}
+          </li>
+        ))
+      }
+    </ul>
+    <Image src={item.image} alt={""} />
+  </div>
+</section>
+
+<style>
+  .services-group-item-section {
+    display: inline-flex;
+    padding: 123px 0px 245px 0px;
+    flex-direction: column;
+    align-items: center;
+    gap: 85px;
+    background: #4130ba;
+    width: 100%;
+  }
+
+  .services-group-item-section.mid-item {
+    background: white;
+  }
+
+  .services-group-item-section > h1 {
+    color: #fff;
+    text-align: center;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family: Epilogue;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .services-group-item-section.mid-item > h1 {
+    color: #4130ba;
+  }
+
+  .services-group-item-section > div.content {
+    color: #fff;
+    text-align: center;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family: Epilogue;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    max-width: 1212.5px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    gap: 170px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .services-group-item-section.mid-item > div.content {
+    flex-direction: row-reverse;
+  }
+
+  .services-group-item-section > div.content img {
+    /* height: 300px; */
+    width: 438px;
+  }
+
+  .services-group-item-section > div.content .list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .services-group-item-section > div.content .list li {
+    color: #fff;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family: Epilogue;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px; /* 133.333% */
+    display: flex;
+    padding: 12px 10px;
+    align-items: flex-start;
+    gap: 32px;
+    text-align: left;
+  }
+
+  .services-group-item-section.mid-item > div.content .list li {
+    color: #4130ba;
+  }
+
+  .services-group-item-section > div.content .list li img {
+    width: 24px;
+    height: 24px;
+  }
+</style>

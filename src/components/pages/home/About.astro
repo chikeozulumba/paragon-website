@@ -4,7 +4,7 @@ import OvalImage from "../../../assets/images/oval.svg";
 const {} = Astro.props;
 ---
 
-<section id="home-about-section">
+<section id="page-about-section">
   <h1>About Us</h1>
   <div>
     <div class="image">
@@ -13,12 +13,11 @@ const {} = Astro.props;
     <div class="text">
       <p>
         Paragon is a people operations agency helping business leaders
-        prioritise their workforce and unlock team potential.
+        prioritize their workforce and unlock team potential.
         <br />
         <br />
-         As an HR resource, we collaborate with you to save time and scale your
-        teams. From employee engagement to crisis management, we are your
-        partner in creating structures and processes that work for your company.
+         We are your partner in creating environments, structures, and processes
+        that work for your company to save time and scale your teams.
       </p>
 
       <button>Make an appointment</button>
@@ -27,7 +26,7 @@ const {} = Astro.props;
 </section>
 
 <style>
-  #home-about-section {
+  #page-about-section {
     padding-left: 154px;
     padding-right: 182px;
     padding-top: 93px;
@@ -39,7 +38,7 @@ const {} = Astro.props;
     }
   }
 
-  #home-about-section > h1 {
+  #page-about-section > h1 {
     color: #4130ba;
     text-align: center;
     font-feature-settings:
@@ -52,32 +51,33 @@ const {} = Astro.props;
     line-height: normal;
   }
 
-  #home-about-section > div {
+  #page-about-section > div {
     margin-top: 99px;
     display: flex;
+    flex-direction: row-reverse;
     align-items: center;
     gap: 69px;
     max-width: 1464px;
     width: 100%;
   }
 
-  #home-about-section div.image {
+  #page-about-section div.image {
     width: 645px;
     display: flex;
     justify-content: center;
     @media screen and (max-width: 450px) {
       display: none;
-     }
+    }
   }
 
-  #home-about-section div.text {
+  #page-about-section div.text {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 67px;
   }
 
-  #home-about-section div.text p {
+  #page-about-section div.text p {
     color: #0f1221;
     font-feature-settings:
       "clig" off,
@@ -98,7 +98,7 @@ const {} = Astro.props;
     }
   }
 
-  #home-about-section div.text button {
+  #page-about-section div.text button {
     display: flex;
     padding: 18px 32px;
     justify-content: center;
@@ -116,5 +116,8 @@ const {} = Astro.props;
     font-weight: 700;
     line-height: normal;
     border: none;
+    @media screen and (max-width: 450px) {
+      font-size: 16px;
+    }
   }
 </style>

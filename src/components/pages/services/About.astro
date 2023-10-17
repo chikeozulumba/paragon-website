@@ -1,0 +1,159 @@
+---
+import { Image } from "astro:assets";
+import FounderImage from "../../../assets/images/founder.svg";
+const {} = Astro.props;
+---
+
+<section id="founder-section">
+  <div>
+    <div class="image">
+      <Image src={FounderImage} alt={""} />
+    </div>
+    <div class="text">
+      <h5>FOUNDER</h5>
+      <div class="divider"></div>
+      <div class="bio">
+        <h5>Ijeoma Surname</h5>
+        <h6>Founder, Paragon Consulting</h6>
+      </div>
+      <p>
+        Ijeoma Ofonagoro is a People Operations and Talent Development Leader with 13+ years of experience working with international and cross-cultural teams spanning the US, Europe, Africa, and Asia.
+        <br />
+        <br />
+        She has spent the majority of her career working with social enterprises, startups, and international development agencies to scale projects and advise on team management and growth to implement initiatives in the health, tech, agriculture, and governance sectors. She holds a Master’s in Social Work with a concentration in Community and Social Development from the Mandel School of Applied Social Sciences at Case Western Reserve University and a Bachelor of Science in Sociology. She also holds an HR certification and has a knack for facilitation. 
+        <br />
+        <br />
+         Her motto, “Difficult is not Impossible,” was birthed from her experience dealing with burned-out teams and leaders and uncovering ways to improve culture and productivity. She brings this mindset to Paragon, where she helps startups and medium-sized businesses scale their people operations to achieve their business goals and so much more.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  #founder-section {
+    padding-left: 154px;
+    padding-right: 182px;
+    padding-top: 64px;
+    padding-bottom: 155.8px;
+
+    @media screen and (max-width: 450px) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  #founder-section > div {
+    margin-top: 99px;
+    display: flex;
+    gap: 69px;
+    max-width: 1464px;
+    width: 100%;
+  }
+
+  #founder-section div.image {
+    /* width: 645px;
+    display: flex;
+    justify-content: center; */
+    @media screen and (max-width: 450px) {
+      width: auto;
+      display: flex;
+    }
+  }
+
+  #founder-section div.image img {
+    
+    @media screen and (max-width: 450px) {
+      
+    }
+  }
+
+  #founder-section div.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
+
+  #founder-section div.text h5 {
+    margin: 0;
+  }
+
+  #founder-section div.text .divider {
+    width: 360px;
+    height: 1px;
+    stroke-width: 0.8px;
+    background: #0f1221;
+    margin: 21px 0;
+  }
+
+  #founder-section div.text .bio {
+    margin-bottom: 40px;
+  }
+
+  #founder-section div.text .bio h5 {
+    width: 360px;
+    color: #0f1221;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family: Typo Grotesk;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  #founder-section div.text .bio h6 {
+    color: #0f1221;
+
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family: Typo Grotesk;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+  }
+
+  #founder-section div.text p {
+    color: #0f1221;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family: Epilogue;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    max-width: 586px;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    @media screen and (max-width: 450px) {
+      /* padding-left: 20px;
+      padding-right: 20px; */
+    }
+  }
+
+  #founder-section div.text button {
+    display: flex;
+    padding: 18px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 100px;
+    background: #4130ba;
+    color: #fff;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family: Typo Grotesk;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border: none;
+  }
+</style>

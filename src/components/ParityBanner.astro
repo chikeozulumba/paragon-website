@@ -1,0 +1,86 @@
+---
+const { purchasingParity, page } = Astro.props;
+const { pathname } = Astro.url;
+const ALLOWED_COUNTRIES = {
+  NG: {
+    code: "NAIJALOVE",
+    url: "facebook.com/paragon",
+    discount: 75,
+  },
+};
+
+const countryCode: keyof typeof ALLOWED_COUNTRIES =
+  purchasingParity?.countryCodeIsoAlpha2;
+  const parityDetails = ALLOWED_COUNTRIES[countryCode];
+const isValid = typeof parityDetails !== "undefined";
+
+const pagesNotWithMainLayout = ['services', 'about']
+
+const mainLayoutApplied = !pagesNotWithMainLayout.includes(page)
+
+---
+
+{
+  isValid && (
+    <div id="parity-banner" class={`${!mainLayoutApplied ? 'not-main' : ''}`}>
+      <div class="img">
+        <img
+        src={`/svg/flags/${purchasingParity.countryCodeIsoAlpha2.toLowerCase()}.svg`}
+        alt={""}
+      /></div>
+      <div class="text">
+        <p>
+          Hey! I noticed you are coming from <strong>{purchasingParity.countryName}</strong> where our items to be purchased may be a
+          bit expensive.
+        </p>
+        <p>
+          If you need it, use the code <strong>{parityDetails.code}</strong> for an extra <strong>{parityDetails.discount}%</strong> off the <a href="/bookings">listed prices.</a>
+        </p>
+      </div>
+    </div>
+  )
+}
+
+<style>
+  #parity-banner {
+    background-color: #e68832;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+
+  #parity-banner.not-main {
+    background-color: var(--primary-color) !important;
+  }
+
+  #parity-banner div.img {
+    border-radius: 10px;
+    background: white;
+    padding: 5px;
+    height: 40px;
+  }
+
+  #parity-banner img {
+    height: 100%;
+    border-radius: 5px;
+  }
+
+  #parity-banner div.text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #parity-banner div.text p {
+    font-size: 14px;
+    margin: 0;
+    color: white !important;
+  }
+
+  #parity-banner div.text p a {
+    text-decoration: underline;
+    color: inherit;
+  }
+</style>

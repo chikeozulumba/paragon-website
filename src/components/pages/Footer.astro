@@ -63,11 +63,11 @@ const SOCIAL_LINKS = [
     </ul>
     <ul class="href">
       {
-        HERO_NAVIGATION_ITEMS.map((link, i) => {
-          const url = `/${link.toLowerCase().replaceAll(" ", "-")}`;
+        HERO_NAVIGATION_ITEMS.map(({ title, targetSection }, i) => {
+          const url = `/${title.toLowerCase().replaceAll(" ", "-")}`;
           return (
             <li>
-              <a href={url}>{link}</a>
+              <a data-target-section={targetSection} href={url}>{title}</a>
             </li>
           );
         })

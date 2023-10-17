@@ -1,56 +1,71 @@
 ---
-import { DEFAULT_PAGE_TITLE } from '../constants/site';
+import fetchPPP from "purchasing-power-parity";
+import { DEFAULT_PAGE_TITLE } from "../constants/site";
+import ParityBanner from "../components/ParityBanner.astro";
 
 interface Props {
-	title?: string;
-	page?: string;
+  title?: string;
+  page?: string;
 }
 
-const { title = DEFAULT_PAGE_TITLE, page = 'Home' } = Astro.props;
+const { title = DEFAULT_PAGE_TITLE, page = "Home" } = Astro.props;
+// const purchasingParity = await fetchPPP();
+const purchasingParity = {
+  countryCodeIsoAlpha2: 'NG',
+  countryName: 'Nigeria',
+  currenciesCountry: { NGN: { name: 'Nigerian naira', symbol: '₦' } },
+  countryCodeIsoAlpha3: 'NGA',
+  currencyMain: { exchangeRate: 775.556002, name: 'Nigerian naira', symbol: '₦' }
+}
+
 ---
 
-<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="stylesheet" href="/css/fonts.css" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    {
+      purchasingParity?.countryCodeIsoAlpha2 && (
+        <ParityBanner page={page} purchasingParity={purchasingParity} />
+      )
+    }
+    <slot />
+  </body>
 </html>
-  
+
 <style is:global>
-	@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@100;300;400;500;700&display=swap');
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-		--primary-color: #4130BA;
-		--primary-color-1: #2D1CA8;
-		--secondary-color: #E68832;
-	}
+  @import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@100;300;400;500;700&display=swap");
+  :root {
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%
+    );
+    --primary-color: #4130ba;
+    --primary-color-1: #2d1ca8;
+    --secondary-color: #e68832;
+  }
 
-	html {
-		scroll-behavior: smooth;
-	}
+  html {
+    scroll-behavior: smooth;
+  }
 
-	body {
-		padding: 0px;
-		margin: 0px;
-		box-sizing: border-box;
-		font-family: Epilogue;
-		background: #ffffff;
-	}
+  body {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Epilogue;
+    background: #ffffff;
+  }
 </style>
