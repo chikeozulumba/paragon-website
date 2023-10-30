@@ -1,7 +1,8 @@
 export const HERO_NAVIGATION_ITEMS = [
   { title: "About", targetSection: "#page-about-section" },
-  { title: "Services", },
-  { title: "Resources", url: '/resources' },
+  { title: "Services" },
+  { title: "Advisory Sessions" },
+  { title: "Resources", url: "/resources" },
 ];
 
 export const ALT_HERO_NAVIGATION_ITEMS = [
@@ -11,5 +12,6 @@ export const ALT_HERO_NAVIGATION_ITEMS = [
     url: "/#page-about-section",
   },
   { title: "Services" },
+  { title: "Advisory Sessions" },
   { title: "Resources" },
 ];
