@@ -88,12 +88,32 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@astrojs/partytown@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "@astrojs/partytown@npm:2.0.1"
+  dependencies:
+    "@builder.io/partytown": ^0.8.0
+    mrmime: ^1.0.1
+  checksum: 70f6c1b1d009c313546b34560b1469694301af7d014b5a71767fefa7bcf9928589e547fe9615f54021dfab21421a42943e1c3f92afac2e6f336a61d2687dc634
+  languageName: node
+  linkType: hard
+
 "@astrojs/prism@npm:^3.0.0":
   version: 3.0.0
   resolution: "@astrojs/prism@npm:3.0.0"
   dependencies:
     prismjs: ^1.29.0
   checksum: 84d014943a81534e033a4b286c827eccb7600b51332bcddc06bd174e88c8cb3a6d31dcb691346cf1f0ea6e817dacbfa52a945081e413cc87e3b1449272237e02
+  languageName: node
+  linkType: hard
+
+"@astrojs/sitemap@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "@astrojs/sitemap@npm:3.0.2"
+  dependencies:
+    sitemap: ^7.1.1
+    zod: 3.21.1
+  checksum: dce5dbe39f1ceb69635c6542fbc598a54eec56fae93eba4018d1fffb7627f64747bffe89d1f4cafbb1bc1f2f13813cb7a8af52eb6407cd13ab18af5a45416264
   languageName: node
   linkType: hard
 
@@ -407,6 +427,15 @@ __metadata:
     "@babel/helper-validator-identifier": ^7.22.20
     to-fast-properties: ^2.0.0
   checksum: 215fe04bd7feef79eeb4d33374b39909ce9cad1611c4135a4f7fdf41fe3280594105af6d7094354751514625ea92d0875aba355f53e86a92600f290e77b0e604
+  languageName: node
+  linkType: hard
+
+"@builder.io/partytown@npm:^0.8.0":
+  version: 0.8.1
+  resolution: "@builder.io/partytown@npm:0.8.1"
+  bin:
+    partytown: bin/partytown.cjs
+  checksum: acf94e657bbf9ae9c076b881bf077ae0321ea40ef4a7304567718dbfe4dcd2e0ef01a62baf6a0dab5621af048c66fd7d0364a0fc4d0969c9cc827ccf43e1906d
   languageName: node
   linkType: hard
 
@@ -1130,6 +1159,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:^17.0.5":
+  version: 17.0.45
+  resolution: "@types/node@npm:17.0.45"
+  checksum: aa04366b9103b7d6cfd6b2ef64182e0eaa7d4462c3f817618486ea0422984c51fc69fd0d436eae6c9e696ddfdbec9ccaa27a917f7c2e8c75c5d57827fe3d95e8
+  languageName: node
+  linkType: hard
+
 "@types/parse5@npm:^6.0.0":
   version: 6.0.3
   resolution: "@types/parse5@npm:6.0.3"
@@ -1141,6 +1177,15 @@ __metadata:
   version: 1.20.3
   resolution: "@types/resolve@npm:1.20.3"
   checksum: 1d5b7fb852505bfc8e4671ce0ffc8573d7b0aa1acfca1f009f1ed879268301e68b8cc06dc6e065dc0c07e9f87699a01a0e972c8b4105b6ffcae236f7d7f91870
+  languageName: node
+  linkType: hard
+
+"@types/sax@npm:^1.2.1":
+  version: 1.2.6
+  resolution: "@types/sax@npm:1.2.6"
+  dependencies:
+    "@types/node": "*"
+  checksum: 9df7514599cb09f63c60150f3676c3a8e08e8d9cb3f08a2b32ce33e059f2f853dc7b9cd19bc858a5822f71fa227236d54bef0353f545105b33ede8cd10d2d09d
   languageName: node
   linkType: hard
 
@@ -1328,6 +1373,13 @@ __metadata:
     delegates: ^1.0.0
     readable-stream: ^3.6.0
   checksum: 52590c24860fa7173bedeb69a4c05fb573473e860197f618b9a28432ee4379049336727ae3a1f9c4cb083114601c1140cee578376164d0e651217a9843f9fe83
+  languageName: node
+  linkType: hard
+
+"arg@npm:^5.0.0":
+  version: 5.0.2
+  resolution: "arg@npm:5.0.2"
+  checksum: 6c69ada1a9943d332d9e5382393e897c500908d91d5cb735a01120d5f71daf1b339b7b8980cbeaba8fd1afc68e658a739746179e4315a26e8a28951ff9930078
   languageName: node
   linkType: hard
 
@@ -4044,6 +4096,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"mrmime@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "mrmime@npm:1.0.1"
+  checksum: cc979da44bbbffebaa8eaf7a45117e851f2d4cb46a3ada6ceb78130466a04c15a0de9a9ce1c8b8ba6f6e1b8618866b1352992bf1757d241c0ddca558b9f28a77
+  languageName: node
+  linkType: hard
+
 "ms@npm:2.0.0":
   version: 2.0.0
   resolution: "ms@npm:2.0.0"
@@ -4391,6 +4450,8 @@ __metadata:
   dependencies:
     "@astrojs/cloudflare": ^7.5.2
     "@astrojs/netlify": ^3.0.2
+    "@astrojs/partytown": ^2.0.1
+    "@astrojs/sitemap": ^3.0.2
     "@astrojs/vercel": ^5.0.2
     astro: ^3.2.2
     purchasing-power-parity: ^2.0.2
@@ -5084,6 +5145,20 @@ __metadata:
   version: 1.0.5
   resolution: "sisteransi@npm:1.0.5"
   checksum: aba6438f46d2bfcef94cf112c835ab395172c75f67453fe05c340c770d3c402363018ae1ab4172a1026a90c47eaccf3af7b6ff6fa749a680c2929bd7fa2b37a4
+  languageName: node
+  linkType: hard
+
+"sitemap@npm:^7.1.1":
+  version: 7.1.1
+  resolution: "sitemap@npm:7.1.1"
+  dependencies:
+    "@types/node": ^17.0.5
+    "@types/sax": ^1.2.1
+    arg: ^5.0.0
+    sax: ^1.2.4
+  bin:
+    sitemap: dist/cli.js
+  checksum: 87a6d21b0d4a33b8c611d3bb8543d02b813c0ebfce014213ef31849b5c1439005644f19ad1593ec89815f6101355f468c9a02c251d09aa03f6fddd17e23c4be4
   languageName: node
   linkType: hard
 

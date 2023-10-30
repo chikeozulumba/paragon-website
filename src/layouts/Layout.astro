@@ -11,13 +11,16 @@ interface Props {
 const { title = DEFAULT_PAGE_TITLE, page = "Home" } = Astro.props;
 // const purchasingParity = await fetchPPP();
 const purchasingParity = {
-  countryCodeIsoAlpha2: 'NG',
-  countryName: 'Nigeria',
-  currenciesCountry: { NGN: { name: 'Nigerian naira', symbol: '₦' } },
-  countryCodeIsoAlpha3: 'NGA',
-  currencyMain: { exchangeRate: 775.556002, name: 'Nigerian naira', symbol: '₦' }
-}
-
+  countryCodeIsoAlpha2: "NG",
+  countryName: "Nigeria",
+  currenciesCountry: { NGN: { name: "Nigerian naira", symbol: "₦" } },
+  countryCodeIsoAlpha3: "NGA",
+  currencyMain: {
+    exchangeRate: 775.556002,
+    name: "Nigerian naira",
+    symbol: "₦",
+  },
+};
 ---
 
 <html lang="en">
@@ -29,6 +32,19 @@ const purchasingParity = {
     <link rel="stylesheet" href="/css/fonts.css" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <!-- Google tag (gtag.js) -->
+    <script
+      type="text/partytown"
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=MEASUREMENT_ID"></script>
+    <script type="text/partytown">
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-88P9Q3WEM1");
+    </script>
   </head>
   <body>
     {
