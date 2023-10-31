@@ -5,9 +5,8 @@ import MenuClose from "../../buttons/MenuClose.astro";
 import { DEFAULT_LOGO_ALT_DESC } from "../../../constants/site";
 import { HERO_NAVIGATION_ITEMS } from "../../../constants/links";
 import LogoImage from "../../../assets/images/logos/primary.svg";
-import TextUnderlineImage from "../../../assets/images/text-underline.svg";
-import OvalBottomImage from "../../../assets/images/oval-bottom.svg";
-import OvalRightImage from "../../../assets/images/oval-right.svg";
+import LeftImage from "../../../assets/images/oval-bottom.svg";
+import RightImage from "../../../assets/images/oval-right.svg";
 
 const {} = Astro.props;
 const links = HERO_NAVIGATION_ITEMS;
@@ -40,26 +39,23 @@ const links = HERO_NAVIGATION_ITEMS;
   });
 </script>
 
-<section id="hero">
-  <nav>
+<section id="hero" class="lg:px-[96px] xl:px-[120px] relative overflow-hidden">
+  <nav class="flex justify-between h-[90.96px] items-center">
     <a href="/">
       <Image src={LogoImage} alt={DEFAULT_LOGO_ALT_DESC} />
     </a>
 
-    <ul>
+    <ul class="hidden md:flex xl:gap-[40px] lg:gap-[32px] items-center">
       {
-        links.map(({ title, targetSection }, i) => {
-          const url = `/${title.toLowerCase().replaceAll(" ", "-")}`;
+        links.map(({ title, targetSection, attributes, url: $url }, i) => {
+          const url = $url || `/${title.toLowerCase().replaceAll(" ", "-")}`;
           return (
             <li>
-              <a data-target-section={targetSection} href={url}>{title}</a>
+              <a {...attributes} data-target-section={targetSection} href={url} class={`${attributes?.class || ''} text-white lg:text-[14px] xl:text-[16px]`}>{title}</a>
             </li>
           );
         })
       }
-      <li>
-        <a class="cta">Let's talk</a>
-      </li>
     </ul>
 
     <div role="button" class="mobile-menu cta closed" data-mobile-toggle>
@@ -78,174 +74,34 @@ const links = HERO_NAVIGATION_ITEMS;
           })
         }
         <li>
-          <a href="https://1sh2o0w6yoa.typeform.com/to/OxgLgwY4" target="_blank" class="mobile-cta">Let's talk</a>
+          <a href="https://1sh2o0w6yoa.typeform.com/to/OxgLgwY4" target="_blank" class="mobile-cta">Let's Talk</a>
         </li>
       </ul>
     </div>
   </nav>
 
-  <div class="leading-area">
-    <h3>
-      <span class="pre-text">Navigating</span>{" "}<span class="underline"
-        ><span class="text">people</span>
-        <Image src={TextUnderlineImage} alt={""} /></span
-      > Nurturing potential
+  <div class="lg:max-w-[fit-content] md:mt-[132px] w-full mx-auto text-center">
+    <h3 class="font-[600] text-white lg:text-[72px] font-primary">
+      Navigating people
+    </h3>
+    <h3 class="font-[600] text-white lg:text-[72px] -mt-8 font-primary">
+      Nurturing potential
     </h3>
 
-    <p>We are your stand in People Operations and HR team</p>
+    <p class="mt-[24px] lg:text-[24px] text-white font-[300]">Your stand-in People Operations and Human Resources Team</p>
 
-    <a class="cta" href="/services"> Our services</a>
+    <a class="mt-[90px] block px-[32px] py-[18px] text-[24px] font-[700] font-body text-[var(--primary-color)] bg-white w-fit mx-auto rounded-[100px]" href="/services">Our services</a>
   </div>
 
-  <Image class={"oval-right"} src={OvalRightImage} alt="" />
-  <Image class={"oval-bottom"} src={OvalBottomImage} alt="" />
+  <Image class={"oval-bottom -left-[14px] -bottom-[28px] absolute"} src={LeftImage} alt="" />
+  <Image class={"oval-right -bottom-[28px] right-0 absolute"} src={RightImage} alt="" />
 </section>
 
 <style>
   #hero {
     background-color: var(--primary-color);
     height: 813px;
-    padding: 0 120px;
     position: relative;
-
-    @media screen and (max-width: 450px) {
-      padding: 0 20px;
-    }
-  }
-
-  #hero > nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 90.96px;
-  }
-
-  #hero > nav ul {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    list-style-type: none;
-
-    @media screen and (max-width: 450px) {
-      display: none;
-    }
-  }
-
-  #hero > nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 14px;
-    line-height: 16.4px;
-  }
-
-  #hero > nav ul li a.cta {
-    padding: 12px 20px;
-    border: 1px solid #ffffff;
-    border-radius: 100px;
-    font-weight: 500;
-    display: block;
-    line-height: 14.35px;
-  }
-
-  .leading-area {
-    margin-top: 100.04px;
-    padding-left: 60px;
-
-    @media screen and (max-width: 450px) {
-      padding-left: 0px;
-    }
-  }
-
-  .leading-area > h3 {
-    font-weight: 600;
-    font-size: 64px;
-    max-width: 711px;
-    line-height: 72px;
-    min-height: 144px;
-    color: white;
-    position: relative;
-    z-index: 9999;
-    margin: 0;
-
-    @media screen and (max-width: 450px) {
-      position: initial;
-    }
-  }
-
-  .leading-area > h3 > span.underline {
-    position: relative;
-    z-index: 10;
-  }
-
-  .leading-area > h3 > span.pre-text {
-    position: relative;
-    z-index: 19;
-  }
-
-  .leading-area > h3 > span.underline > span.text {
-    z-index: inherit;
-  }
-
-  .leading-area > h3 > span.underline > img {
-    position: absolute;
-    bottom: 2px;
-    left: -25px;
-    z-index: -1;
-  }
-
-  .leading-area > p {
-    font-size: 24px;
-    line-height: 36px;
-    font-weight: 300;
-    color: #ffffff;
-    margin-top: 16px;
-    margin-bottom: 0px;
-  }
-
-  .leading-area .cta {
-    width: fit-content;
-    display: block;
-    padding: 18px 32px;
-    background-color: var(--secondary-color);
-    color: var(--primary-color-1);
-    border: none;
-    margin-top: 73px;
-    border-radius: 100px;
-    font-size: 24px;
-    line-height: 28.58px;
-    font-family: Epilogue;
-    font-feature-settings:
-      "clig" off,
-      "liga" off;
-    font-family: Typo Grotesk;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    text-decoration: none;
-     @media screen and (max-width: 450px) {
-      font-size: 16px;
-    }
-  }
-
-  #hero .oval-right {
-    top: 162px;
-    right: 0;
-    position: absolute;
-
-    @media screen and (max-width: 450px) {
-      display: none;
-    }
-  }
-
-  #hero .oval-bottom {
-    left: 176px;
-    bottom: 0;
-    position: absolute;
-
-    @media screen and (max-width: 450px) {
-      display: none;
-    }
   }
 
   .mobile-menu {

@@ -4,121 +4,15 @@ import OvalImage from "../../../assets/images/oval.svg";
 const {} = Astro.props;
 ---
 
-<section id="page-about-section">
-  <h1>About Us</h1>
-  <div>
-    <div class="image">
-      <Image src={OvalImage} alt={""} />
-    </div>
-    <div class="text">
-      <p>
-        Paragon is a people operations agency helping business leaders
-        prioritize their workforce and unlock team potential.
-        <br />
-        <br />
-         We are your partner in creating environments, structures, and processes
-        that work for your company to save time and scale your teams.
+<section id="page-about-section" class="lg:pt-[144px] lg:pb-[200px]">
+  <div class="lg:max-w-[1200px] xl:max-w-[1500px] mx-auto flex flex-col justify-center gap-[36px]">
+    <h6 class="w-fit mx-auto px-[16px] py-[10px] bg-[#4130BA] text-white font-[400] text-[16px] font-primary uppercase">About Us</h6>
+    <h1 class="w-fit mx-auto lg:text-[48px] font-primary font-[600]">Who we are?</h1>
+    <div class="text-center w-full">
+      <p class="text-[32px] font-[300] text-[#222222] lg:leading-[64px] h-[192px]">
+        Paragon is a <span class="text-[#4130BA] font-[700]">people operations</span> agency helping business leaders prioritize their workforce and unlock team potential. 
+        We are your partner in <span class="text-[#4130BA] font-[700]">creating environments, structures, and processes</span> that work for your company to save time and scale your teams.
       </p>
-
-      <a class="cta" target="_blank" href="https://1sh2o0w6yoa.typeform.com/to/OxgLgwY4">Make an appointment</a>
     </div>
   </div>
 </section>
-
-<style>
-  #page-about-section {
-    padding-left: 154px;
-    padding-right: 182px;
-    padding-top: 93px;
-    padding-bottom: 155.8px;
-
-    @media screen and (max-width: 450px) {
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-  }
-
-  #page-about-section > h1 {
-    color: #4130ba;
-    text-align: center;
-    font-feature-settings:
-      "clig" off,
-      "liga" off;
-    font-family: Epilogue;
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-  }
-
-  #page-about-section > div {
-    margin-top: 99px;
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    gap: 69px;
-    max-width: 1464px;
-    width: 100%;
-  }
-
-  #page-about-section div.image {
-    width: 645px;
-    display: flex;
-    justify-content: center;
-    @media screen and (max-width: 450px) {
-      display: none;
-    }
-  }
-
-  #page-about-section div.text {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 67px;
-  }
-
-  #page-about-section div.text p {
-    color: #0f1221;
-    font-feature-settings:
-      "clig" off,
-      "liga" off;
-    font-family: Epilogue;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 30px;
-    max-width: 586px;
-    width: 100%;
-    margin-top: 0;
-    margin-bottom: 0;
-
-    @media screen and (max-width: 450px) {
-      /* padding-left: 20px;
-      padding-right: 20px; */
-    }
-  }
-
-  #page-about-section div.text a.cta {
-    display: flex;
-    padding: 18px 32px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    border-radius: 100px;
-    background: #4130ba;
-    color: #fff;
-    font-feature-settings:
-      "clig" off,
-      "liga" off;
-    font-family: Typo Grotesk;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    border: none;
-    text-decoration: none;
-    @media screen and (max-width: 450px) {
-      font-size: 16px;
-    }
-  }
-</style>
