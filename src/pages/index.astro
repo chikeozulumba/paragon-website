@@ -8,10 +8,22 @@ import Newsletter from "../components/pages/Newsletter.astro";
 import Footer from "../components/pages/Footer.astro";
 import Founder from "../components/pages/Founder.astro";
 import Brands from "../components/pages/Brands.astro";
+import { HERO_BOTTOM_CAPTION, HERO_BOTTOM_TEXT, HERO_CTA, HERO_TOP_CAPTION } from "../data/home";
 ---
 
 <Layout title="Welcome to Paragon Consulting" page="home">
-  <Hero />
+  <Hero
+    captions={{
+      top: HERO_TOP_CAPTION,
+      bottom: HERO_BOTTOM_CAPTION,
+      description: HERO_BOTTOM_TEXT,
+    }}
+
+    cta={{
+      title: HERO_CTA.title,
+      url: HERO_CTA.url
+    }}
+  />
   <About />
   <Services />
   <Founder />
