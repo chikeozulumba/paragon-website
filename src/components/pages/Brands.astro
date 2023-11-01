@@ -2,10 +2,12 @@
 import { Image } from "astro:assets";
 import MetaImage from "../../assets/images/brands/meta.svg";
 import NinthGridImage from "../../assets/images/brands/ninthgrid.svg";
+import AsturImage from "../../assets/images/brands/astur.jpg";
 
 const {} = Astro.props;
 
 const BRANDS = [
+    { title: 'Astur', image: AsturImage, class: 'md:h-[100px] w-fit' },
     { title: 'Meta', image: MetaImage },
     { title: 'NinthGrid', image: NinthGridImage },
 ]
@@ -14,7 +16,7 @@ const BRANDS = [
 
 <section id="brands-section" class="py-[100px] flex flex-col gap-[48px]">
   <h1 class="uppercase lg:text-[24px] mx-auto font-body text-[#484848]">Trusted by great companies</h1>
-  <div class="lg:max-w-[1248px] mx-auto flex flex-row gap-[120px]">
-    {BRANDS.map((brand) =>  <Image class="lg:h-[48px] w-fit" src={brand.image} alt={brand.title + ' - Paragon Consulting'} />)}
+  <div class="lg:max-w-[1248px] mx-auto flex flex-row items-center gap-[120px]">
+    {BRANDS.map((brand) =>  <Image class={brand.class || "md:h-[48px] w-fit"} src={brand.image} alt={brand.title + ' - Paragon Consulting'} />)}
   </div>
 </section>
