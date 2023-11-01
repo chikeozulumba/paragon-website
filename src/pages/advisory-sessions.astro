@@ -6,7 +6,11 @@ import AlternateHero from "../components/AlternateHero.astro";
 ---
 
 <Layout title="Express Advisory | Paragon Consulting" page="advisory-sessions">
-  <AlternateHero />
+  <AlternateHero 
+    captions={{
+      top: "Express Advisory",
+      description: "Need quick advice and want to talk out a challenge or an idea?",
+    }} />
   <Booking />
   <Footer />
 </Layout>
