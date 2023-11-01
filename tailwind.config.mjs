@@ -3,8 +3,8 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     fontFamily: {
-      'primary': ['Epilogue'],
-      'body': ['"Typo Grotesk"'],
+      primary: ["Epilogue"],
+      body: ['"Typo Grotesk"'],
     },
     extend: {
       screens: {
@@ -12,5 +12,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms"), require('@tailwindcss/typography')],
 };

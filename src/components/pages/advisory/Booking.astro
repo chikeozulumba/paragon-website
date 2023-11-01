@@ -4,133 +4,87 @@ import OvalImage from "../../../assets/images/oval.svg";
 const {} = Astro.props;
 ---
 
-<section id="page-advisory-booking-section">
-  <h1>Schedule a session with Us</h1>
-  <div>
-    <div class="image">
-      <Image src={OvalImage} alt={""} />
-    </div>
-    <div class="text">
-      <p>
-        Need quick advice and want to talk out a challenge or an idea? Schedule
-        an <a target="_blank" href="https://1sh2o0w6yoa.typeform.com/to/OxgLgwY4">Advisory chat for 30 minutes</a> or an <a target="_blank" href="https://1sh2o0w6yoa.typeform.com/to/OxgLgwY4">advisory discussion for 1 hour</a>
+<section id="page-advisory-booking-section" class="pt-[99px] pb-[256px] flex flex-col gap-[256px]">
+  <div class="lg:max-w-[1260px] mx-auto w-full">
+    <h1 class="lg:text-[48px] font-[600] text-[#123257] font-primary">
+      Express Sessions
+    </h1>
+    <form class="mt-[58px] flex flex-col gap-[24px]">
+      <input
+        name="fullName"
+        type="text"
+        class="p-[24px] bg-[#F6F7F9] border border-[#F6F7F9] w-full text-[#9FA8B1] text-[16px] font-[300]"
+        placeholder="Enter full name"
+      />
+      <input
+        name="businessName"
+        type="text"
+        class="p-[24px] bg-[#F6F7F9] border border-[#F6F7F9] w-full text-[#9FA8B1] text-[16px] font-[300]"
+        placeholder="Enter your business name"
+      />
 
-        <br />
-        <br />
-         Trying to get a new people operations and HR initiative off the ground
-        or need more comprehensive support, consider joining the people leaders
-        coaching program.
+      <div class="mt-[36px] flex flex-col">
+        <h1 class="lg:text-[24px] pl-[12px] font-[600] text-[#000000] font-primary">
+          How long would you need?
+        </h1>
+        <div class="mt-[24px] flex flow-row gap-[24px] w-full">
+          <div class="flex items-center gap-x-3 bg-[#F6F7F9] p-[24px] w-full">
+            <input
+              id="30-minutes"
+              name="lengthOfCall"
+              type="radio"
+              class="h-4 w-4 border-gray-300 text-[#4130BA] focus:ring-[#4130BA]"
+            />
+            <label
+              for="30-minutes"
+              class="block text-[16px] mt-[2px] font-medium leading-6 text-[#222222]"
+              >30 minutes</label
+            >
+          </div>
+          <div class="flex items-center gap-x-3 bg-[#F6F7F9] p-[24px] w-full">
+            <input
+              id="one-hour"
+              name="lengthOfCall"
+              type="radio"
+              class="h-4 w-4 border-gray-300 text-[#4130BA] focus:ring-[#4130BA]"
+            />
+            <label
+              for="one-hour"
+              class="block text-[16px] mt-[2px] font-medium leading-6 text-[#222222]"
+              >1 hour</label
+            >
+          </div>
+        </div>
 
-        <br />
-        <br />
-        It’s a 6-week program where we meet weekly to up your people operations game. <a target="_blank" href="https://1sh2o0w6yoa.typeform.com/to/OxgLgwY4">Apply here</a> or book a 15-minute discovery call to find out more.
-      </p>
+        <button type="submit" class="mt-[36px] rounded-[100px] py-[18px] text-[24px] font-body bg-[#4130BA] text-white">Book a call</button>
+      </div>
+    </form>
+  </div>
+  <div class="lg:max-w-[1260px] mx-auto w-full">
+    <h1 class="lg:text-[48px] font-[600] text-[#123257] font-primary">
+      People Leaders Coaching Program
+    </h1>
+    <h4 class="text-[20px] font-[400] mt-[22px] text-[#123257]">
+      Trying to get a new people operations and HR initiative off the ground or need more comprehensive support, consider joining the people leaders coaching program. It’s a 6-week program where we meet weekly to up your people operations game.
+    </h4>
+    <form class="mt-[74px] flex flex-col gap-[24px]">
+      <input
+        name="fullName"
+        type="text"
+        class="p-[24px] bg-[#F6F7F9] border border-[#F6F7F9] w-full text-[#9FA8B1] text-[16px] font-[300]"
+        placeholder="Enter full name"
+      />
+      <input
+        name="businessName"
+        type="text"
+        class="p-[24px] bg-[#F6F7F9] border border-[#F6F7F9] w-full text-[#9FA8B1] text-[16px] font-[300]"
+        placeholder="Enter your business name"
+      />
 
-      <a class="cta" target="_blank" href="https://1sh2o0w6yoa.typeform.com/to/OxgLgwY4">Make an appointment</a>
-    </div>
+      <div class="mt-[36px] flex flex-row w-full gap-[36px]">
+        <button type="submit" class="rounded-[100px] w-full py-[18px] text-[24px] font-body border border-[#4130BA] text-[#4130BA]">Book a 15-minutes discovery call</button>
+        <button type="submit" class="rounded-[100px] w-full py-[18px] text-[24px] font-body bg-[#4130BA] text-white">Book a call</button>
+      </div>
+    </form>
   </div>
 </section>
-
-<style>
-  #page-advisory-booking-section {
-    padding-left: 154px;
-    padding-right: 182px;
-    padding-top: 93px;
-    padding-bottom: 155.8px;
-
-    @media screen and (max-width: 450px) {
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-  }
-
-  #page-advisory-booking-section > h1 {
-    color: #4130ba;
-    text-align: center;
-    font-feature-settings:
-      "clig" off,
-      "liga" off;
-    font-family: Epilogue;
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-  }
-
-  #page-advisory-booking-section > div {
-    margin-top: 99px;
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    gap: 69px;
-    max-width: 1464px;
-    width: 100%;
-  }
-
-  #page-advisory-booking-section div.image {
-    width: 645px;
-    display: flex;
-    justify-content: center;
-    @media screen and (max-width: 450px) {
-      display: none;
-    }
-  }
-
-  #page-advisory-booking-section div.text {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 67px;
-  }
-
-  #page-advisory-booking-section div.text p {
-    color: #0f1221;
-    font-feature-settings:
-      "clig" off,
-      "liga" off;
-    font-family: Epilogue;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 30px;
-    max-width: 586px;
-    width: 100%;
-    margin-top: 0;
-    margin-bottom: 0;
-
-    @media screen and (max-width: 450px) {
-      /* padding-left: 20px;
-      padding-right: 20px; */
-    }
-  }
-
-  #page-advisory-booking-section div.text p>a {
-    text-decoration: underline;
-    color: #4130ba;
-    cursor: pointer;
-  }
-
-  #page-advisory-booking-section div.text a.cta {
-    display: flex;
-    padding: 18px 32px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    border-radius: 100px;
-    background: #4130ba;
-    color: #fff;
-    font-feature-settings:
-      "clig" off,
-      "liga" off;
-    font-family: Typo Grotesk;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    border: none;
-    text-decoration: none;
-    @media screen and (max-width: 450px) {
-      font-size: 16px;
-    }
-  }
-</style>
