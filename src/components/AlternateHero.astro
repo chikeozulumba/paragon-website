@@ -1,14 +1,14 @@
 ---
 import { Image } from "astro:assets";
-import MenuOpen from "../../buttons/MenuOpen.astro";
-import MenuClose from "../../buttons/MenuClose.astro";
-import { DEFAULT_LOGO_ALT_DESC } from "../../../constants/site";
-import { HERO_NAVIGATION_ITEMS } from "../../../constants/links";
-import LogoImage from "../../../assets/images/logos/primary.svg";
-import LeftImage from "../../../assets/images/oval-bottom.svg";
-import RightImage from "../../../assets/images/oval-right.svg";
+import MenuOpen from "./buttons/MenuOpen.astro";
+import MenuClose from "./buttons/MenuClose.astro";
+import { DEFAULT_LOGO_ALT_DESC } from "../constants/site";
+import { HERO_NAVIGATION_ITEMS } from "../constants/links";
+import LogoImage from "../assets/images/logos/primary.svg";
+import LeftImage from "../assets/images/hero-star.svg";
+import RightImage from "../assets/images/hero-ellipse.svg";
 
-const {} = Astro.props;
+const { captions = {}, cta } = Astro.props;
 const links = HERO_NAVIGATION_ITEMS;
 ---
 
@@ -25,21 +25,23 @@ const links = HERO_NAVIGATION_ITEMS;
     });
   });
 
-  document.querySelectorAll("[data-target-section]")?.forEach(function (button) {
-    button.addEventListener("click", function (el) {
-      const target = (el.target as any).dataset.targetSection
-      if (!target) return
+  document
+    .querySelectorAll("[data-target-section]")
+    ?.forEach(function (button) {
+      button.addEventListener("click", function (el) {
+        const target = (el.target as any).dataset.targetSection;
+        if (!target) return;
 
-      el.stopPropagation();
-      el.preventDefault();
+        el.stopPropagation();
+        el.preventDefault();
 
-      const targetEl = document.querySelector(target)
-      targetEl?.scrollIntoView()
+        const targetEl = document.querySelector(target);
+        targetEl?.scrollIntoView();
+      });
     });
-  });
 </script>
 
-<section id="hero" class="lg:px-[96px] xl:px-[120px] relative overflow-hidden">
+<section id="alt-hero" class="lg:px-[96px] xl:px-[120px] relative overflow-hidden">
   <nav class="flex justify-between h-[90.96px] items-center">
     <a href="/">
       <Image src={LogoImage} alt={DEFAULT_LOGO_ALT_DESC} />
@@ -51,7 +53,16 @@ const links = HERO_NAVIGATION_ITEMS;
           const url = $url || `/${title.toLowerCase().replaceAll(" ", "-")}`;
           return (
             <li>
-              <a {...attributes} data-target-section={targetSection} href={url} class={`${attributes?.class || ''} text-white lg:text-[14px] xl:text-[16px]`}>{title}</a>
+              <a
+                {...attributes}
+                data-target-section={targetSection}
+                href={url}
+                class={`${
+                  attributes?.class || ""
+                } text-white lg:text-[14px] xl:text-[16px]`}
+              >
+                {title}
+              </a>
             </li>
           );
         })
@@ -65,42 +76,79 @@ const links = HERO_NAVIGATION_ITEMS;
       <ul id="mobile-nav">
         {
           links.map(({ title, targetSection }, i) => {
-          const url = `/${title.toLowerCase().replaceAll(" ", "-")}`;
+            const url = `/${title.toLowerCase().replaceAll(" ", "-")}`;
             return (
               <li>
-                <a data-target-section={targetSection} href={url}>{title}</a>
+                <a data-target-section={targetSection} href={url}>
+                  {title}
+                </a>
               </li>
             );
           })
         }
         <li>
-          <a href="https://1sh2o0w6yoa.typeform.com/to/OxgLgwY4" target="_blank" class="mobile-cta">Let's Talk</a>
+          <a
+            href="https://1sh2o0w6yoa.typeform.com/to/OxgLgwY4"
+            target="_blank"
+            class="mobile-cta">Let's Talk</a
+          >
         </li>
       </ul>
     </div>
   </nav>
 
   <div class="lg:max-w-[fit-content] md:mt-[132px] w-full mx-auto text-center">
-    <h3 class="font-[600] text-white lg:text-[72px] font-primary">
-      Navigating people
-    </h3>
-    <h3 class="font-[600] text-white lg:text-[72px] -mt-8 font-primary">
-      Nurturing potential
-    </h3>
+    {
+      captions.top && (
+        <h3 class="font-[600] text-white lg:text-[72px] font-primary">
+          {captions.top}
+        </h3>
+      )
+    }
+    {
+      captions.bottom && (
+        <h3 class="font-[600] text-white lg:text-[72px] -mt-8 font-primary">
+          {captions.bottom}
+        </h3>
+      )
+    }
 
-    <p class="mt-[24px] lg:text-[24px] text-white font-[300]">Your stand-in People Operations and Human Resources Team</p>
+    {
+      captions.description && (
+        <p class="mt-[24px] lg:text-[24px] text-white font-[300]">
+          {captions.description}
+        </p>
+      )
+    }
 
-    <a class="mt-[90px] block px-[32px] py-[18px] text-[24px] font-[700] font-body text-[var(--primary-color)] bg-white w-fit mx-auto rounded-[100px]" href="/services">Our services</a>
+    {
+      cta && (
+        <a
+          class="mt-[90px] block px-[32px] py-[18px] text-[24px] font-[700] font-body text-[var(--primary-color)] bg-white w-fit mx-auto rounded-[100px]"
+          href={cta.url}
+        >
+          {cta.text}
+        </a>
+      )
+    }
   </div>
 
-  <Image class={"oval-bottom -left-[14px] -bottom-[28px] absolute"} src={LeftImage} alt="" />
-  <Image class={"oval-right -bottom-[28px] right-0 absolute"} src={RightImage} alt="" />
+  <Image
+    class={"oval-bottom left-[98px] -bottom-[28px] absolute"}
+    src={LeftImage}
+    alt=""
+  />
+  <Image
+    class={"oval-right right-[48px] -bottom-[28px] absolute"}
+    src={RightImage}
+    alt=""
+  />
 </section>
 
 <style>
-  #hero {
+  #alt-hero {
     background-color: var(--primary-color);
-    height: 813px;
+    height: 635px;
     position: relative;
   }
 

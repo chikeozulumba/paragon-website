@@ -1,127 +1,101 @@
 ---
+import ExpandIcon from "../../../../assets/images/expand.svg";
 import { Image } from "astro:assets";
-import CheckIcon from "../../../../assets/images/check.svg";
-import AltCheckIcon from "../../../../assets/images/check-alt.svg";
-import ItemImage from "../../../../assets/images/services/items/01.svg";
 const { item, position } = Astro.props;
 
 const isMidClass = position % 2 == 0;
+const ref = "services-group-item-" + position;
 ---
 
-<section
-  class={["services-group-item-section", isMidClass ? "mid-item" : ""].join(" ")}
->
-  <h1>{item.title}</h1>
-  <div class="content">
-    <ul class="list">
-      {
-        item.items.map((subContent) => (
-          <li>
-            <span>
-              <Image
-                src={isMidClass ? AltCheckIcon : CheckIcon}
-                alt={item.title + " " + subContent}
-              />
-            </span>
-            {subContent}
-          </li>
-        ))
+<script>
+  document.querySelectorAll('.services-group-item button').forEach((e) => {
+    e.addEventListener('click', (evt: any) => {
+      evt.stopPropagation()
+      console.log(evt)
+      const prop = evt.target?.dataset?.service
+
+      if (typeof prop === 'undefined') return;
+      const content = document.getElementById('content-' + prop)
+      const isActive = content?.classList.contains('overflow-hidden')
+      if (isActive) {
+        content?.classList.remove('h-[120px]','overflow-hidden', 'text-ellipsis')
+        content?.classList.add('h-fit')
+        e?.classList.add('-rotate-180')
+        e?.classList.replace('rotate-0', '-rotate-180')
+      } else {
+        content?.classList.remove('h-fit')
+        content?.classList.add('h-[120px]', 'overflow-hidden', 'text-ellipsis')
+        e?.classList.replace('-rotate-180', 'rotate-0')
       }
-    </ul>
-    <Image src={item.image} alt={""} />
+    })
+  })
+</script>
+
+<div
+  class={[
+    "services-group-item px-[24px] py-[48px] flex justify-between items-center border-b border-[#BEBEBE]",
+    isMidClass ? "mid-item" : "",
+  ].join(" ")}
+>
+  <div id={"id-" + ref} class="flex gap-[32px]">
+    <Image src={item.image} class="w-[102px] h-[102px]" alt={""} />
+    <div id={"content-" + ref} class="content h-[120px] overflow-hidden text-ellipsis">
+      <h1 class="text-[32px] font-[500] text-[#123257]">{item.title}</h1>
+      {
+        Array.isArray(item.items) ? (
+          <ul class="list mt-[23px] pl-4 flex flex-col gap-[4px]">
+            {item.items.map((subContent: any) => (
+              <li class="text-[16px] text-[#58657D] list-disc leading-[24px] max-w-[748px]">
+                {subContent}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p class="mt-[23px] text-[16px] text-[#58657D] max-w-[748px]">
+            {item.items}
+          </p>
+        )
+      }
+
+      {
+        item.hasCta && (
+          <a href="/advisory-sessions" class="block mt-[36px] bg-[#4130BA] text-white w-fit py-[18px] px-[32px] rounded-[100px] text-[14px]">
+            Book a consultation
+          </a>
+        )
+      }
+    </div>
   </div>
-</section>
 
-<style>
-  .services-group-item-section {
-    display: inline-flex;
-    padding: 123px 0px 245px 0px;
-    flex-direction: column;
-    align-items: center;
-    gap: 85px;
-    background: #4130ba;
-    width: 100%;
-  }
+  <div>
+    <button data-service={ref} class="">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="64"
+        height="64"
+        viewBox="0 0 64 64"
+        fill="none"
+        class="pointer-events-none"
+      >
+        <mask
+          id="mask0_2125_8621"
+          style="mask-type:alpha"
+          maskUnits="userSpaceOnUse"
+          x="0"
+          y="0"
+          width="64"
+          height="64"
+        >
+          <rect width="64" height="64" fill="#D9D9D9"></rect>
+        </mask>
+        <g mask="url(#mask0_2125_8621)">
+          <path
+            d="M32 40.999L16 24.999L19.7333 21.2656L32 33.5323L44.2667 21.2656L48 24.999L32 40.999Z"
+            fill="#1C1B1F"></path>
+        </g>
+      </svg>
+    </button>
+  </div>
+</div>
 
-  .services-group-item-section.mid-item {
-    background: white;
-  }
-
-  .services-group-item-section > h1 {
-    color: #fff;
-    text-align: center;
-    font-feature-settings:
-      "clig" off,
-      "liga" off;
-    font-family: Epilogue;
-    font-size: 36px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-  }
-
-  .services-group-item-section.mid-item > h1 {
-    color: #4130ba;
-  }
-
-  .services-group-item-section > div.content {
-    color: #fff;
-    text-align: center;
-    font-feature-settings:
-      "clig" off,
-      "liga" off;
-    font-family: Epilogue;
-    font-size: 36px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    max-width: 1212.5px;
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    gap: 170px;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .services-group-item-section.mid-item > div.content {
-    flex-direction: row-reverse;
-  }
-
-  .services-group-item-section > div.content img {
-    /* height: 300px; */
-    width: 438px;
-  }
-
-  .services-group-item-section > div.content .list {
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .services-group-item-section > div.content .list li {
-    color: #fff;
-    font-feature-settings:
-      "clig" off,
-      "liga" off;
-    font-family: Epilogue;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 32px; /* 133.333% */
-    display: flex;
-    padding: 12px 10px;
-    align-items: flex-start;
-    gap: 32px;
-    text-align: left;
-  }
-
-  .services-group-item-section.mid-item > div.content .list li {
-    color: #4130ba;
-  }
-
-  .services-group-item-section > div.content .list li img {
-    width: 24px;
-    height: 24px;
-  }
-</style>
+<style></style>

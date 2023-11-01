@@ -1,0 +1,186 @@
+---
+import { Image } from "astro:assets";
+import MenuOpen from "./buttons/MenuOpen.astro";
+import MenuClose from "./buttons/MenuClose.astro";
+import { DEFAULT_LOGO_ALT_DESC } from "../constants/site";
+import { HERO_NAVIGATION_ITEMS } from "../constants/links";
+import LogoImage from "../../assets/images/logos/primary.svg";
+import LeftImage from "../../assets/images/oval-bottom.svg";
+import RightImage from "../../assets/images/oval-right.svg";
+
+const {} = Astro.props;
+const links = HERO_NAVIGATION_ITEMS;
+---
+
+<script>
+  let isMobileMenuOpen = false;
+  function toggleMobileNavigation(evt: HTMLButtonElement) {
+    isMobileMenuOpen = !isMobileMenuOpen;
+  }
+
+  document.querySelectorAll("[data-mobile-toggle]")?.forEach((button) => {
+    button.addEventListener("click", (el) => {
+      el.stopPropagation();
+      button.classList.toggle("open");
+    });
+  });
+
+  document.querySelectorAll("[data-target-section]")?.forEach(function (button) {
+    button.addEventListener("click", function (el) {
+      const target = (el.target as any).dataset.targetSection
+      if (!target) return
+
+      el.stopPropagation();
+      el.preventDefault();
+
+      const targetEl = document.querySelector(target)
+      targetEl?.scrollIntoView()
+    });
+  });
+</script>
+
+<section id="hero" class="lg:px-[96px] xl:px-[120px] relative overflow-hidden">
+  <nav class="flex justify-between h-[90.96px] items-center">
+    <a href="/">
+      <Image src={LogoImage} alt={DEFAULT_LOGO_ALT_DESC} />
+    </a>
+
+    <ul class="hidden md:flex xl:gap-[40px] lg:gap-[32px] items-center">
+      {
+        links.map(({ title, targetSection, attributes, url: $url }, i) => {
+          const url = $url || `/${title.toLowerCase().replaceAll(" ", "-")}`;
+          return (
+            <li>
+              <a {...attributes} data-target-section={targetSection} href={url} class={`${attributes?.class || ''} text-white lg:text-[14px] xl:text-[16px]`}>{title}</a>
+            </li>
+          );
+        })
+      }
+    </ul>
+
+    <div role="button" class="mobile-menu cta closed" data-mobile-toggle>
+      <span class="open-icon"><MenuOpen /></span>
+      <span class="close-icon"><MenuClose /></span>
+
+      <ul id="mobile-nav">
+        {
+          links.map(({ title, targetSection }, i) => {
+          const url = `/${title.toLowerCase().replaceAll(" ", "-")}`;
+            return (
+              <li>
+                <a data-target-section={targetSection} href={url}>{title}</a>
+              </li>
+            );
+          })
+        }
+        <li>
+          <a href="https://1sh2o0w6yoa.typeform.com/to/OxgLgwY4" target="_blank" class="mobile-cta">Let's Talk</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="lg:max-w-[fit-content] md:mt-[132px] w-full mx-auto text-center">
+    <h3 class="font-[600] text-white lg:text-[72px] font-primary">
+      Navigating people
+    </h3>
+    <h3 class="font-[600] text-white lg:text-[72px] -mt-8 font-primary">
+      Nurturing potential
+    </h3>
+
+    <p class="mt-[24px] lg:text-[24px] text-white font-[300]">Your stand-in People Operations and Human Resources Team</p>
+
+    <a class="mt-[90px] block px-[32px] py-[18px] text-[24px] font-[700] font-body text-[var(--primary-color)] bg-white w-fit mx-auto rounded-[100px]" href="/services">Our services</a>
+  </div>
+
+  <Image class={"oval-bottom -left-[14px] -bottom-[28px] absolute"} src={LeftImage} alt="" />
+  <Image class={"oval-right -bottom-[28px] right-0 absolute"} src={RightImage} alt="" />
+</section>
+
+<style>
+  #hero {
+    background-color: var(--primary-color);
+    height: 813px;
+    position: relative;
+  }
+
+  .mobile-menu {
+    display: none;
+
+    @media screen and (max-width: 450px) {
+      display: block;
+    }
+  }
+
+  .mobile-menu {
+    background: transparent;
+    border: none;
+    color: white;
+    stroke: white;
+    position: relative;
+  }
+
+  .mobile-menu > svg {
+    color: white;
+    height: 24px;
+    width: 24px;
+  }
+
+  .mobile-menu.cta > * {
+    /* pointer-events: none; */
+  }
+
+  .mobile-menu.closed > span.open-icon {
+    display: block;
+  }
+
+  .mobile-menu.closed > span.close-icon {
+    display: none;
+  }
+
+  .mobile-menu.open > span.open-icon {
+    display: none;
+  }
+
+  .mobile-menu.open > span.close-icon {
+    display: block;
+  }
+
+  .mobile-menu ul#mobile-nav {
+    display: none;
+  }
+
+  .mobile-menu.open ul#mobile-nav {
+    display: flex !important;
+    position: absolute;
+    right: 0px;
+    top: 40px;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    color: var(--primary-color);
+    z-index: 9999;
+    padding: 15px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 150px;
+    margin: 0;
+    border-radius: 20px;
+    box-shadow: 1px 1px 15px 0px rgba(0, 0, 0, 0.05);
+  }
+
+  .mobile-menu.open ul#mobile-nav li {
+    text-align: left !important;
+    width: 100%;
+  }
+
+  .mobile-menu.open ul#mobile-nav li:not(:last-child) {
+    border-bottom: 1px solid var(--secondary-color);
+    padding-bottom: 10px;
+  }
+
+  .mobile-menu.open ul#mobile-nav a {
+    color: var(--primary-color) !important;
+    font-weight: 600;
+  }
+</style>

@@ -1,12 +1,16 @@
 ---
-import { ServicesList } from "../../../../data/services.ts"
-import ServiceGroupItem from "./Item.astro"
+import { LIST_OF_SERVICES } from "../../../../data/services.ts";
+import ServiceGroupItem from "./Item.astro";
 
 const {} = Astro.props;
 ---
-<section id="services-group-section">
-  {ServicesList.map((item, i) => {
-    return <ServiceGroupItem item={item} position={i + 1} />
-  })}
-</section>
 
+<section id="services-group-section" class="md:pt-[129px]">
+  <div class="md:max-w-[1248px] mx-auto">
+    {
+      LIST_OF_SERVICES.map((item, i) => {
+        return <ServiceGroupItem item={item} position={i + 1} />;
+      })
+    }
+  </div>
+</section>

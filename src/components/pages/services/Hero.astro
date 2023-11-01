@@ -1,4 +1,4 @@
-                        ---
+---
 import { Image } from "astro:assets";
 import MenuOpen from "../../buttons/MenuOpen.astro";
 import MenuClose from "../../buttons/MenuClose.astro";
@@ -18,7 +18,7 @@ const defaultPretext = `Our Services`;
 const defaultTitle = `Access experts and transform your People Operations`;
 const defaultDescription = `Want your company to be effective at HR management and establish systems and structure for your business, but don’t know where to start?`;
 
-const service = ServicesContent.find((s) => s.slug === slug);
+const service: any = ServicesContent.find((s) => s.slug === slug);
 
 const pretext = service?.pre || defaultPretext;
 const title = service?.title || defaultTitle;
