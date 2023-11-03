@@ -1,7 +1,7 @@
 ---
-import { map } from "astro/zod";
-import dayjs from "dayjs";
-import LocalizedFormat from "dayjs/plugin/LocalizedFormat";
+const dayjs = require('dayjs')
+const LocalizedFormat = require("dayjs/plugin/LocalizedFormat");
+
 dayjs.extend(LocalizedFormat);
 
 const { post, tag: queryTag } = Astro.props;

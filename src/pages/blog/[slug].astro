@@ -1,9 +1,10 @@
 ---
-import dayjs from "dayjs";
-import LocalizedFormat from "dayjs/plugin/LocalizedFormat";
 import Footer from "../../components/pages/Footer.astro";
 import Newsletter from "../../components/pages/Newsletter.astro";
 import BlogLayout from "../../layouts/Blog.astro";
+
+const dayjs = require('dayjs')
+const LocalizedFormat = require("dayjs/plugin/LocalizedFormat");
 
 dayjs.extend(LocalizedFormat);
 
