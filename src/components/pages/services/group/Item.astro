@@ -11,7 +11,6 @@ const ref = "services-group-item-" + position;
   document.querySelectorAll('.services-group-item button').forEach((e) => {
     e.addEventListener('click', (evt: any) => {
       evt.stopPropagation()
-      console.log(evt)
       const prop = evt.target?.dataset?.service
 
       if (typeof prop === 'undefined') return;
@@ -32,6 +31,7 @@ const ref = "services-group-item-" + position;
 </script>
 
 <div
+  id={item.key}
   class={[
     "services-group-item px-[24px] py-[48px] flex justify-between items-center border-b border-[#BEBEBE]",
     isMidClass ? "mid-item" : "",
@@ -97,5 +97,3 @@ const ref = "services-group-item-" + position;
     </button>
   </div>
 </div>
-
-<style></style>

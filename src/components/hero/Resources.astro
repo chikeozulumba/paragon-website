@@ -1,23 +1,26 @@
 ---
 import { Image } from "astro:assets";
-import MenuOpen from "./buttons/MenuOpen.astro";
-import MenuClose from "./buttons/MenuClose.astro";
-import { DEFAULT_LOGO_ALT_DESC } from "../constants/site";
-import { HERO_NAVIGATION_ITEMS } from "../constants/links";
-import LogoImage from "../assets/images/logos/primary.svg";
-import LeftImage from "../assets/images/oval-bottom.svg";
-import RightImage from "../assets/images/oval-right.svg";
+import dayjs from "dayjs";
+import LocalizedFormat from "dayjs/plugin/LocalizedFormat";
+dayjs.extend(LocalizedFormat);
+import MenuOpen from "../buttons/MenuOpen.astro";
+import MenuClose from "../buttons/MenuClose.astro";
+import { DEFAULT_LOGO_ALT_DESC } from "../../constants/site";
+import { RESOURCES_HERO_NAVIGATION_ITEMS } from "../../data/navbar";
+import LogoImage from "../../assets/images/logos/secondary.svg";
 
-const { captions = {}, cta } = Astro.props;
-const links = HERO_NAVIGATION_ITEMS;
+const {
+  captions = {},
+  cta,
+  image = `/img/default-blog.jpeg`,
+  imageAlt,
+  description,
+  post,
+} = Astro.props;
+const links = RESOURCES_HERO_NAVIGATION_ITEMS;
 ---
 
 <script>
-  let isMobileMenuOpen = false;
-  function toggleMobileNavigation(evt: HTMLButtonElement) {
-    isMobileMenuOpen = !isMobileMenuOpen;
-  }
-
   document.querySelectorAll("[data-mobile-toggle]")?.forEach((button) => {
     button.addEventListener("click", (el) => {
       el.stopPropagation();
@@ -32,19 +35,19 @@ const links = HERO_NAVIGATION_ITEMS;
         const target = (el.target as any).dataset.targetSection;
         if (!target) return;
 
-        el.stopPropagation();
-        el.preventDefault();
-
         const targetEl = document.querySelector(target);
         targetEl?.scrollIntoView();
       });
     });
 </script>
 
-<section id="hero" class="lg:px-[96px] xl:px-[120px] relative overflow-hidden">
+<section
+  id="resources-hero"
+  class="lg:px-[96px] xl:px-[120px] relative overflow-hidden"
+>
   <nav class="flex justify-between h-[90.96px] items-center">
     <a href="/">
-      <Image src={LogoImage} alt={DEFAULT_LOGO_ALT_DESC} />
+      <Image height={50} width={164} src={LogoImage} alt={DEFAULT_LOGO_ALT_DESC} />
     </a>
 
     <ul class="hidden md:flex xl:gap-[40px] lg:gap-[32px] items-center">
@@ -59,7 +62,7 @@ const links = HERO_NAVIGATION_ITEMS;
                 href={url}
                 class={`${
                   attributes?.class || ""
-                } text-white lg:text-[14px] xl:text-[16px]`}
+                } text-[var(--primary-color)] lg:text-[14px] xl:text-[16px]`}
               >
                 {title}
               </a>
@@ -97,48 +100,59 @@ const links = HERO_NAVIGATION_ITEMS;
     </div>
   </nav>
 
-  <div class="lg:max-w-[fit-content] md:mt-[132px] w-full mx-auto text-center">
-    {
-      captions.top && (
-        <h3 class="font-[600] text-white lg:text-[72px] font-primary">
-          {captions.top}
-        </h3>
-      )
-    }
-    {
-      captions.bottom && (
-        <h3 class="font-[600] text-white lg:text-[72px] -mt-8 font-primary">
-          {captions.bottom}
-        </h3>
-      )
-    }
-
-    {captions.description && <p class="mt-[24px] lg:text-[24px] text-white font-[300]">
-      {captions.description}
-    </p>}
-
-    {cta && <a
-      class="mt-[90px] block px-[32px] py-[18px] text-[24px] font-[700] font-body text-[var(--primary-color)] bg-white w-fit mx-auto rounded-[100px]"
-      href={cta.url}>{cta.title}</a
-    >}
+  <div
+    class="lg:max-w-[fit-content] md:mt-[90px] md:mb-[135px] w-full mx-auto text-center"
+  >
+    <div class="flex md:gap-[64px] items-center">
+      <div
+        class="w-[600px] h-[600px] shrink-0 rounded-sm"
+        style={{
+          backgroundPosition: "100% 100%",
+          background: `url(${image}) no-repeat`,
+          backgroundSize: "cover",
+        }}
+      >
+      </div>
+      <div class="flex flex-col items-start">
+        {
+          Array.isArray(captions.tags) && (
+            <p class="uppercase mb-4 text-[var(--primary-color)] opacity-70 inline-flex gap-4">
+              {captions.tags.join(", ")}
+            </p>
+          )
+        }
+        <h2
+          class="text-[48px] font-[600] leading-tight md:max-w-[608px] text-left text-[var(--primary-color)]"
+        >
+          {
+            captions.title ||
+              `Unique approaches to finding the right people via skills-based
+          recruitment`
+          }
+        </h2>
+        <div
+          class="mt-8 md:max-w-[608px] font-[500] items-start flex flex-col text-[14px] text-[#123257]"
+        >
+          <p class="text-left">
+            {post.frontmatter.description}
+          </p>
+          <p class="font-light mt-4 text-sm">
+            {dayjs(post.frontmatter.datePublished).format("LLLL")}
+          </p>
+        </div>
+        <a
+          class="mt-[60px] font-body block px-[32px] py-[18px] text-[20px] font-[500] text-white bg-[var(--primary-color)] w-fit rounded-[100px]"
+          href={cta.url}>Read more</a
+        >
+      </div>
+    </div>
   </div>
-
-  <Image
-    class={"oval-bottom -left-[14px] -bottom-[28px] absolute"}
-    src={LeftImage}
-    alt=""
-  />
-  <Image
-    class={"oval-right -bottom-[28px] right-0 absolute"}
-    src={RightImage}
-    alt=""
-  />
 </section>
 
 <style>
-  #hero {
-    background-color: var(--primary-color);
-    height: 813px;
+  #resources-hero {
+    background-color: white;
+    min-height: 813px;
     position: relative;
   }
 

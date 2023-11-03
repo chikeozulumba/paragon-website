@@ -1,0 +1,52 @@
+---
+import ResourcesItem from "./Item.astro";
+import { RESOURCE_TAGS } from "../../../data/resources";
+
+const { posts } = Astro.props;
+
+const { searchParams } = Astro.url;
+let queryTag = searchParams.get("tag");
+---
+
+<section class="pb-[200px]">
+  <ul
+    class="px-[146px] h-[67px] flex gap-[20px] items-center border-b border-[#D0D5DD]"
+  >
+    <li class="flex h-full items-center">
+      <li class="flex h-full items-center">
+        <a
+          href={`?tag=`}
+          class={[
+            "font-[300] text-[18px] h-full px-2 flex items-center capitalize",
+            queryTag === "" || !queryTag
+              ? "border-b-4 border-[var(--primary-color)]"
+              : "border-b-4 border-transparent",
+          ].join(" ")}
+        >
+          all
+        </a>
+      </li>
+      {
+        RESOURCE_TAGS.map((tag) => (
+          <li class="flex h-full items-center">
+            <a
+              href={`${tag !== "all" ? "?tag=" + tag : ""}`}
+              class={[
+                "font-[300] text-[18px] h-full px-2 flex items-center capitalize",
+                (queryTag ?? "all") === tag
+                  ? "border-b-4 border-[var(--primary-color)]"
+                  : "border-b-4 border-transparent",
+              ].join(" ")}
+            >
+              {tag}
+            </a>
+          </li>
+        ))
+      }
+    </li>
+
+    <div class="md:max-w-[1203px] md:mx-auto">
+        {posts.map((post: any) => <ResourcesItem post={post} tag={queryTag} />)}
+    </div>
+  </ul>
+</section>

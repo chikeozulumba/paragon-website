@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import { DEFAULT_LOGO_ALT_DESC } from "../../constants/site";
-import { HERO_NAVIGATION_ITEMS } from "../../constants/links";
+import { FOOTER_NAVIGATION_ITEMS } from "../../data/navbar";
 import LogoImage from "../../assets/images/logos/primary.svg";
 import FacebookImage from "../../assets/images/social/facebook.svg";
 import TwitterImage from "../../assets/images/social/twitter.svg";
@@ -43,7 +43,7 @@ const SOCIAL_LINKS = [
 <footer>
   <div class="logo">
     <a href="/">
-      <Image src={LogoImage} alt={DEFAULT_LOGO_ALT_DESC} />
+      <Image height={50} width={164} src={LogoImage} alt={DEFAULT_LOGO_ALT_DESC} />
     </a>
   </div>
   <div class="links">
@@ -63,11 +63,11 @@ const SOCIAL_LINKS = [
     </ul>
     <ul class="href">
       {
-        HERO_NAVIGATION_ITEMS.map(({ title, targetSection }, i) => {
-          const url = `/${title.toLowerCase().replaceAll(" ", "-")}`;
+        FOOTER_NAVIGATION_ITEMS.map(({ title, attributes = {}, targetSection, url: $url }, i) => {
+          const url = $url || `/${title.toLowerCase().replaceAll(" ", "-")}`;
           return (
             <li>
-              <a data-target-section={targetSection} href={url}>{title}</a>
+              <a {...attributes} data-target-section={targetSection} href={url}>{title}</a>
             </li>
           );
         })

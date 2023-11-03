@@ -1,0 +1,51 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Newsletter from "../components/pages/Newsletter.astro";
+import ResourcesView from "../components/pages/resources/index.astro";
+import Footer from "../components/pages/Footer.astro";
+import { HERO_CTA } from "../data/home";
+import ResourcesHero from "../components/hero/Resources.astro";
+
+const { searchParams } = Astro.url;
+let queryTag = searchParams.get("tag");
+
+const posts = (await Astro.glob("../content/posts/**/*.md")).sort(
+  (a, b) =>
+    Date.parse(b.frontmatter.datePublished) -
+    Date.parse(a.frontmatter.datePublished)
+);
+
+const [firstPost, ...remainingPosts] = posts;
+
+const postsToBeDisplayed = remainingPosts.filter((post) =>
+  queryTag !== null && queryTag !== "" && String(queryTag)?.length !== 0
+    ? (post.frontmatter.tags || []).includes(queryTag)
+    : true
+);
+---
+
+<Layout title="Resources | Paragon Consulting" page="home">
+  {
+    firstPost && (
+      <ResourcesHero
+        post={firstPost}
+        captions={{
+          title: firstPost.frontmatter.title,
+          description: firstPost.frontmatter.description,
+          tags: firstPost.frontmatter.tags,
+        }}
+        image={firstPost.frontmatter?.image?.url}
+        imageAlt={firstPost.frontmatter?.image?.alt}
+        cta={{
+          title: HERO_CTA.title,
+          url: `/blog/${firstPost.frontmatter.slug}`,
+        }}
+      />
+    )
+  }
+
+  <ResourcesView posts={postsToBeDisplayed} />
+
+  <Newsletter />
+  <Footer />
+</Layout>

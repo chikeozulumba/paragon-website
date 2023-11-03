@@ -1,23 +1,17 @@
 ---
 import { Image } from "astro:assets";
-import MenuOpen from "./buttons/MenuOpen.astro";
-import MenuClose from "./buttons/MenuClose.astro";
-import { DEFAULT_LOGO_ALT_DESC } from "../constants/site";
-import { HERO_NAVIGATION_ITEMS } from "../constants/links";
-import LogoImage from "../assets/images/logos/primary.svg";
-import LeftImage from "../assets/images/hero-star.svg";
-import RightImage from "../assets/images/hero-ellipse.svg";
+import MenuOpen from "../buttons/MenuOpen.astro";
+import MenuClose from "../buttons/MenuClose.astro";
+import { DEFAULT_LOGO_ALT_DESC } from "../../constants/site";
+import { ALT_HERO_NAVIGATION_ITEMS } from "../../data/navbar";
+import LogoImage from "../../assets/images/logos/primary.svg";
+import LeftImage from "../../assets/images/hero-star.svg";
+import RightImage from "../../assets/images/hero-ellipse.svg";
 
 const { captions = {}, cta } = Astro.props;
-const links = HERO_NAVIGATION_ITEMS;
+const links = ALT_HERO_NAVIGATION_ITEMS;
 ---
-
 <script>
-  let isMobileMenuOpen = false;
-  function toggleMobileNavigation(evt: HTMLButtonElement) {
-    isMobileMenuOpen = !isMobileMenuOpen;
-  }
-
   document.querySelectorAll("[data-mobile-toggle]")?.forEach((button) => {
     button.addEventListener("click", (el) => {
       el.stopPropagation();
@@ -32,8 +26,6 @@ const links = HERO_NAVIGATION_ITEMS;
         const target = (el.target as any).dataset.targetSection;
         if (!target) return;
 
-        el.stopPropagation();
-        el.preventDefault();
 
         const targetEl = document.querySelector(target);
         targetEl?.scrollIntoView();
@@ -44,7 +36,7 @@ const links = HERO_NAVIGATION_ITEMS;
 <section id="alt-hero" class="lg:px-[96px] xl:px-[120px] relative overflow-hidden">
   <nav class="flex justify-between h-[90.96px] items-center">
     <a href="/">
-      <Image src={LogoImage} alt={DEFAULT_LOGO_ALT_DESC} />
+      <Image height={50} width={164} src={LogoImage} alt={DEFAULT_LOGO_ALT_DESC} />
     </a>
 
     <ul class="hidden md:flex xl:gap-[40px] lg:gap-[32px] items-center">

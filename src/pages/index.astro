@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Hero from "../components/Hero.astro";
+import Hero from "../components/hero/Primary.astro";
 import About from "../components/pages/home/About.astro";
 import Services from "../components/pages/home/Services.astro";
 import Testimonial from "../components/pages/Testimonial.astro";
@@ -25,10 +25,10 @@ import { HERO_BOTTOM_CAPTION, HERO_BOTTOM_TEXT, HERO_CTA, HERO_TOP_CAPTION } fro
     }}
   />
   <About />
+  <Founder class="pb-[144px] pt-[200px]" />
   <Services />
-  <Founder />
   <Brands />
-  <Testimonial />
+  <Testimonial class="flex text-[#123257] items-center justify-center md:pt-[100px] md:pb-[200px] md:pl-[199px] md:pr-[197.5px]" />
   <Newsletter />
   <Footer />
 </Layout>

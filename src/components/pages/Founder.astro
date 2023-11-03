@@ -1,10 +1,8 @@
 ---
-import { Image } from "astro:assets";
-import FounderImage from "../../assets/images/founder.svg";
-const {} = Astro.props;
+const { class: className } = Astro.props;
 ---
 
-<section id="founder-section" class="pt-[200px] pb-[100px]">
+<section id="founder-section" class={className || "pt-[200px] pb-[100px]"}>
   <div class="lg:max-w-[1248px] bg-[#F0F0F2] mx-auto flex flex-row lg:h-[586px]">
     <div class="lg:w-[388px] flex-1 relative bg-[#4130BA] pb-[64px] px-[64px] flex flex-col items-start font-body justify-end">
       <h3 class="font-[600] lg:text-[48px] text-white">Our<br />Founder</h3>

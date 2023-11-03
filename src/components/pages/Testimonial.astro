@@ -1,128 +1,32 @@
 ---
 import { Image } from "astro:assets";
-import TestimonialImage from "../../assets/images/testimonials/01.svg";
-const {} = Astro.props;
+import TestimonialImage from "../../assets/images/testimonials/02.svg";
+const { class: className } = Astro.props;
 ---
 
-<section id="home-testimonial-section">
-  <div>
-    <div class="image">
-      <Image src={TestimonialImage} alt={""} />
+<section
+  id="home-testimonial-section"
+  class={className ||
+    "flex text-[#123257] items-center justify-center md:py-[263px] md:pl-[199px] md:pr-[197.5px]"}
+>
+  <div
+    class="mx-auto w-fit max-w-[1020px] flex items-center justify-center flex-col text-center"
+  >
+    <div class="flex justify-center items-center w-fit">
+      <Image class={"mx-auto"} src={TestimonialImage} alt={""} />
     </div>
-    <div class="text">
-      <h3>“The best HR Support out there”</h3>
-      <p>
-        Exceptional HR support! Their expertise streamlined our HR processes,
-        saving time and ensuring compliance. A true partner in managing our
-        workforce effectively. Highly recommend!
-      </p>
+    <h3 class="text-[32px] font-[600] mt-[50px] text-[#123257]">
+      “The best HR Support out there”
+    </h3>
+    <p class="text-[#123257] mt-[24px] max-w-[520px] text-[20px] font-light">
+      Exceptional HR support! Their expertise streamlined our HR processes,
+      saving time and ensuring compliance. A true partner in managing our
+      workforce effectively. Highly recommend!
+    </p>
 
-      <div class="bio">
-        <h5>Timmy Godinez</h5>
-        <p>HR Lead</p>
-      </div>
+    <div class="mt-[64px]">
+      <h5 class="text-[24px] font-[600]">Timmy Godinez</h5>
+      <p class="text-[20px] font-[300]">HR Lead</p>
     </div>
   </div>
 </section>
-
-<style>
-  #home-testimonial-section {
-    padding-left: 199px;
-    padding-right: 197.5px;
-    padding-top: 263px;
-    padding-bottom: 263px;
-    @media screen and (max-width: 1440px) {
-      padding-left: 159px;
-      padding-right: 158px;
-      padding-top: 210px;
-      padding-bottom: 210px;
-    }
-
-    @media screen and (max-width: 450px) {
-      padding: 80px 20px;
-    }
-  }
-
-  #home-testimonial-section > div {
-    display: flex;
-    align-items: flex-start;
-    gap: 85px;
-    width: 100%;
-  }
-
-  #home-testimonial-section div.image {
-    width: 645px;
-    display: flex;
-    justify-content: center;
-
-    @media screen and (max-width: 450px) {
-      display: none;
-    }
-  }
-
-  #home-testimonial-section div.text {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    max-width: 650px;
-    gap: 24px;
-  }
-
-  #home-testimonial-section div.text h3 {
-    color: #000;
-    font-feature-settings:
-      "clig" off,
-      "liga" off;
-    font-family: Epilogue;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 32px; /* 100% */
-    margin: 0;
-    margin-top: 72px;
-  }
-
-  #home-testimonial-section div.text p {
-    color: #000;
-    font-feature-settings:
-      "clig" off,
-      "liga" off;
-    font-family: Epilogue;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 28px; /* 140% */
-    margin: 0;
-  }
-
-  #home-testimonial-section div.text div.bio {
-    margin-top: 64px;
-  }
-
-  #home-testimonial-section div.text div.bio h5 {
-    color: #000;
-    font-feature-settings:
-      "clig" off,
-      "liga" off;
-    font-family: Epilogue;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 28px; /* 116.667% */
-    margin: 0;
-  }
-
-  #home-testimonial-section div.text div.bio p {
-    color: #000;
-    font-feature-settings:
-      "clig" off,
-      "liga" off;
-    font-family: Epilogue;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 28px; /* 140% */
-    margin: 0;
-    margin-top: 8px;
-  }
-</style>

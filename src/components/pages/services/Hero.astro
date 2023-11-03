@@ -4,7 +4,7 @@ import MenuOpen from "../../buttons/MenuOpen.astro";
 import MenuClose from "../../buttons/MenuClose.astro";
 import { ServicesContent } from "../../../data/services";
 import { DEFAULT_LOGO_ALT_DESC } from "../../../constants/site";
-import { ALT_HERO_NAVIGATION_ITEMS } from "../../../constants/links";
+import { ALT_HERO_NAVIGATION_ITEMS } from "../../../data/navbar";
 import LogoImage from "../../../assets/images/logos/secondary.svg";
 import Large01Image from "../../../assets/images/services/large-01.svg";
 import Large02Image from "../../../assets/images/services/large-02.svg";
@@ -42,7 +42,7 @@ const description = service?.description || defaultDescription;
 <section id="hero">
   <nav>
     <a href="/">
-      <Image src={LogoImage} alt={DEFAULT_LOGO_ALT_DESC} />
+      <Image height={50} width={164} src={LogoImage} alt={DEFAULT_LOGO_ALT_DESC} />
     </a>
 
     <ul>

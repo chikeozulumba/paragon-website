@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import MenuOpen from "../../buttons/MenuOpen.astro";
 import MenuClose from "../../buttons/MenuClose.astro";
 import { DEFAULT_LOGO_ALT_DESC } from "../../../constants/site";
-import { ALT_HERO_NAVIGATION_ITEMS } from "../../../constants/links";
+import { ALT_HERO_NAVIGATION_ITEMS } from "../../../data/navbar";
 import LogoImage from "../../../assets/images/logos/primary.svg";
 import TextUnderlineImage from "../../../assets/images/text-underline.svg";
 import OvalBottomImage from "../../../assets/images/oval-bottom.svg";
@@ -49,7 +49,7 @@ const links = ALT_HERO_NAVIGATION_ITEMS;
 <section id="hero">
   <nav>
     <a href="/">
-      <Image src={LogoImage} alt={DEFAULT_LOGO_ALT_DESC} />
+      <Image height={50} width={164} src={LogoImage} alt={DEFAULT_LOGO_ALT_DESC} />
     </a>
 
     <ul>

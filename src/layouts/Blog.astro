@@ -2,17 +2,19 @@
 import fetchPPP from "purchasing-power-parity";
 import { DEFAULT_PAGE_TITLE } from "../constants/site";
 import ParityBanner from "../components/ParityBanner.astro";
+import BlogHero from "../components/hero/Blog.astro";
 
 interface Props {
   title?: string;
   page?: string;
+  post: any;
 }
 
-const { title = DEFAULT_PAGE_TITLE, page = "Home" } = Astro.props;
-const { hostname } = Astro.url
+const { title = DEFAULT_PAGE_TITLE, page = "Blog", post } = Astro.props;
+const { hostname } = Astro.url;
 
 const purchasingParity =
-  hostname !== 'localhost'
+  hostname !== "localhost"
     ? await fetchPPP()
     : {
         countryCodeIsoAlpha2: "NG",
@@ -55,6 +57,7 @@ const purchasingParity =
         <ParityBanner page={page} purchasingParity={purchasingParity} />
       )
     }
+    <BlogHero post={post} />
     <slot />
   </body>
 </html>
@@ -86,5 +89,24 @@ const purchasingParity =
     box-sizing: border-box;
     font-family: Epilogue;
     background: #ffffff;
+  }
+
+  .blog-content p {
+    color: #123257;
+    font-weight: 300;
+  }
+
+  .blog-content>p {
+    margin-top: 30px;
+  }
+
+  .blog-content p:has(img) {
+    margin-bottom: 50px;
+  }
+
+  .blog-content>h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #123257;
   }
 </style>
