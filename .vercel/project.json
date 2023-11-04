@@ -1,0 +1,15 @@
+{
+  "projectId": "prj_ukRq7hIRBMrgId3ZEPP2oZHJtUmk",
+  "orgId": "QR7tdNew3DQ0HPcoOQs6wXEa",
+  "settings": {
+    "createdAt": 1697111878441,
+    "framework": "astro",
+    "devCommand": null,
+    "installCommand": "yarn install",
+    "buildCommand": "yarn astro build",
+    "outputDirectory": null,
+    "rootDirectory": null,
+    "directoryListing": false,
+    "nodeVersion": "18.x"
+  }
+}
