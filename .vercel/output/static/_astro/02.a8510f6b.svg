@@ -1,0 +1,33 @@
+<svg width="216" height="73" viewBox="0 0 216 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect y="0.154297" width="216" height="72" rx="12" fill="white"/>
+<mask id="mask0_2121_8645" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="24" y="24" width="24" height="25">
+<rect x="24" y="24.1543" width="24" height="24" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask0_2121_8645)">
+<path d="M29.825 46.1543L31.45 39.1293L26 34.4043L33.2 33.7793L36 27.1543L38.8 33.7793L46 34.4043L40.55 39.1293L42.175 46.1543L36 42.4293L29.825 46.1543Z" fill="#E68832"/>
+</g>
+<mask id="mask1_2121_8645" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="60" y="24" width="24" height="25">
+<rect x="60" y="24.1543" width="24" height="24" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask1_2121_8645)">
+<path d="M65.825 46.1543L67.45 39.1293L62 34.4043L69.2 33.7793L72 27.1543L74.8 33.7793L82 34.4043L76.55 39.1293L78.175 46.1543L72 42.4293L65.825 46.1543Z" fill="#E68832"/>
+</g>
+<mask id="mask2_2121_8645" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="96" y="24" width="24" height="25">
+<rect x="96" y="24.1543" width="24" height="24" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask2_2121_8645)">
+<path d="M101.825 46.1543L103.45 39.1293L98 34.4043L105.2 33.7793L108 27.1543L110.8 33.7793L118 34.4043L112.55 39.1293L114.175 46.1543L108 42.4293L101.825 46.1543Z" fill="#E68832"/>
+</g>
+<mask id="mask3_2121_8645" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="132" y="24" width="24" height="25">
+<rect x="132" y="24.1543" width="24" height="24" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask3_2121_8645)">
+<path d="M137.825 46.1543L139.45 39.1293L134 34.4043L141.2 33.7793L144 27.1543L146.8 33.7793L154 34.4043L148.55 39.1293L150.175 46.1543L144 42.4293L137.825 46.1543Z" fill="#E68832"/>
+</g>
+<mask id="mask4_2121_8645" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="168" y="24" width="24" height="25">
+<rect x="168" y="24.1543" width="24" height="24" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask4_2121_8645)">
+<path d="M173.825 46.1543L175.45 39.1293L170 34.4043L177.2 33.7793L180 27.1543L182.8 33.7793L190 34.4043L184.55 39.1293L186.175 46.1543L180 42.4293L173.825 46.1543Z" fill="#E68832"/>
+</g>
+</svg>
