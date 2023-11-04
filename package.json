@@ -30,6 +30,6 @@
     "@tailwindcss/ui": "^0.7.2"
   },
   "engines": {
-    "node": "18.18.2"
+    "node": ">=18"
   }
 }
