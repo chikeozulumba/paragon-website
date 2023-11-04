@@ -1,15 +1,16 @@
 ---
 import { Image } from "astro:assets";
 
+import dayjs  from 'dayjs'
+import LocalizedFormat from "dayjs/plugin/LocalizedFormat.js";
+
 import MenuOpen from "../buttons/MenuOpen.astro";
 import MenuClose from "../buttons/MenuClose.astro";
 import { DEFAULT_LOGO_ALT_DESC } from "../../constants/site";
 import { RESOURCES_HERO_NAVIGATION_ITEMS } from "../../data/navbar";
 import LogoImage from "../../assets/images/logos/secondary.svg";
 
-
-const dayjs = require('dayjs')
-const LocalizedFormat = require("dayjs/plugin/LocalizedFormat");
+dayjs.extend(LocalizedFormat);
 
 dayjs.extend(LocalizedFormat);
 

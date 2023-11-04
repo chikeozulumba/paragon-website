@@ -2,7 +2,6 @@ import { defineConfig } from "astro/config";
 import vercel from "@astrojs/vercel/serverless";
 import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
-
 import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
@@ -20,4 +19,5 @@ export default defineConfig({
   adapter: vercel({
     edgeMiddleware: true,
   }),
+  site: "https://paragon.works",
 });

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://paragon.works/sitemap-index.xml
