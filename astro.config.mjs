@@ -17,7 +17,7 @@ export default defineConfig({
   ],
   output: "server",
   adapter: vercel({
-    // edgeMiddleware: true,
+    edgeMiddleware: true,
   }),
   site: "https://paragon.works",
 });
