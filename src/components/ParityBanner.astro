@@ -1,40 +1,38 @@
 ---
+import { ALLOWED_COUNTRIES } from "../data/parity";
+
 const { purchasingParity, page } = Astro.props;
-const { pathname } = Astro.url;
-const ALLOWED_COUNTRIES = {
-  NG: {
-    code: "PARAGONWORKSNIGERIA",
-    url: "https://www.linkedin.com/company/paragon-consulting-global/",
-    discount: 75,
-  },
-};
 
 const countryCode: keyof typeof ALLOWED_COUNTRIES =
   purchasingParity?.countryCodeIsoAlpha2;
-  const parityDetails = ALLOWED_COUNTRIES[countryCode];
-const isValid = typeof parityDetails !== "undefined" && ['advisory'].includes(page)
+const parityDetails = ALLOWED_COUNTRIES[countryCode];
+const isValid =
+  typeof parityDetails !== "undefined" && ["advisory-sessions"].includes(page);
 
-const pagesNotWithMainLayout = ['services', 'about']
+const pagesNotWithMainLayout = ["services", "about"];
 
-const mainLayoutApplied = !pagesNotWithMainLayout.includes(page)
-
+const mainLayoutApplied = !pagesNotWithMainLayout.includes(page);
 ---
 
 {
   isValid && (
-    <div id="parity-banner" class={`${!mainLayoutApplied ? 'not-main' : ''}`}>
+    <div id="parity-banner" class={`${!mainLayoutApplied ? "not-main" : ""}`}>
       <div class="img">
         <img
-        src={`/svg/flags/${purchasingParity.countryCodeIsoAlpha2.toLowerCase()}.svg`}
-        alt={""}
-      /></div>
+          src={`/svg/flags/${purchasingParity.countryCodeIsoAlpha2.toLowerCase()}.svg`}
+          alt={""}
+        />
+      </div>
       <div class="text">
         <p>
-          Hey! I noticed you are coming from <strong>{purchasingParity.countryName}</strong> where our items to be purchased may be a
-          bit expensive.
+          Hey! I noticed you are coming from{" "}
+          <strong>{purchasingParity.countryName}</strong> where our items to be
+          purchased may be a bit expensive.
         </p>
         <p>
-          If you need it, use the code <strong>{parityDetails.code}</strong> for an extra <strong>{parityDetails.discount}%</strong> off the <a href="/advisory-sessions">listed prices.</a>
+          If you need it, use the code <strong>{parityDetails.code}</strong> for
+          an extra <strong>{parityDetails.discount}%</strong> off the{" "}
+          <a href="/advisory-sessions">listed prices.</a>
         </p>
       </div>
     </div>
