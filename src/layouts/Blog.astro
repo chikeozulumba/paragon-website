@@ -12,17 +12,10 @@ interface Props {
 
 const { title = DEFAULT_PAGE_TITLE, page = "Blog", post } = Astro.props;
 
-const purchasingParity = {
-  countryCodeIsoAlpha2: "NG",
-  countryName: "Nigeria",
-  currenciesCountry: { NGN: { name: "Nigerian naira", symbol: "₦" } },
-  countryCodeIsoAlpha3: "NGA",
-  currencyMain: {
-    exchangeRate: 775.556002,
-    name: "Nigerian naira",
-    symbol: "₦",
-  },
-};
+let purchasingParity = null;
+try {
+  purchasingParity = await fetchPPP();
+} catch (error) {}
 ---
 
 <html lang="en">
@@ -50,7 +43,7 @@ const purchasingParity = {
   </head>
   <body>
     {
-      purchasingParity?.countryCodeIsoAlpha2 && (
+      purchasingParity && purchasingParity?.countryCodeIsoAlpha2 && (
         <ParityBanner page={page} purchasingParity={purchasingParity} />
       )
     }
