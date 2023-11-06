@@ -9,10 +9,10 @@ const { post, tag: queryTag } = Astro.props;
 const image = post.frontmatter.image?.url || `/img/default-blog.jpeg`;
 ---
 
-<div class="pt-[100px]">
-  <div class="flex items-center gap-[46px]">
+<div class="lg:pt-[100px] pt-[50px]">
+  <div class="flex flex-col md:flex-row items-center gap-[46px] p-[20px] overflow-hidden">
     <div
-      class="w-[465px] h-[240px] shrink-0 rounded-sm"
+      class="lg:w-[465px] lg:h-[240px] w-[370px] h-[200px] shrink-0 rounded-sm"
       style={{
         backgroundPosition: "100% 100%",
         background: `url(${image}) no-repeat`,
@@ -22,14 +22,14 @@ const image = post.frontmatter.image?.url || `/img/default-blog.jpeg`;
     </div>
 
     <div class="flex flex-col gap-[10px]">
-        <a class="text-[32px] leading-[40px] text-[#123257] font-[500]" href={'/blog/' + post.frontmatter.slug}>
+        <a class="md:text-[32px] md:leading-[40px] text-[20px] leading-[28px] text-[#123257] font-[500]" href={'/blog/' + post.frontmatter.slug}>
             {post.frontmatter.title}
         </a>
-        <p class="text-[20px] leading-[28px] font-[300] text-[#123257]">
+        <p class="text-[14px] leading-[28px] md:text-[20px] md:leading-[28px] font-[300] text-[#123257]">
             {post.frontmatter.description}
         </p>
         
-      <div class="mt-4 font-light text-sm w-full justify-between items-center flex gap-4 text-[#123257]">
+      <div class="md:mt-4 font-light text-sm w-full justify-between md:items-center flex flex-col md:flex-row md:gap-4 text-[#123257]">
         <p class="flex gap-2 capitalize">
           {(post.frontmatter.tags || []).map((tag: any) => <span class={['text-[14px] text-[#123257]', queryTag === tag && 'font-[500]' ].join(' ')}>{tag}</span>)}
         </p>

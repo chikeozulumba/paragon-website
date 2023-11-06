@@ -33,10 +33,10 @@ const content = post.compiledContent();
   title={`${post.frontmatter.title} | Paragon Consulting`}
   post={post}
 >
-  <main
-    class="md:flex md:flex-row md:max-w-[1248px] mx-auto md:gap-[135px] mt-[74px] pb-[200px]"
+  <div
+    class="md:flex md:flex-row md:max-w-[1248px] mx-auto md:gap-[135px] mt-[35px] md:mt-[74px] pb-[100px] lg:pb-[200px] flex flex-col-reverse lg:flex-row"
   >
-    <div class="md:max-w-[155px] w-full shrink-0">
+    <div class="md:max-w-[155px] w-full shrink-0 flex flex-col items-center mt-[32px] lg:mt-0">
       <h4 class="text-[20px] leading-[28px] font-[500] text-[#123257]">
         Share this post
       </h4>
@@ -81,17 +81,17 @@ const content = post.compiledContent();
         </svg>
       </div>
     </div>
-    <div class="md:max-w-[875px] w-full">
-      <h1 class="text-[48px] text-[#123257] leading-[57.6px] font-[600]">
+    <div class="md:max-w-[875px] w-full px-[20px] md:px-0">
+      <h1 class="md:text-[48px] text-[24px] text-[#123257] md:leading-[57.6px] font-[600]">
         {post.frontmatter?.title}
       </h1>
-      <div class="mt-4 font-light text-sm flex gap-1 text-[#123257]">
-        <p>by</p>
+      <div class="mt-4 font-light text-sm flex flex-col md:flex-row gap-1 text-[#123257]">
+        <p class="hidden md:block">by</p>
         <p>
           {post.frontmatter.author}
         </p>
-        <p>on</p>
-        <p>
+        <p class="hidden md:block">on</p>
+        <p class="italic md:not-italic">
           {dayjs(post.frontmatter.datePublished).format("LLLL")}
         </p>
       </div>
@@ -100,7 +100,7 @@ const content = post.compiledContent();
         <div class="blog-content" set:html={content} />
       </div>
     </div>
-  </main>
+  </div>
 
   <Newsletter />
   <Footer />

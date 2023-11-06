@@ -7,7 +7,7 @@ const { class: className } = Astro.props;
 <section
   id="home-testimonial-section"
   class={className ||
-    "flex text-[#123257] items-center justify-center md:py-[263px] md:pl-[199px] md:pr-[197.5px]"}
+    "flex text-[#123257] items-center justify-center py-[150px] px-[20px] md:py-[263px] md:pl-[199px] md:pr-[197.5px]"}
 >
   <div
     class="mx-auto w-fit max-w-[1020px] flex items-center justify-center flex-col text-center"
@@ -15,18 +15,18 @@ const { class: className } = Astro.props;
     <div class="flex justify-center items-center w-fit">
       <Image class={"mx-auto"} src={TestimonialImage} alt={""} />
     </div>
-    <h3 class="text-[32px] font-[600] mt-[50px] text-[#123257]">
+    <h3 class="text-[28px] md:text-[32px] font-[600] mt-[50px] text-[#123257]">
       “The best HR Support out there”
     </h3>
-    <p class="text-[#123257] mt-[24px] max-w-[520px] text-[20px] font-light">
+    <p class="text-[#123257] mt-[24px] max-w-[520px] text-[16px] md:text-[20px] font-light">
       Exceptional HR support! Their expertise streamlined our HR processes,
       saving time and ensuring compliance. A true partner in managing our
       workforce effectively. Highly recommend!
     </p>
 
     <div class="mt-[64px]">
-      <h5 class="text-[24px] font-[600]">Timmy Godinez</h5>
-      <p class="text-[20px] font-[300]">HR Lead</p>
+      <h5 class="text-[18px] md:text-[24px] font-[600]">Timmy Godinez</h5>
+      <p class="text-[18px] md:text-[20px] font-[300]">HR Lead</p>
     </div>
   </div>
 </section>

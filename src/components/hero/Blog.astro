@@ -35,9 +35,9 @@ const image = post.frontmatter.image?.url
 
 <section
   id="resources-hero"
-  class="lg:px-[96px] xl:px-[120px] relative overflow-hidden"
+  class="lg:px-[96px] xl:px-[120px] relative overflow-hidden lg:min-h-[813px]"
 >
-  <nav class="flex justify-between h-[90.96px] items-center">
+  <nav class="flex justify-between h-[90.96px] items-center px-[20px] md:px-0">
     <a href="/">
       <Image height={50} width={164} src={LogoImage} alt={DEFAULT_LOGO_ALT_DESC} />
     </a>
@@ -65,8 +65,8 @@ const image = post.frontmatter.image?.url
     </ul>
 
     <div role="button" class="mobile-menu cta closed" data-mobile-toggle>
-      <span class="open-icon"><MenuOpen /></span>
-      <span class="close-icon"><MenuClose /></span>
+      <span class="open-icon"><MenuOpen className="text-[#4130BA]" /></span>
+      <span class="close-icon"><MenuClose className="text-[#4130BA]" /></span>
 
       <ul id="mobile-nav">
         {
@@ -74,27 +74,20 @@ const image = post.frontmatter.image?.url
             const url = `/${title.toLowerCase().replaceAll(" ", "-")}`;
             return (
               <li>
-                <a data-target-section={targetSection} href={url}>
+                <a class="!font-[300] text-[12px]" data-target-section={targetSection} href={url}>
                   {title}
                 </a>
               </li>
             );
           })
         }
-        <li>
-          <a
-            href="https://1sh2o0w6yoa.typeform.com/to/OxgLgwY4"
-            target="_blank"
-            class="mobile-cta">Let's Talk</a
-          >
-        </li>
       </ul>
     </div>
   </nav>
 
-  {image && <div class="lg:max-w-[fit-content] md:mt-[90px] w-full mx-auto text-center">
+  {image && <div class="lg:max-w-[fit-content] mt-[90px] w-full mx-auto text-center sm:px-auto">
     <div
-      class="md:w-[1248px] md:h-[617px] shrink-0"
+      class="lg:w-[1248px] md:h-[617px] shrink-0 w-[370px] h-[400px] mx-auto rounded-sm"
       style={{
         backgroundPosition: "100% 100%",
         background: `url(${image}) no-repeat`,
@@ -108,7 +101,6 @@ const image = post.frontmatter.image?.url
 <style>
   #resources-hero {
     background-color: white;
-    min-height: 813px;
     position: relative;
   }
 

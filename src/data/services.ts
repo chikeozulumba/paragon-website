@@ -66,7 +66,10 @@ export const LIST_OF_SERVICES = [
     image: ServicesItem03,
     key: 'bespoke-employee-engagement-guidance',
     items: `Looking to level up your company’s employee experience but don’t know what to do or how to do it? We can help translate your mission and vision into an employee experience that attracts, retains, and motivates your team as you scale your business.`,
-    hasCta: true,
+    hasCta: {
+      title: 'Book a consultation',
+      path: '/advisory-sessions'
+    },
   },
   {
     title: "Employee Experience",

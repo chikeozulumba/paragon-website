@@ -8,50 +8,63 @@ const ref = "services-group-item-" + position;
 ---
 
 <script>
-  document.querySelectorAll('.services-group-item button').forEach((e) => {
-    e.addEventListener('click', (evt: any) => {
-      evt.stopPropagation()
-      const prop = evt.target?.dataset?.service
+  document.querySelectorAll(".services-group-item button").forEach((e) => {
+    e.addEventListener("click", (evt: any) => {
+      evt.stopPropagation();
+      const prop = evt.target?.dataset?.service;
 
-      if (typeof prop === 'undefined') return;
-      const content = document.getElementById('content-' + prop)
-      const isActive = content?.classList.contains('overflow-hidden')
+      if (typeof prop === "undefined") return;
+      const content = document.getElementById("content-" + prop);
+      const isActive = content?.classList.contains("overflow-hidden");
       if (isActive) {
-        content?.classList.remove('h-[120px]','overflow-hidden', 'text-ellipsis')
-        content?.classList.add('h-fit')
-        e?.classList.add('-rotate-180')
-        e?.classList.replace('rotate-0', '-rotate-180')
+        content?.classList.remove(
+          "h-[120px]",
+          "overflow-hidden",
+          "text-ellipsis"
+        );
+        content?.classList.add("h-fit");
+        e?.classList.add("-rotate-180");
+        e?.classList.replace("rotate-0", "-rotate-180");
       } else {
-        content?.classList.remove('h-fit')
-        content?.classList.add('h-[120px]', 'overflow-hidden', 'text-ellipsis')
-        e?.classList.replace('-rotate-180', 'rotate-0')
+        content?.classList.remove("h-fit");
+        content?.classList.add("h-[120px]", "overflow-hidden", "text-ellipsis");
+        e?.classList.replace("-rotate-180", "rotate-0");
       }
-    })
-  })
+    });
+  });
 </script>
 
 <div
   id={item.key}
   class={[
-    "services-group-item px-[24px] py-[48px] flex justify-between items-center border-b border-[#BEBEBE]",
+    "services-group-item px-[20px] py-[40px] lg:px-[24px] lg:py-[48px] flex justify-between items-start lg:items-center border-b border-[#BEBEBE]/30 lg:border-[#BEBEBE]",
     isMidClass ? "mid-item" : "",
   ].join(" ")}
 >
   <div id={"id-" + ref} class="flex gap-[32px]">
-    <Image src={item.image} class="w-[102px] h-[102px]" alt={""} />
-    <div id={"content-" + ref} class="content h-[120px] overflow-hidden text-ellipsis">
-      <h1 class="text-[32px] font-[500] text-[#123257]">{item.title}</h1>
+    <Image
+      src={item.image}
+      class="lg:w-[102px] lg:h-[102px] h-[40px] w-[40px]"
+      alt={""}
+    />
+    <div
+      id={"content-" + ref}
+      class="content h-fit lg:h-[120px] overflow-hidden text-ellipsis"
+    >
+      <h1 class="lg:text-[32px] lg:font-[500] text-[18px] text-[#123257]">
+        {item.title}
+      </h1>
       {
         Array.isArray(item.items) ? (
           <ul class="list mt-[23px] pl-4 flex flex-col gap-[4px]">
             {item.items.map((subContent: any) => (
-              <li class="text-[16px] text-[#58657D] list-disc leading-[24px] max-w-[748px]">
+              <li class="lg:text-[16px] text-[#58657D] text-[14px] list-disc leading-[24px] max-w-[748px]">
                 {subContent}
               </li>
             ))}
           </ul>
         ) : (
-          <p class="mt-[23px] text-[16px] text-[#58657D] max-w-[748px]">
+          <p class="mt-[23px] lg:text-[16px] text-[14px] text-[#58657D] max-w-[748px] leading-loose sm:leading-auto">
             {item.items}
           </p>
         )
@@ -59,15 +72,18 @@ const ref = "services-group-item-" + position;
 
       {
         item.hasCta && (
-          <a href="/advisory-sessions" class="block mt-[36px] bg-[#4130BA] text-white w-fit py-[18px] px-[32px] rounded-[100px] text-[14px]">
-            Book a consultation
+          <a
+            href={item.hasCta.path}
+            class="block mt-[36px] bg-[#4130BA] text-white w-fit lg:py-[18px] lg:px-[32px] rounded-[100px] lg:text-[14px] py-[14px] px-[20px] text-[12px]"
+          >
+            {item.hasCta.title}
           </a>
         )
       }
     </div>
   </div>
 
-  <div>
+  <div class="hidden lg:block">
     <button data-service={ref} class="">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +91,7 @@ const ref = "services-group-item-" + position;
         height="64"
         viewBox="0 0 64 64"
         fill="none"
-        class="pointer-events-none"
+        class="pointer-events-none sm:w-auto sm:h-auto h-[20px] w-[20px]"
       >
         <mask
           id="mask0_2125_8621"

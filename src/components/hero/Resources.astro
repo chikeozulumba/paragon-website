@@ -18,8 +18,6 @@ const {
   captions = {},
   cta,
   image = `/img/default-blog.jpeg`,
-  imageAlt,
-  description,
   post,
 } = Astro.props;
 const links = RESOURCES_HERO_NAVIGATION_ITEMS;
@@ -50,7 +48,7 @@ const links = RESOURCES_HERO_NAVIGATION_ITEMS;
   id="resources-hero"
   class="lg:px-[96px] xl:px-[120px] relative overflow-hidden"
 >
-  <nav class="flex justify-between h-[90.96px] items-center">
+  <nav class="flex justify-between h-[90.96px] items-center px-[20px] md:px-0">
     <a href="/">
       <Image height={50} width={164} src={LogoImage} alt={DEFAULT_LOGO_ALT_DESC} />
     </a>
@@ -78,8 +76,8 @@ const links = RESOURCES_HERO_NAVIGATION_ITEMS;
     </ul>
 
     <div role="button" class="mobile-menu cta closed" data-mobile-toggle>
-      <span class="open-icon"><MenuOpen /></span>
-      <span class="close-icon"><MenuClose /></span>
+      <span class="open-icon"><MenuOpen className="text-[#4130BA]" /></span>
+      <span class="close-icon"><MenuClose className="text-[#4130BA]" /></span>
 
       <ul id="mobile-nav">
         {
@@ -87,30 +85,23 @@ const links = RESOURCES_HERO_NAVIGATION_ITEMS;
             const url = `/${title.toLowerCase().replaceAll(" ", "-")}`;
             return (
               <li>
-                <a data-target-section={targetSection} href={url}>
+                <a class="!font-[300] text-[12px]" data-target-section={targetSection} href={url}>
                   {title}
                 </a>
               </li>
             );
           })
         }
-        <li>
-          <a
-            href="https://1sh2o0w6yoa.typeform.com/to/OxgLgwY4"
-            target="_blank"
-            class="mobile-cta">Let's Talk</a
-          >
-        </li>
       </ul>
     </div>
   </nav>
 
   <div
-    class="lg:max-w-[fit-content] md:mt-[90px] md:mb-[135px] w-full mx-auto text-center"
+    class="lg:max-w-[fit-content] mt-[90px] md:mb-[135px] w-full mx-auto text-center"
   >
-    <div class="flex md:gap-[64px] items-center">
+    <div class="flex md:gap-[64px] items-center p-[20px] sm:p-0 pb-[100px] sm:pb-0">
       <div
-        class="w-[600px] h-[600px] shrink-0 rounded-sm"
+        class="w-[600px] h-[600px] shrink-0 rounded-sm hidden md:block"
         style={{
           backgroundPosition: "100% 100%",
           background: `url(${image}) no-repeat`,
@@ -127,7 +118,7 @@ const links = RESOURCES_HERO_NAVIGATION_ITEMS;
           )
         }
         <h2
-          class="text-[48px] font-[600] leading-tight md:max-w-[608px] text-left text-[var(--primary-color)]"
+          class="lg:text-[48px] text-[32px] font-[600] leading-tight md:max-w-[608px] text-left text-[var(--primary-color)]"
         >
           {
             captions.title ||
@@ -138,7 +129,7 @@ const links = RESOURCES_HERO_NAVIGATION_ITEMS;
         <div
           class="mt-8 md:max-w-[608px] font-[500] items-start flex flex-col text-[14px] text-[#123257]"
         >
-          <p class="text-left">
+          <p class="text-left font-normal">
             {post.frontmatter.description}
           </p>
           <p class="font-light mt-4 text-sm">
@@ -146,7 +137,7 @@ const links = RESOURCES_HERO_NAVIGATION_ITEMS;
           </p>
         </div>
         <a
-          class="mt-[60px] font-body block px-[32px] py-[18px] text-[20px] font-[500] text-white bg-[var(--primary-color)] w-fit rounded-[100px]"
+          class="md:mt-[60px] mt-[36px] font-body block px-[32px] md:py-[18px] py-[12px] md:text-[20px] text-[16px] font-[500] text-white bg-[var(--primary-color)] w-fit rounded-[100px]"
           href={cta.url}>Read more</a
         >
       </div>

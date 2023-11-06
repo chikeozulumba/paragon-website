@@ -33,8 +33,8 @@ const links = ALT_HERO_NAVIGATION_ITEMS;
     });
 </script>
 
-<section id="alt-hero" class="lg:px-[96px] xl:px-[120px] relative overflow-hidden">
-  <nav class="flex justify-between h-[90.96px] items-center">
+<section id="alt-hero" class="lg:px-[96px] xl:px-[120px] relative overflow-hidden h-[500px] lg:h-[635px]">
+  <nav class="flex justify-between h-[90.96px] items-center px-[20px] md:px-0">
     <a href="/">
       <Image height={50} width={164} src={LogoImage} alt={DEFAULT_LOGO_ALT_DESC} />
     </a>
@@ -71,35 +71,28 @@ const links = ALT_HERO_NAVIGATION_ITEMS;
             const url = `/${title.toLowerCase().replaceAll(" ", "-")}`;
             return (
               <li>
-                <a data-target-section={targetSection} href={url}>
+                <a class="!font-[300] text-[12px]" data-target-section={targetSection} href={url}>
                   {title}
                 </a>
               </li>
             );
           })
         }
-        <li>
-          <a
-            href="https://1sh2o0w6yoa.typeform.com/to/OxgLgwY4"
-            target="_blank"
-            class="mobile-cta">Let's Talk</a
-          >
-        </li>
       </ul>
     </div>
   </nav>
 
-  <div class="lg:max-w-[fit-content] md:mt-[132px] w-full mx-auto text-center">
+  <div class="lg:max-w-[fit-content] md:mt-[132px] mt-[100px] w-full mx-auto text-center">
     {
       captions.top && (
-        <h3 class="font-[600] text-white lg:text-[72px] font-primary">
+        <h3 class="font-[600] text-white lg:text-[72px] text-[30px] font-primary">
           {captions.top}
         </h3>
       )
     }
     {
       captions.bottom && (
-        <h3 class="font-[600] text-white lg:text-[72px] -mt-8 font-primary">
+        <h3 class="font-[600] text-white lg:text-[72px] text-[30px] lg:-mt-8 font-primary">
           {captions.bottom}
         </h3>
       )
@@ -126,21 +119,22 @@ const links = ALT_HERO_NAVIGATION_ITEMS;
   </div>
 
   <Image
-    class={"oval-bottom left-[98px] -bottom-[28px] absolute"}
+    class={"oval-bottom lg:left-[98px] lg:-bottom-[28px] bottom-0 left-0 sm:w-auto w-[100px] absolute"}
     src={LeftImage}
     alt=""
   />
   <Image
-    class={"oval-right right-[48px] -bottom-[28px] absolute"}
+    class={"oval-right lg:right-[48px] lg:-bottom-[28px] bottom-0 right-0 sm:w-auto w-[100px] absolute"}
     src={RightImage}
     alt=""
   />
+  <!-- class={"oval-bottom lg:-left-[14px] -bottom-[28px] left-0 w-[200px] absolute"}
+class={"oval-right lg:-bottom-[28px] bottom-0 right-0 w-[100px] absolute"} -->
 </section>
 
 <style>
   #alt-hero {
     background-color: var(--primary-color);
-    height: 635px;
     position: relative;
   }
 

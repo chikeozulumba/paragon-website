@@ -36,7 +36,7 @@ const links = HERO_NAVIGATION_ITEMS;
     });
 </script>
 
-<section id="hero" class="lg:px-[96px] xl:px-[120px] relative overflow-hidden">
+<section id="hero" class="lg:px-[96px] h-[700px] lg:h-[813px] xl:px-[120px] relative overflow-hidden px-[20px] md:px-0">
   <nav class="flex justify-between h-[90.96px] items-center">
     <a href="/">
       <Image height={50} width={164} src={LogoImage} alt={DEFAULT_LOGO_ALT_DESC} />
@@ -74,35 +74,28 @@ const links = HERO_NAVIGATION_ITEMS;
             const url = `/${title.toLowerCase().replaceAll(" ", "-")}`;
             return (
               <li>
-                <a data-target-section={targetSection} href={url}>
+                <a class="!font-[300] text-[12px]" data-target-section={targetSection} href={url}>
                   {title}
                 </a>
               </li>
             );
           })
         }
-        <li>
-          <a
-            href="https://1sh2o0w6yoa.typeform.com/to/OxgLgwY4"
-            target="_blank"
-            class="mobile-cta">Let's Talk</a
-          >
-        </li>
       </ul>
     </div>
   </nav>
 
-  <div class="lg:max-w-[fit-content] md:mt-[132px] w-full mx-auto text-center">
+  <div class="lg:max-w-[fit-content] md:mt-[132px] mt-[100px] w-full mx-auto text-center">
     {
       captions.top && (
-        <h3 class="font-[600] text-white lg:text-[72px] font-primary">
+        <h3 class="font-[600] text-white lg:text-[72px] text-[30px] font-primary">
           {captions.top}
         </h3>
       )
     }
     {
       captions.bottom && (
-        <h3 class="font-[600] text-white lg:text-[72px] -mt-8 font-primary">
+        <h3 class="font-[600] text-white lg:text-[72px] text-[30px] lg:-mt-8 font-primary">
           {captions.bottom}
         </h3>
       )
@@ -113,18 +106,18 @@ const links = HERO_NAVIGATION_ITEMS;
     </p>}
 
     {cta && <a
-      class="mt-[90px] block px-[32px] py-[18px] text-[24px] font-[700] font-body text-[var(--primary-color)] bg-white w-fit mx-auto rounded-[100px]"
+      class="lg:mt-[90px] mt-[40px] block lg:px-[32px] lg:py-[18px] lg:text-[24px] px-[32px] py-[12px] text-[18px] font-[700] font-body text-[var(--primary-color)] bg-white w-fit mx-auto rounded-[100px]"
       href={cta.url}>{cta.title}</a
     >}
   </div>
 
   <Image
-    class={"oval-bottom -left-[14px] -bottom-[28px] absolute"}
+    class={"oval-bottom lg:-left-[14px] -bottom-[28px] left-0 w-[200px] sm:w-auto absolute"}
     src={LeftImage}
     alt=""
   />
   <Image
-    class={"oval-right -bottom-[28px] right-0 absolute"}
+    class={"oval-right lg:-bottom-[28px] bottom-0 right-0 w-[100px] sm:w-auto absolute"}
     src={RightImage}
     alt=""
   />
@@ -133,7 +126,6 @@ const links = HERO_NAVIGATION_ITEMS;
 <style>
   #hero {
     background-color: var(--primary-color);
-    height: 813px;
     position: relative;
   }
 

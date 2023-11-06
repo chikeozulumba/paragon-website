@@ -3,14 +3,26 @@ const { class: className } = Astro.props;
 ---
 
 <section id="founder-section" class={className || "pt-[200px] pb-[100px]"}>
-  <div class="lg:max-w-[1248px] bg-[#F0F0F2] mx-auto flex flex-row lg:h-[586px]">
-    <div class="lg:w-[388px] flex-1 relative bg-[#4130BA] pb-[64px] px-[64px] flex flex-col items-start font-body justify-end">
-      <h3 class="font-[600] lg:text-[48px] text-white">Our<br />Founder</h3>
+  <div
+    class="lg:max-w-[1248px] bg-[#F0F0F2] mx-auto flex flex-col md:flex-row lg:h-[586px]"
+  >
+    <div
+      class="lg:w-[388px] flex-1 relative bg-white lg:bg-[#4130BA] md:pb-[64px] md:px-[64px] py-[20px] px-[20px] flex flex-col md:items-start font-body md:justify-end"
+    >
+      <h3 class="font-[600] lg:text-[48px] text-[32px] lg:text-white font-primary text-black mb-[20px] lg:mb-0 flex lg:block gap-1 lg:gap-0 mx-auto">
+        Our<br class="hidden lg:block" /><span class="block lg:hidden" />Founder
+      </h3>
     </div>
-    <div class="content w-[860px] pr-[78.5px] text-right flex flex-col justify-center items-end gap-[26px] bg-[#F0B884]">
-      <h5 class="lg:text-[48px] font-[600]">Ijeoma Ofonagoro</h5>
-      <p class="lg:max-w-[708px] lg:text-[24px] font-[400]">
-        Ijeoma is a People Operations and Talent Development Leader with 13+ years of experience working with international and cross-cultural teams spanning the US, Europe, Africa, and Asia.  She has spent the majority of her career working with social enterprises, startups, and international development agencies to scale projects...
+    <div
+      class="content lg:w-[860px] lg:pr-[78.5px] lg:text-right flex flex-col justify-center lg:items-end gap-[26px] bg-[#F0B884] px-[20px] pt-[50px] pb-[100px] lg:pb-0 lg:pl-0 lg:pt-0"
+    >
+      <h5 class="lg:text-[48px] text-[24px] font-[600]">Ijeoma Ofonagoro</h5>
+      <p class="lg:max-w-[708px] lg:text-[24px] text-[20px] font-[300] lg:font-[400] mt-[20px] lg:mt-0">
+        Ijeoma is a People Operations and Talent Development Leader with 13+
+        years of experience working with international and cross-cultural teams
+        spanning the US, Europe, Africa, and Asia.  She has spent the majority
+        of her career working with social enterprises, startups, and
+        international development agencies to scale projects.
       </p>
       <!-- <a class="block font-[500] lg:text-[24px]">Read more</a> -->
     </div>
@@ -18,7 +30,10 @@ const { class: className } = Astro.props;
 </section>
 
 <style>
-  #founder-section .content {border-radius: 250px 0px 0px 120px;
-    border-radius: 250px 0px 0px 120px;
+  #founder-section .content {
+    @media screen and (min-width: 1024px) {
+      border-radius: 250px 0px 0px 120px;
+      border-radius: 250px 0px 0px 120px;
+    }
   }
 </style>

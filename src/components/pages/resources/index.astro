@@ -10,14 +10,15 @@ let queryTag = searchParams.get("tag");
 
 <section class="pb-[200px]">
   <ul
-    class="px-[146px] h-[67px] flex gap-[20px] items-center border-b border-[#D0D5DD]"
+    id="menu"
+    class="lg:px-[146px] lg:h-[67px] flex gap-[20px] items-center border-b border-[#D0D5DD] overflow-x-scroll"
   >
     <li class="flex h-full items-center">
       <li class="flex h-full items-center">
         <a
           href={`?tag=`}
           class={[
-            "font-[300] text-[18px] h-full px-2 flex items-center capitalize",
+            "font-[300] md:text-[18px] text-[12px] h-full px-2 flex items-center capitalize",
             queryTag === "" || !queryTag
               ? "border-b-4 border-[var(--primary-color)]"
               : "border-b-4 border-transparent",
@@ -32,7 +33,7 @@ let queryTag = searchParams.get("tag");
             <a
               href={`${tag !== "all" ? "?tag=" + tag : ""}`}
               class={[
-                "font-[300] text-[18px] h-full px-2 flex items-center capitalize",
+                "font-[300] md:text-[18px] text-[12px] h-full px-2 flex items-center capitalize whitespace-nowrap",
                 (queryTag ?? "all") === tag
                   ? "border-b-4 border-[var(--primary-color)]"
                   : "border-b-4 border-transparent",
@@ -46,7 +47,17 @@ let queryTag = searchParams.get("tag");
     </li>
 
     <div class="md:max-w-[1203px] md:mx-auto">
-        {posts.map((post: any) => <ResourcesItem post={post} tag={queryTag} />)}
+      {posts.map((post: any) => <ResourcesItem post={post} tag={queryTag} />)}
     </div>
   </ul>
 </section>
+
+<style>
+  #menu {
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
+  #menu::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+</style>

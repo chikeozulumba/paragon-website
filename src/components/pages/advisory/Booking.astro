@@ -4,9 +4,9 @@ import OvalImage from "../../../assets/images/oval.svg";
 const {} = Astro.props;
 ---
 
-<section id="page-advisory-booking-section" class="pt-[99px] pb-[256px] flex flex-col gap-[256px]">
-  <div class="lg:max-w-[1260px] mx-auto w-full">
-    <h1 class="lg:text-[48px] font-[600] text-[#123257] font-primary">
+<section id="page-advisory-booking-section" class="lg:pt-[99px] lg:pb-[256px] pt-[50px] pb-[100px] flex flex-col gap-[100px] lg:gap-[256px]">
+  <div class="lg:max-w-[1260px] mx-auto w-full px-[20px] md:px-0">
+    <h1 class="lg:text-[48px] text-[32px] font-[600] text-[#123257] font-primary">
       Express Sessions
     </h1>
     <form class="mt-[58px] flex flex-col gap-[24px]">
@@ -26,11 +26,11 @@ const {} = Astro.props;
       />
 
       <div class="mt-[36px] flex flex-col">
-        <h1 class="lg:text-[24px] pl-[12px] font-[600] text-[#000000] font-primary">
+        <h1 class="lg:text-[24px] text-[18px] pl-[12px] font-[600] text-[#000000] font-primary">
           How long would you need?
         </h1>
-        <div class="mt-[24px] flex flow-row gap-[24px] w-full">
-          <div class="flex items-center gap-x-3 bg-[#F6F7F9] p-[24px] w-full">
+        <div class="mt-[24px] flex flex-col gap-[24px] w-full">
+          <div class="flex flex-row items-center gap-x-3 bg-[#F6F7F9] p-[24px] w-full">
             <input
               id="30-minutes"
               name="lengthOfCall"
@@ -62,8 +62,8 @@ const {} = Astro.props;
       </div>
     </form>
   </div>
-  <div class="lg:max-w-[1260px] mx-auto w-full">
-    <h1 class="lg:text-[48px] font-[600] text-[#123257] font-primary">
+  <div class="lg:max-w-[1260px] mx-auto w-full px-[20px] md:px-0">
+    <h1 class="lg:text-[48px] text-[32px] font-[600] text-[#123257] font-primary">
       People Leaders Coaching Program
     </h1>
     <h4 class="text-[20px] font-[400] mt-[22px] text-[#123257]">
@@ -85,9 +85,9 @@ const {} = Astro.props;
         placeholder="Enter your business name"
       />
 
-      <div class="mt-[36px] flex flex-row w-full gap-[36px]">
-        <button type="submit" class="rounded-[100px] w-full py-[18px] text-[24px] font-body border border-[#4130BA] text-[#4130BA]">Book a 15-minutes discovery call</button>
-        <button type="submit" class="rounded-[100px] w-full py-[18px] text-[24px] font-body bg-[#4130BA] text-white">Book a call</button>
+      <div class="mt-[36px] flex flex-col md:flex-row w-full gap-[36px]">
+        <button type="submit" class="rounded-[100px] w-full py-[12px] md:py-[18px] text-[16px] md:text-[24px] font-body border border-[#4130BA] text-[#4130BA]">Book a 15-minutes discovery call</button>
+        <button type="submit" class="rounded-[100px] w-full py-[12px] md:py-[18px] text-[16px] md:text-[24px] font-body bg-[#4130BA] text-white">Book a call</button>
       </div>
     </form>
   </div>
