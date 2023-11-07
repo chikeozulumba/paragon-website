@@ -1,10 +1,10 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Newsletter from "../components/pages/Newsletter.astro";
-import ResourcesView from "../components/pages/resources/index.astro";
-import Footer from "../components/pages/Footer.astro";
-import { HERO_CTA } from "../data/home";
-import ResourcesHero from "../components/hero/Resources.astro";
+import Layout from "../src/layouts/Layout.astro";
+import Newsletter from "../src/components/pages/Newsletter.astro";
+import ResourcesView from "../src/components/pages/resources/index.astro";
+import Footer from "../src/components/pages/Footer.astro";
+import { HERO_CTA } from "../src/data/home";
+import ResourcesHero from "../src/components/hero/Resources.astro";
 
 const { searchParams } = Astro.url;
 let queryTag = searchParams.get("tag");
