@@ -52,7 +52,7 @@ export const LIST_OF_SERVICES = [
   {
     title: "People Leadership Guidance",
     image: ServicesItem01,
-    key: 'people-leadership-guidiance',
+    key: "people-leadership-guidiance",
     items: `Managing a workforce can be challenging. Need quick advice on a tricky employee problem? If you are experiencing a people operations or HR challenge, such as an employee relations issue, we can help!`,
   },
   {
@@ -64,11 +64,11 @@ export const LIST_OF_SERVICES = [
   {
     title: "Bespoke Employee Engagement Guidance",
     image: ServicesItem03,
-    key: 'bespoke-employee-engagement-guidance',
+    key: "bespoke-employee-engagement-guidance",
     items: `Looking to level up your company’s employee experience but don’t know what to do or how to do it? We can help translate your mission and vision into an employee experience that attracts, retains, and motivates your team as you scale your business.`,
     hasCta: {
-      title: 'Book a consultation',
-      path: '/advisory-sessions'
+      title: "Book a consultation",
+      path: "https://topmate.io/ij_paragonconsulting",
     },
   },
   {

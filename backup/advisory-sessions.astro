@@ -1,0 +1,22 @@
+---
+import Layout from "../src/layouts/Layout.astro";
+import Booking from "../src/components/pages/advisory/Booking.astro";
+import Footer from "../src/components/pages/Footer.astro";
+import AlternateHero from "../src/components/hero/Secondary.astro";
+import Founder from "../src/components/pages/Founder.astro";
+import Testimonial from "../src/components/pages/Testimonial.astro";
+import Newsletter from "../src/components/pages/Newsletter.astro";
+---
+
+<Layout title="Express Advisory | Paragon Consulting" page="advisory-sessions">
+  <AlternateHero 
+    captions={{
+      top: "Express Advisory",
+      description: "Need quick advice and want to talk out a challenge or an idea?",
+    }} />
+  <Booking />
+  <Founder class="md:pb-[144px] md:pt-[200px] pt-[50px]" />
+  <Testimonial />
+  <Newsletter />
+  <Footer />
+</Layout>
