@@ -70,8 +70,8 @@ const links = HERO_NAVIGATION_ITEMS;
 
       <ul id="mobile-nav">
         {
-          links.map(({ title, targetSection }, i) => {
-            const url = `/${title.toLowerCase().replaceAll(" ", "-")}`;
+          links.map(({ title, targetSection, url: $url }, i) => {
+            const url = $url || `/${title.toLowerCase().replaceAll(" ", "-")}`;
             return (
               <li>
                 <a class="!font-[300] text-[12px]" data-target-section={targetSection} href={url}>

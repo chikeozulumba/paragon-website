@@ -44,7 +44,7 @@ export const FOOTER_NAVIGATION_ITEMS = [
 export const ALT_HERO_NAVIGATION_ITEMS = [
   {
     title: "About",
-    targetSection: "/#page-about-section",
+    targetSection: "#page-about-section",
     url: "/#page-about-section",
   },
   { title: "Services" },
