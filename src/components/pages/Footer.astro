@@ -7,29 +7,46 @@ import FacebookImage from "../../assets/images/social/facebook.svg";
 import TwitterImage from "../../assets/images/social/twitter.svg";
 import LinkedInImage from "../../assets/images/social/linkedin.svg";
 import InstagramImage from "../../assets/images/social/instagram.svg";
+import YoutubeImage from "../../assets/images/social/youtube.svg";
 import CircleArrowUpImage from "../../assets/images/circle-arrow-up.svg";
 
 const {} = Astro.props;
 const SOCIAL_LINKS = [
   {
-    name: `Facebook`,
-    url: `https://facebook.com/paragon`,
-    image: FacebookImage,
-  },
-  {
     name: `Twitter`,
-    url: `https://twitter.com/paragon`,
+    url: `https://twitter.com/withparagon`,
     image: TwitterImage,
+    style: {
+      height: "25px",
+      width: "25px",
+    },
   },
   {
     name: `LinkedIn`,
     url: `https://www.linkedin.com/company/paragon-consulting-global/`,
     image: LinkedInImage,
+    style: {
+      height: "25px",
+      width: "25px",
+    },
   },
   {
     name: `Instagram`,
-    url: `https://instagram.com/paragon-consulting`,
+    url: `https://www.instagram.com/withparagonworks/`,
     image: InstagramImage,
+    style: {
+      height: "28px",
+      width: "28px",
+    },
+  },
+  {
+    name: `YouTube`,
+    url: `https://youtube.com/@withparagon`,
+    image: YoutubeImage,
+    style: {
+      height: "28px",
+      width: "28px",
+    },
   },
 ];
 ---
@@ -43,16 +60,24 @@ const SOCIAL_LINKS = [
 <footer>
   <div class="logo">
     <a href="/">
-      <Image height={50} width={164} src={LogoImage} alt={DEFAULT_LOGO_ALT_DESC} />
+      <Image
+        height={50}
+        width={164}
+        src={LogoImage}
+        alt={DEFAULT_LOGO_ALT_DESC}
+      />
     </a>
   </div>
-  <div class="flex justify-between md:gap-y-[36px] gap-y-[20px] flex-col items-center">
+  <div
+    class="flex justify-between md:gap-y-[36px] gap-y-[20px] flex-col items-center"
+  >
     <ul class="social">
       {
         SOCIAL_LINKS.map((link) => (
           <li>
             <a href={link.url} target="__blank">
               <Image
+                style={{ ...(link.style || {}) }}
                 src={link.image}
                 alt={DEFAULT_LOGO_ALT_DESC + "-" + link.name}
               />
@@ -61,16 +86,27 @@ const SOCIAL_LINKS = [
         ))
       }
     </ul>
-    <ul class="flex justify-between md:gap-[32px] gap-[20px] flex-col md:flex-row items-center text-white mt-[36px] md:mt-0">
+    <ul
+      class="flex justify-between md:gap-[32px] gap-[20px] flex-col md:flex-row items-center text-white mt-[36px] md:mt-0"
+    >
       {
-        FOOTER_NAVIGATION_ITEMS.map(({ title, attributes = {}, targetSection, url: $url }, i) => {
-          const url = $url || `/${title.toLowerCase().replaceAll(" ", "-")}`;
-          return (
-            <li>
-              <a {...attributes} class="font-[300] md:font-normal" data-target-section={targetSection} href={url}>{title}</a>
-            </li>
-          );
-        })
+        FOOTER_NAVIGATION_ITEMS.map(
+          ({ title, attributes = {}, targetSection, url: $url }, i) => {
+            const url = $url || `/${title.toLowerCase().replaceAll(" ", "-")}`;
+            return (
+              <li>
+                <a
+                  {...attributes}
+                  class="font-[300] md:font-normal"
+                  data-target-section={targetSection}
+                  href={url}
+                >
+                  {title}
+                </a>
+              </li>
+            );
+          }
+        )
       }
     </ul>
   </div>
@@ -80,7 +116,9 @@ const SOCIAL_LINKS = [
     </a>
   </div>
 
-  <p class="!font-[300] !md:font-normal !text-[12px] !md:text-[16px]">©Paragon Consulting 2023. All rights reserved.</p>
+  <p class="!font-[300] !md:font-normal !text-[12px] !md:text-[16px]">
+    ©Paragon Consulting 2023. All rights reserved.
+  </p>
 </footer>
 
 <style>
@@ -125,11 +163,12 @@ const SOCIAL_LINKS = [
     gap: 24px;
     padding-left: 0px;
     margin: 0;
+    align-items: flex-start;
   }
 
   ul.social img {
     height: 100%;
-    width: 20px;
+    width: 25px;
   }
 
   ul.social a {
