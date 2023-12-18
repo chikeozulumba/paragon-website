@@ -1,0 +1,14 @@
+---
+import { LIST_OF_TEAM } from "../../../../data/team";
+import TeamGroupItem from "./Item.astro";
+
+const {} = Astro.props;
+---
+
+<section id="team-group-section" class="py-[100px] lg:px-[96px] xl:px-[120px] px-[20px] md:px-0 flex flex-col gap-[48px]">
+    {
+        LIST_OF_TEAM.map((item, i) => {
+            return <TeamGroupItem item={item} position={i + 1} />;
+        })
+    }
+</section>

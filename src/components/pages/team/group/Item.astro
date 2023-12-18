@@ -1,0 +1,51 @@
+---
+import { Image } from "astro:assets";
+const { class: className, item } = Astro.props;
+---
+
+<section class={className || "founder-section"}>
+  <div class="bg-[#fff] mx-auto flex flex-col md:flex-row md:min-h-[586px]">
+    <div
+      class="lg:w-[388px] relative bg-white lg:bg-[#transparent]/90 md:pb-[64px] md:px-[64px] py-[20px] px-[20px] flex flex-col md:items-start font-body md:justify-center"
+    >
+      {
+        item.image && (
+          <Image
+            class="object-contain rounded-sm overflow-hidden lg:w-[260px] lg:h-[324px]"
+            src={item.image}
+            alt={item.name + " - Paragon consulting"}
+          />
+        )
+      }
+    </div>
+    <div
+      class="content flex-1 lg:px-[78.5px] flex flex-col justify-center gap-[26px] bg-[#F0B884]/10 px-[20px] pt-[50px] pb-[100px] lg:py-[100px]"
+    >
+      <h5 class="lg:text-[48px] text-[24px] font-[600]">{item.name}</h5>
+      <p
+        class="lg:max-w-[850px] lg:text-[24px] text-[20px] font-[300] lg:font-[400] mt-[20px] lg:mt-0"
+      > 
+        {item.description}
+      </p>
+      {
+        item.linkedIn && (
+          <>
+            <div class="my-2 h-[1px] bg-gray-200 w-2/3" />
+            <a
+              href={item.linkedIn}
+              target="_blank"
+              class="block font-[500] lg:text-[24px]"
+            >
+              <img
+                class="h-[20px]"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAADzUlEQVR4nO2cS6hOXRjHfy5RLjFwKSIpCt+AMFBO9I2QS7nlMqI+Bm4zRkiSDFwy+hQ5U2ZyOaSIDJSBKAkhSpEB4XDcztFylrxOzvLu/a7Hu9+9/r96Oqfznnf17PXf/7X2WmuvBWFGARuBFuAu8BZ4539v8Z+5/xHGjASOAJ+Bjj/EV+AkMMY6qVRZCLypQoiu4b6zqN7Jl41N/o7PKkalW7bU+yLKwlzgSw1i/Ih2YFm9L6YMfUaeZirUfLkyRU6ORhTjR7gyRQ5GRWqquoYrU4/EOTvyDqNwZYuMnDMUxA0eRUbuGwryIGsyonM6xEqQ96rg7EiQgnFPTVaxaDFssi7U++IaEcvH3s31vrhGZLTRwNBNNGpKPifHDQRpzpuM6HRJa0QxWn2ZogaW+KnzWsVwZaysJRHxk+0RBNmhCo2Lu7s/5BDiI7Amci7CMxE4k0GMM/47wphpwD7gDtBWIUCb/5v7bLp1EqJ7hgBDVUFCCCGEEEKUhd7AJOBfYCnwH7DB/3Svyi4ApgKD651oWekBzAQOANcyzn6/BC4DO4EmoE+tybi74GLkmJMjj62Rc5hc5WB3F/Ao4vKDE2g/MIGcrDJYoFqbI4/myDm4G607+gPbgNcG114Zp4GxEoSgILOAJ8ZCVMYHL75rFqsiFYf0AHYbvUNQTZwCBkmQTnoBx+okRGVcBwaSuEN6+o2pHQWJK0DflAXZUwARusbBVAVZGOnljdjR7vd1JiXIfOBxASq/u3jY3SCyrII8LECl/yk2piRIRwPEU/8EKEEoTrh+ToJQnHADRglCccJt/eunPoTiNlvq1Km7IIckCL9UyCv/mHzbr43E3J5R7RxX0g5p9eexuKZi2G9ycfNf4/22vFt/IZ+PlfNbKQnSDvzvVwqrxYmzzne+lrn9k5ogbcBy8jPDnzlpld/ilARpB1ZTOysMc9yWkiDNxOO8UY6HUxHkEzAioiBNRnmeTEWQE8TFrc0/M8jzaiqCzCY+FuvzN1MQ5J1/LTQ2Fp27OzG89IJcwobJBrm61c3SC7IXGwYYrNU/T0GQ9djxInKu7rXW0gsyj8Y5/M3NJJRekCnYccMg39ILMg473J4QCUK2SrA8XdvtQZEgZKuE4YaCWMxplb7JGkJjnQr+HQmSj7MShEI5RIIgQdSHBJBDkEPkkAByCHKIHBJADkEOkUMCyCHIIXJIADkEOUQOCSCHIIfIIQHkEOQQOSSAHIIcIocEkEOQQ+SQAHIIcogcEkAOQQ6RQwLIIcghckgAOQQ5RA4JIIcgh8gh/EWHfAPuaDhBpezVAAAAAABJRU5ErkJggg=="
+              />
+            </a>
+          </>
+        )
+      }
+    </div>
+  </div>
+</section>
+
+<style></style>

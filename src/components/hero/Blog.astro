@@ -6,7 +6,7 @@ import { DEFAULT_LOGO_ALT_DESC } from "../../constants/site";
 import { RESOURCES_HERO_NAVIGATION_ITEMS } from "../../data/navbar";
 import LogoImage from "../../assets/images/logos/secondary.svg";
 
-const { captions = {}, cta, post } = Astro.props;
+const { post } = Astro.props;
 const links = RESOURCES_HERO_NAVIGATION_ITEMS;
 
 const image = post.frontmatter.image?.url
