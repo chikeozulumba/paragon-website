@@ -1,8 +1,8 @@
 ---
 title: '(Update) Unique approaches to finding the right people via skills-based recruitment'
-slug: 'paragon-begining'
+slug: 'update-paragon-begining'
 datePublished: 2024-02-12
-description: 'Exceptional HR support! Their expertise streamlined our HR processes, saving time and ensuring compliance. A true partner in managing our workforce effectively. Highly recommend.'
+description: 'Update: Exceptional HR support! Their expertise streamlined our HR processes, saving time and ensuring compliance. A true partner in managing our workforce effectively. Highly recommend.'
 author: 'Ijeoma Ofonagoro'
 image:
     url: '/img/default-blog.jpeg'
