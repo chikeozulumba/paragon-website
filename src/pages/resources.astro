@@ -34,7 +34,7 @@ const postsToBeDisplayed = remainingPosts.filter((post) =>
           description: firstPost.frontmatter.description,
           tags: firstPost.frontmatter.tags,
         }}
-        image={firstPost.frontmatter?.image?.url}
+        image={firstPost.frontmatter?.image?.preview || firstPost.frontmatter?.image?.url}
         imageAlt={firstPost.frontmatter?.image?.alt}
         cta={{
           title: HERO_CTA.title,
@@ -44,7 +44,7 @@ const postsToBeDisplayed = remainingPosts.filter((post) =>
     )
   }
 
-  <ResourcesView posts={postsToBeDisplayed} />
+  {postsToBeDisplayed.length > 1 && <ResourcesView posts={postsToBeDisplayed} />}
 
   <Newsletter />
   <Footer />

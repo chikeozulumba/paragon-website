@@ -1,5 +1,4 @@
 ---
-import fetchPPP from "purchasing-power-parity";
 import { DEFAULT_PAGE_TITLE } from "../constants/site";
 import ParityBanner from "../components/ParityBanner.astro";
 import BlogHero from "../components/hero/Blog.astro";
@@ -90,7 +89,23 @@ try {
     font-weight: 300;
   }
 
-  .blog-content > p {
+  .blog-content > p:not(:first-child) {
+    margin-top: 30px;
+  }
+
+  .blog-content > h1:not(:first-child) {
+    margin-top: 30px;
+  }
+
+  .blog-content > h2:not(:first-child) {
+    margin-top: 30px;
+  }
+
+  .blog-content > h3:not(:first-child) {
+    margin-top: 30px;
+  }
+
+  .blog-content > h4:not(:first-child) {
     margin-top: 30px;
   }
 
@@ -102,5 +117,34 @@ try {
     font-size: 20px;
     font-weight: 600;
     color: #123257;
+  }
+
+  .blog-content > h3 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #123257;
+  }
+
+  .blog-content > h4 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #123257;
+  }
+
+  .blog-content a {
+    text-decoration: underline;
+  }
+
+  .blog-content img {
+    margin: 0 auto;
+  }
+
+  .blog-content img ~ a {
+    margin-top: 10px;
+    text-decoration: none !important;
+    display: block;
+    font-weight: 400;
+    text-align: center;
+    font-size: 12px;
   }
 </style>
