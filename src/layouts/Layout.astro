@@ -6,9 +6,10 @@ import ParityBanner from "../components/ParityBanner.astro";
 interface Props {
   title?: string;
   page?: string;
+  description?: string;
 }
 
-const { title = DEFAULT_PAGE_TITLE, page = "Home" } = Astro.props;
+const { title = DEFAULT_PAGE_TITLE, page = "Home", description = "Welcome to Paragon" } = Astro.props;
 const { hostname } = Astro.url;
 
 let purchasingParity = null;
@@ -21,10 +22,17 @@ try {
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content={description} />
+
+    <meta property="og:site_name" content="Paragon Consulting">
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" itemprop="image" content="/icon.png">
+    <meta property="og:type" content="website" />
+
     <meta name="viewport" content="width=device-width" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" type="image" href="/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

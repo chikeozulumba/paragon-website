@@ -55,6 +55,7 @@ export const ALT_HERO_NAVIGATION_ITEMS = [
       target: "_blank",
     },
   },
+  { title: "Resources", url: "/resources" },
   {
     title: "Let's Talk",
     url: "https://topmate.io/ij_paragonconsulting",
