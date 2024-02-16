@@ -99,10 +99,10 @@ const image = post.frontmatter.image?.url;
     class="lg:max-w-[fit-content] mt-[90px] w-full mx-auto text-center sm:px-auto"
   >
     <div
-      class="lg:w-[1248px] shrink-0 w-[370px] mx-auto rounded-sm"
+      class="lg:w-[1048px] xl:w-[1248px] shrink-0 w-full mx-auto rounded-sm"
     >
       <h1
-        class="md:text-[48px] text-[24px] text-[#123257] md:leading-[57.6px] font-[600]"
+        class="md:text-[48px] text-[32px] text-[#123257] md:leading-[57.6px] font-[600]"
       >
         {post.frontmatter?.title}
       </h1>
@@ -122,15 +122,11 @@ const image = post.frontmatter.image?.url;
 
     {
       image && (
-        <div class="lg:max-w-[fit-content] mt-[90px] w-full mx-auto text-center sm:px-auto">
+        <div class="lg:max-w-[fit-content] mt-[40px] lg:mt-[90px] w-full mx-auto text-center sm:px-auto">
           <div
-            class="lg:w-[1248px] md:h-[617px] shrink-0 w-[370px] h-[400px] mx-auto rounded-sm"
-            style={{
-              backgroundPosition: "100% 100%",
-              background: `url(${image}) no-repeat`,
-              backgroundSize: "cover",
-            }}
-          />
+          >
+            <img class=" object-cover" src={image} alt={""} />
+          </div>
         </div>
       )
     }

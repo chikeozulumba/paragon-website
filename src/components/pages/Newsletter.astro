@@ -5,9 +5,9 @@ import NewsletterImage from "../../assets/images/newsletter/02.svg";
 const { color: backgroundColor = `#E6883299` } = Astro.props;
 ---
 
-<section id="home-newsletter-section">
+<section id="home-newsletter-section" class="lg:px-[142px] xl:px-[177.5px] xl:py-[144px] px-[20px] py-[80px]">
   <div>
-    <div class="image">
+    <div class="image hidden sm:block w-[464px]">
       <Image src={NewsletterImage} alt={""} />
     </div>
     <div class="text">
@@ -28,14 +28,15 @@ const { color: backgroundColor = `#E6883299` } = Astro.props;
 
 <style define:vars={{ backgroundColor }}>
   #home-newsletter-section {
-    padding-left: 177.5px;
-    padding-right: 177.5px;
-    padding-top: 144px;
-    padding-bottom: 144px;
     background: var(--backgroundColor);
     @media screen and (max-width: 1440px) {
       padding-left: 142px;
       padding-right: 142px;
+    }
+
+    @media screen and (max-width: 1001px) {
+      padding-left: 50px;
+      padding-right: 50px;
     }
 
     @media screen and (max-width: 450px) {
@@ -55,7 +56,7 @@ const { color: backgroundColor = `#E6883299` } = Astro.props;
     display: flex;
     justify-content: center;
 
-    @media screen and (max-width: 450px) {
+    @media screen and (max-width: 1001px) {
       display: none;
     }
   }
