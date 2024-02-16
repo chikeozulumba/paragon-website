@@ -23,7 +23,7 @@ Managing HR tasks like recruitment, compliance, employee development, and payrol
 
 ## Why Your Company Needs Us
 
-Here's a breakdown of what we bring to the table:
+Here's a breakdown of **[what we bring to the table](https://www.paragon.works/services)**:
 
 ### Talent Attraction and Retention
 
@@ -36,7 +36,7 @@ Navigating employment laws and policies can be a headache if you're a busy found
 ### Engaging Company Culture
 
 ![A remote image with query params](../assets/images/multicultural.jpeg)
-[Photo by fauxels from Pexels](https://www.pexels.com/photo/group-of-people-gathered-around-wooden-table-3184360)
+<!-- [Photo by fauxels from Pexels](https://www.pexels.com/photo/group-of-people-gathered-around-wooden-table-3184360) -->
 
 Creating a strong and aligned culture is critical for empowering employees and fueling business success. We'll guide you through this by developing cultural strategies tailored to your vision. Once the foundations are in place, we assist with ongoing initiatives to continuously cultivate the culture.
 
@@ -47,7 +47,7 @@ One thing that sets us apart is our tailored approach to each client. As a start
 So, we take our time upfront to truly understand your company - your unique culture, goals, pain points, and desired outcomes. Only then do we prescribe customized solutions with transparent, project-based pricing. What you receive is exceptionally high-value expert guidance tackling essential tasks from people who truly understand your business.
 
 ![A remote image with query params](../assets/images/hr-planning.jpeg)
-[Photo by Christina Morillo from Pexels](https://www.pexels.com/photo/group-of-people-talking-to-each-other-in-front-of-brown-wooden-table-1181360/)
+<!-- [Photo by Christina Morillo from Pexels](https://www.pexels.com/photo/group-of-people-talking-to-each-other-in-front-of-brown-wooden-table-1181360/) -->
 
 ### Strategic HR Planning
 
@@ -62,4 +62,4 @@ Leveraging the right HR tools is paramount for efficiency and insight in the dig
 
 ## Be A Part of The Paragon Team
 
-Paragon proves that taking care of your team should be a top priority. When you partner with us, you'll get guidance from experts who love helping startups like yours. So, if you're ready to relax and focus on growing your business rather than stress over complicated HR tasks, book a call to speak with us or email us at **<info@paragon.works>**.
+Paragon proves that taking care of your team should be a top priority. When you partner with us, you'll get guidance from experts who love helping startups like yours. So, if you're ready to relax and focus on growing your business rather than stress over complicated HR tasks, **[book a call to speak with us](https://topmate.io/ij_paragonconsulting)** or email us at **<info@paragon.works>**.
