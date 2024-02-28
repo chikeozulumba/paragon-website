@@ -44,7 +44,7 @@ const postsToBeDisplayed = remainingPosts.filter((post) =>
     )
   }
 
-  {postsToBeDisplayed.length > 1 && <ResourcesView posts={postsToBeDisplayed} />}
+  {postsToBeDisplayed.length > 0 && <ResourcesView posts={postsToBeDisplayed} />}
 
   <Newsletter />
   <Footer />
