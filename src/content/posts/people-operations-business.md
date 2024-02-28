@@ -8,7 +8,7 @@ image:
     url: '/img/default-blog.jpeg'
     preview: '/assets/scalability.png'
     alt: 'The full Paragon logo.'
-tags: ["recruitment", "human resources"]
+tags: []
 ---
 
 People Operations and How Your Business Can Profit from It
