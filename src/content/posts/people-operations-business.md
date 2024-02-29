@@ -11,8 +11,6 @@ image:
 tags: []
 ---
 
-# How Your Business Can Profit from Peeople Operations
-
 Your employees are your greatest asset. And it's no secret that fostering high employee engagement, satisfaction, and productivity is critical to any organization's success. However, in the fast-paced business world, it can be all too easy to neglect the human side of work. That's where Paragon’s strategic people operations come in.
 
 In this article, we'll explore why updating your people practices is important for bottom-line results in today's competitive landscape. Let's get started!
