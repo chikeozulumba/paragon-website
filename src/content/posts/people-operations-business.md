@@ -5,8 +5,8 @@ datePublished: 2024-02-28
 description: 'Learn how strategic people operations practices can boost employee engagement and productivity at your company. Read now to strengthen your workforce.'
 author: 'Naomi Oseni'
 image:
-    url: '/assets/scalability.png'
-    preview: '/assets/scalability.png'
+    url: '/assets/people-operations-1.jpg'
+    preview: '/assets/people-operations-1.jpg'
     alt: 'The full Paragon logo.'
 tags: []
 ---
