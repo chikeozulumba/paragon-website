@@ -19,7 +19,7 @@ In this article, we'll explore why updating your people practices is important f
 
 People operations, also known as HR Operations or People Ops, refers to the functions within a company dedicated to strategically managing all aspects of the employee experience and journey. As such, our people operations team at **[Paragon Consulting](https://www.paragon.works/)** works to attract, develop, engage, and retain top talent.
 
-![boss-talking-to-employees](/assets/what-is-people-operations.jpeg)
+![boss talking to employees](/assets/what-is-people-operations.jpeg)
 <!-- [Photo by Pavel Danilyuk from Pexels](https://www.pexels.com/photo/boss-talking-to-employees-7658409/) -->
 
 People operations is about optimizing your workforce beyond basic HR and talent management. It leverages data and analytics to gain valuable insights into what motivates and energizes your team. It ensures the right people are matched to the right roles. And it creates an overall culture where employees feel valued, developed, and able to do their best work.
@@ -57,9 +57,10 @@ HR tends to stick to traditional methods and processes for managing employee-rel
 ## How Can Your Organization Benefit From People Operations?
 
 If your organization wants to get the most out of its employees and gain a competitive edge, here is how implementing strategic people operations practices can help take things to the next level.
-Improved Employee Satisfaction
+### Improved Employee Satisfaction
 
-
+![happy employee](/assets/employee-satisfaction.jpeg)
+<!-- [Photo by Andrea Piacquadio from Pexels](https://www.pexels.com/photo/laughing-businesswoman-working-in-office-with-laptop-3756679/) -->
 
 Happy, satisfied workers are more productive and committed to the company's success. So, when the people operations team prioritizes meaningful career growth opportunities, competitive benefits, an open and inclusive culture, and work-life balance programs, it shows the workforce that their well-being matters.
 
