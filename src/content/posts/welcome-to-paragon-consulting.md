@@ -62,4 +62,4 @@ Leveraging the right HR tools is paramount for efficiency and insight in the dig
 
 ## Be A Part of The Paragon Team
 
-Paragon proves that taking care of your team should be a top priority. When you partner with us, you'll get guidance from experts who love helping startups like yours. So, if you're ready to relax and focus on growing your business rather than stress over complicated HR tasks, **[book a call to speak with us](https://topmate.io/ij_paragonconsulting)** or email us at **<info@paragon.works>**.
+Paragon proves that taking care of your team should be a top priority. When you partner with us, you'll get guidance from experts who love helping startups like yours. So, if you're ready to relax and focus on growing your business rather than stress over complicated HR tasks, **[book a call to speak with us](https://topmate.io/paragonconsulting)** or email us at **<info@paragon.works>**.
