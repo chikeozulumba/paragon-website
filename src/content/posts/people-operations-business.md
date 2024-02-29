@@ -76,6 +76,9 @@ When your employees feel supported in their jobs and developmental goals, they'r
 
 Building a strong, positive culture is one of the most effective ways to boost employee morale, motivation, and retention. However, cultivating the right culture takes active effort over time. This is where people operations can provide immense value.
 
+![positive company culture](/assets/positive-company-culture.jpg)
+<!-- [Photo by Anna Shvets from Pexels](https://www.pexels.com/photo/multiethnic-cheerful-colleagues-looking-at-stickers-and-smiling-5324986/) -->
+
 People ops shapes the identity of your organization. So, when your employees understand and believe in the culture, it enhances their sense of purpose at work. With thoughtful interventions, our people operations team can craft a thriving environment where talent wants to contribute their best.
 
 ## Conclusion
