@@ -11,7 +11,7 @@ let queryTag = searchParams.get("tag");
 <section class="md:pb-[200px] pb-[40px]">
   <ul
     id="menu"
-    class="lg:px-[146px] lg:h-[67px] flex gap-[20px] items-center border-b border-[#D0D5DD] overflow-x-scroll"
+    class="hidden lg:px-[146px] lg:h-[67px] gap-[20px] items-center border-b border-[#D0D5DD] overflow-x-scroll"
   >
     <li class="flex h-full items-center">
       <li class="flex h-full items-center">
@@ -45,12 +45,17 @@ let queryTag = searchParams.get("tag");
         ))
       }
     </li>
-
   </ul>
-  <div class="md:max-w-[1203px] md:mx-auto">
-    {posts.map((post: any) => <ResourcesItem post={post} tag={queryTag} />)}
-    {posts.length === 0 && <p class="md:p-[100px] p-[40px] w-full text-center md:text-base text-[12px]">No posts available</p>}
-  </div>
+  {
+    posts.length > 0 && (
+      <div class="md:max-w-[1203px] md:mx-auto">
+        {posts.map((post: any) => (
+          <ResourcesItem post={post} tag={queryTag} />
+        ))}
+      </div>
+    )
+  }
+  <!-- {posts.length === 0 && <p class="md:p-[100px] p-[40px] w-full text-center md:text-base text-[12px]">No posts available</p>} -->
 </section>
 
 <style>
