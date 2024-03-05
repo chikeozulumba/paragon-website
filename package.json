@@ -16,6 +16,7 @@
     "@astrojs/sitemap": "^3.0.2",
     "@astrojs/tailwind": "^5.0.2",
     "@astrojs/vercel": "^5.1.0",
+    "@primer/css": "^21.2.0",
     "astro": "^3.2.2",
     "astro-icon": "^0.8.1",
     "dayjs": "^1.11.10",

@@ -9,6 +9,7 @@ image:
     preview: '/assets/people-operations-1.jpg'
     alt: 'The full Paragon logo.'
 tags: []
+timeToRead: 4
 ---
 
 Your employees are your greatest asset. And it's no secret that fostering high employee engagement, satisfaction, and productivity is critical to any organization's success. However, in the fast-paced business world, it can be all too easy to neglect the human side of work. That's where Paragon’s strategic people operations come in.
@@ -29,7 +30,6 @@ Some key areas our people operations team oversees include recruitment, onboardi
 ## How People Operations Differs From HR
 
 People Operations and HR (Human Resources) are related but distinct concepts within an organization. While both focus on managing the workforce and even have overlapping goals of developing talent, their approaches tend to differ. Here's **[how People Ops differs from HR](https://www.indeed.com/hire/c/info/people-operations-vs-human-resources-vs-human-relations?co=US)**:
-
 
 | Syntax      | People Operations  | Human Resources     |
 | :---        |    :----:   |          ---: |

@@ -98,33 +98,48 @@ const image = post.frontmatter.image?.url;
   <div
     class="lg:max-w-[fit-content] mt-[90px] w-full mx-auto text-center sm:px-auto"
   >
-    <div
-      class="lg:w-[1048px] xl:w-[1248px] shrink-0 w-full mx-auto rounded-sm"
-    >
-      <h1
-        class="md:text-[48px] text-[32px] text-[#123257] md:leading-[57.6px] font-[600]"
-      >
-        {post.frontmatter?.title}
-      </h1>
-      <div
-        class="mt-4 font-light text-md flex flex-col md:flex-row gap-1 text-[#123257] justify-center"
-      >
-        <p class="hidden md:block">by</p>
-        <p>
-          {post.frontmatter.author}
-        </p>
-        <p class="hidden md:block">on</p>
-        <p class="italic md:not-italic">
-          {dayjs(post.frontmatter.datePublished).format("LL")}
-        </p>
+    <div class="lg:w-[1048px] xl:w-[1248px] shrink-0 w-full mx-auto rounded-sm">
+      <div class="text-left">
+        <h1
+          class="md:text-[48px] text-[32px] text-[#123257] md:leading-[57.6px] font-[600] max-w-[800px]"
+        >
+          {post.frontmatter?.title}
+        </h1>
+        <div class="flex justify-between mt-4 md:mt-8 font-[400]">
+          <div
+            class="mt-4 text-md flex flex-col md:flex-row gap-1 text-[#123257] justify-center"
+          >
+            <p class="md:block">Written by</p>
+            <p>
+              {post.frontmatter.author}
+            </p>
+            <p class="hidden md:block">on</p>
+            <p class="italic md:not-italic">
+              {dayjs(post.frontmatter.datePublished).format("LL")}
+            </p>
+          </div>
+          {post.frontmatter.timeToRead && <div class="font-light flex gap-2 items-center text-[#123257]">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="w-4 h-4"
+            >
+              <path
+                d="M11.25 4.533A9.707 9.707 0 0 0 6 3a9.735 9.735 0 0 0-3.25.555.75.75 0 0 0-.5.707v14.25a.75.75 0 0 0 1 .707A8.237 8.237 0 0 1 6 18.75c1.995 0 3.823.707 5.25 1.886V4.533ZM12.75 20.636A8.214 8.214 0 0 1 18 18.75c.966 0 1.89.166 2.75.47a.75.75 0 0 0 1-.708V4.262a.75.75 0 0 0-.5-.707A9.735 9.735 0 0 0 18 3a9.707 9.707 0 0 0-5.25 1.533v16.103Z"
+              ></path>
+            </svg>
+
+            <p>{post.frontmatter.timeToRead} minutes read</p>
+          </div>}
+        </div>
       </div>
     </div>
 
     {
       image && (
         <div class="lg:max-w-[fit-content] mt-[40px] lg:mt-[90px] w-full mx-auto text-center sm:px-auto">
-          <div
-          >
+          <div>
             <img class=" object-cover" src={image} alt={""} />
           </div>
         </div>

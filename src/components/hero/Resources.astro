@@ -99,9 +99,9 @@ const links = RESOURCES_HERO_NAVIGATION_ITEMS;
   <div
     class="lg:max-w-[fit-content] mt-[90px] md:mb-[135px] w-full mx-auto text-center"
   >
-    <div class="flex md:gap-[64px] items-center p-[20px] sm:p-0 pb-[100px] sm:pb-0">
+    <div class="flex md:gap-[64px] items-start p-[20px] sm:p-0 pb-[100px] sm:pb-0">
       <div
-        class="w-[600px] h-[600px] shrink-0 rounded-sm hidden md:block"
+        class="xl:w-[600px] xl:h-[600px] shrink-0 rounded-sm hidden md:block md:w-[400px] md:h-[400px]"
         style={{
           backgroundPosition: "100% 100%",
           background: `url(${image}) no-repeat`,
@@ -118,12 +118,10 @@ const links = RESOURCES_HERO_NAVIGATION_ITEMS;
           )
         }
         <h2
-          class="lg:text-[48px] text-[32px] font-[600] leading-tight md:max-w-[608px] text-left text-[var(--primary-color)]"
+          class="xl:text-[40px] lg:text-[32px] text-[28px] font-[600] leading-tight md:max-w-[608px] text-left text-[var(--primary-color)]"
         >
           {
-            captions.title ||
-              `Unique approaches to finding the right people via skills-based
-          recruitment`
+            captions.title
           }
         </h2>
         <div
@@ -137,7 +135,7 @@ const links = RESOURCES_HERO_NAVIGATION_ITEMS;
           </p>
         </div>
         <a
-          class="md:mt-[60px] mt-[36px] font-body block px-[32px] md:py-[18px] py-[12px] md:text-[20px] text-[16px] font-[500] text-white bg-[var(--primary-color)] w-fit rounded-[100px]"
+          class="lg:mt-[60px] md:mt-[40px] mt-[36px] font-body block px-[32px] md:py-[18px] py-[12px] md:text-[20px] text-[16px] font-[500] text-white bg-[var(--primary-color)] w-fit rounded-[100px]"
           href={cta.url}>Read more</a
         >
       </div>

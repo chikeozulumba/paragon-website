@@ -8,7 +8,7 @@ const { searchParams } = Astro.url;
 let queryTag = searchParams.get("tag");
 ---
 
-<section class="pb-[200px]">
+<section class="md:pb-[200px] pb-[40px]">
   <ul
     id="menu"
     class="lg:px-[146px] lg:h-[67px] flex gap-[20px] items-center border-b border-[#D0D5DD] overflow-x-scroll"
@@ -46,10 +46,11 @@ let queryTag = searchParams.get("tag");
       }
     </li>
 
-    <div class="md:max-w-[1203px] md:mx-auto">
-      {posts.map((post: any) => <ResourcesItem post={post} tag={queryTag} />)}
-    </div>
   </ul>
+  <div class="md:max-w-[1203px] md:mx-auto">
+    {posts.map((post: any) => <ResourcesItem post={post} tag={queryTag} />)}
+    {posts.length === 0 && <p class="md:p-[100px] p-[40px] w-full text-center md:text-base text-[12px]">No posts available</p>}
+  </div>
 </section>
 
 <style>
