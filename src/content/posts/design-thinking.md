@@ -12,7 +12,7 @@ tags: []
 timeToRead: 4
 ---
 
-Imagine if the way your company supported its employees was as innovative as the products and services you offer customers. What if HR ditched tedious checklist tasks for an approach as creative as your best brainstorms? Thanks to forward-thinking leaders like Paragon Consulting, who apply design thinking in people operations, that future is already happening.
+Imagine if the way your company supported its employees was as innovative as the products and services you offer customers. What if HR ditched tedious checklist tasks for an approach as creative as your best brainstorms? Thanks to forward-thinking leaders like **[Paragon Consulting,](https://www.paragon.works/)** who apply design thinking in people operations, that future is already happening.
 
 Instead of reacting to issues, design thinking ventures out to understand employees like never before, then returns with big ideas to test. Its goal? Uncover entirely new ways of building relationships that maximize everyone's talents. And just like your customer research unearths insights that bring growth, its findings inspire new initiatives that foster engagement and fulfillment across the whole organization.
 
@@ -22,7 +22,7 @@ Are you ready to transform how your business champions its greatest asset—its 
 
 Design thinking is a collaborative, creativity-based process and mindset that helps businesses solve complex problems in a human-centered way. Design thinking prioritizes understanding user needs above all else. 
 
-According to IDEO, design thinking focuses on the people who are impacted by the problem rather than starting with preconceived notions of the solution. The goal is to gain an empathetic understanding of the users and their needs through techniques like observation and immersion. This helps organizations define the problem from the user's perspective rather than from their own assumptions.
+**[According to IDEO,](https://designthinking.ideo.com/)** design thinking focuses on the people who are impacted by the problem rather than starting with preconceived notions of the solution. The goal is to gain an empathetic understanding of the users and their needs through techniques like observation and immersion. This helps organizations define the problem from the user's perspective rather than from their own assumptions.
 
 ## Benefits of Design Thinking in HR and People Operations
 
@@ -44,11 +44,11 @@ You know what they say: two heads are better than one. With design thinking, it'
 
 ### Drives Business Results
 
-When you make your people a top priority like design thinking does, rolling out new solutions becomes a whole different ball game. Because the ideas directly target what matters most to staff, you'll find that those solutions get embraced like nothing before. This enhances business results, as happy, supported employees are proven to be more innovative, loyal, and productive. 
+When you make your people a top priority like design thinking does, rolling out new solutions becomes a whole different ball game. Because the ideas directly target what matters most to staff, you'll find that those solutions get embraced like nothing before. This enhances business results, as happy, **[supported employees are proven to be more innovative,](https://www.ox.ac.uk/news/2019-10-24-happy-workers-are-13-more-productive)** loyal, and productive. 
 
 ## Phases of Design Thinking
 
-Design thinking follows a general process that typically includes phases for researching user needs, according to the Interaction Design Foundation. However, it is not a strictly linear process. Teams may move between phases in an agile manner to gain better insights as ideas evolve.
+Design thinking follows a general process that typically includes phases for researching user needs, according to the **[Interaction Design Foundation.](https://www.interaction-design.org/literature/article/5-stages-in-the-design-thinking-process)** However, it is not a strictly linear process. Teams may move between phases in an agile manner to gain better insights as ideas evolve.
  
 ![phases-of-design-thinking](/assets/Phases-of-Design-Thinking-2.jfif)
 <!-- [Photo by Pinterest](https://www.pinterest.com/pin/605312006196498137/) -->
@@ -68,14 +68,14 @@ In the define stage, teams compile and synthesize the key insights gathered duri
 ![design thinking ideation](/assets/Ideate-2.jfif)
 <!-- [Photo by Pinterest](https://www.pinterest.com/pin/523050944223308734/) -->
 
-Now, it's time to get those creative juices flowing. The Ideate stage demands out-of-the-box solutions. Teams must eliminate preconceived notions and look at the defined problem from different perspectives to spark new and creative ideas. The goal of Ideation is to develop as many potential solutions as possible. Examples include brainstorming, brainwriting, analogies, Worst Possible Idea, and SCAMPER (Substitute, Combine, Adapt, Modify/Magnify, Put to another use, Eliminate, Reverse/Rearrange).
+Now, it's time to get those creative juices flowing. The Ideate stage demands out-of-the-box solutions. Teams must eliminate preconceived notions and look at the defined problem from different perspectives to spark new and creative ideas. **[The goal of Ideation](https://careerfoundry.com/en/blog/ux-design/what-is-ideation-in-design-thinking/)** is to develop as many potential solutions as possible. Examples include brainstorming, brainwriting, analogies, Worst Possible Idea, and SCAMPER (Substitute, Combine, Adapt, Modify/Magnify, Put to another use, Eliminate, Reverse/Rearrange).
 
 ### Prototype 
 
 ![design thinking prototype](/assets/Prototype-2.jpg)
 <!-- [Photo by picjumbo.com](https://www.pexels.com/photo/notebook-beside-the-iphone-on-table-196644/) -->
 
-Prototyping is the phase where initial ideas are made solid but in the most hands-on, inexpensive way possible. Prototyping brings concepts out of the whiteboard and into the real world. This allows designers to show solutions as concretely as possible. And most importantly, seeing what users really think when they try the prototypes. User feedback is extremely helpful at this stage, as they can readily point out any problems, concerns, or frustrations.
+**[Prototyping](https://www.interaction-design.org/literature/article/stage-4-in-the-design-thinking-process-prototype)** is the phase where initial ideas are made solid but in the most hands-on, inexpensive way possible. Prototyping brings concepts out of the whiteboard and into the real world. This allows designers to show solutions as concretely as possible. And most importantly, seeing what users really think when they try the prototypes. User feedback is extremely helpful at this stage, as they can readily point out any problems, concerns, or frustrations.
 
 ### Test
 
@@ -87,5 +87,5 @@ The results of the testing phase are analyzed to determine the next steps - whet
 
 The future of work is now. To keep up with this pace of change, HR  and people ops can no longer afford to wait and see. They must lead the charge in rethinking how organizations work. Design thinking provides a powerful framework to transform HR and people ops from process overseer to change champion. 
 
-If your organization is ready to rewrite its story and solve its unique people challenges, let Paragon Consulting provide the pen. With our robust expertise in design thinking, we'll equip you to see challenges from all perspectives before implementing solutions. So book a session to speak with us or email us at info@paragon.works to get started. 
+If your organization is ready to rewrite its story and solve its unique people challenges, let Paragon Consulting provide the pen. With our robust expertise in design thinking, we'll equip you to see challenges from all perspectives before implementing solutions. So **[book a session](https://topmate.io/ij_paragonconsulting)** to speak with us or email us at info@paragon.works to get started. 
 
