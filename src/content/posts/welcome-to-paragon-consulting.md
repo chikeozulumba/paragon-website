@@ -35,7 +35,7 @@ Navigating employment laws and policies can be a headache if you're a busy found
 
 ### Engaging Company Culture
 
-![A remote image with query params](/assets/images/multicultural.jpeg)
+![A remote image with query params](/assets/multicultural.jpeg)
 <!-- [Photo by fauxels from Pexels](https://www.pexels.com/photo/group-of-people-gathered-around-wooden-table-3184360) -->
 
 Creating a strong and aligned culture is critical for empowering employees and fueling business success. We'll guide you through this by developing cultural strategies tailored to your vision. Once the foundations are in place, we assist with ongoing initiatives to continuously cultivate the culture.
