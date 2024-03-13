@@ -5,8 +5,8 @@ datePublished: 2024-03-13
 description: 'Design thinking, with its human-centered approach, is transforming People Ops. Learn how to apply creative problem-solving in people operations to drive business results.'
 author: 'Naomi Oseni'
 image:
-    url: '/assets/Design-Thinking-Preview-2.jpg'
-    preview: '/assets/Design-Thinking-Preview-2.jpg'
+    url: '/assets/Design-Thinking-Preview-2.jfif'
+    preview: '/assets/Design-Thinking-Preview-2.jfif'
     alt: 'The full Paragon logo.'
 tags: []
 timeToRead: 4
