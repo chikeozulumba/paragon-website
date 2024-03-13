@@ -60,6 +60,6 @@ HR Technology Integration
 
 Leveraging the right HR tools is paramount for efficiency and insight in the digital age. But sorting through options and implementing new systems takes time, which many startups lack. As technology experts within the people operations space, we can advise on tools that align with your company's unique needs now and in the future as you scale.
 
-## Be A Part of The Paragon Team
+## Partner With The Paragon Team
 
 Paragon proves that taking care of your team should be a top priority. When you partner with us, you'll get guidance from experts who love helping startups like yours. So, if you're ready to relax and focus on growing your business rather than stress over complicated HR tasks, **[book a call to speak with us](https://topmate.io/paragonconsulting)** or email us at **<info@paragon.works>**.
