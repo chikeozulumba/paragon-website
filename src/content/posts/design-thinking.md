@@ -50,8 +50,8 @@ When you make your people a top priority like design thinking does, rolling out 
 
 Design thinking follows a general process that typically includes phases for researching user needs, according to the Interaction Design Foundation. However, it is not a strictly linear process. Teams may move between phases in an agile manner to gain better insights as ideas evolve.
  
-https://www.pinterest.com/pin/605312006196498137/
-Author: Pinterest
+![phases of design thinking](/assets/Phases-of- Design-Thinking-2.jfif)
+<!-- [Photo by Pinterest](https://www.pinterest.com/pin/605312006196498137/) -->
 
 ### Empathy
 
@@ -65,8 +65,8 @@ In the define stage, teams compile and synthesize the key insights gathered duri
 
 ### Ideate 
 
-https://www.pinterest.com/pin/523050944223308734/
-Author: Pinterest
+![design thinking ideation](/assets/Ideate-2.jfif)
+<!-- [Photo by Pinterest](https://www.pinterest.com/pin/523050944223308734/) -->
 
 Now, it's time to get those creative juices flowing. The Ideate stage demands out-of-the-box solutions. Teams must eliminate preconceived notions and look at the defined problem from different perspectives to spark new and creative ideas. The goal of Ideation is to develop as many potential solutions as possible. Examples include brainstorming, brainwriting, analogies, Worst Possible Idea, and SCAMPER (Substitute, Combine, Adapt, Modify/Magnify, Put to another use, Eliminate, Reverse/Rearrange).
 
