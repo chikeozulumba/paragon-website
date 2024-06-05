@@ -8,7 +8,13 @@ export const HERO_NAVIGATION_ITEMS = [
       target: "_blank",
     },
   },
-  { title: "Resources", url: "/resources" },
+  {
+    title: "Careers",
+    url: "https://paragon.zohorecruit.com/jobs/Careers/",
+    attributes: {
+      target: "_blank",
+    },
+  },
   {
     title: "Let's Talk",
     url: "https://topmate.io/paragonconsulting",
@@ -30,7 +36,13 @@ export const FOOTER_NAVIGATION_ITEMS = [
       target: "_blank",
     },
   },
-  { title: "Resources", url: "/resources" },
+  {
+    title: "Careers",
+    url: "https://paragon.zohorecruit.com/jobs/Careers/",
+    attributes: {
+      target: "_blank",
+    },
+  },
   {
     title: "Let's Talk",
     url: "https://topmate.io/paragonconsulting",
@@ -55,7 +67,13 @@ export const ALT_HERO_NAVIGATION_ITEMS = [
       target: "_blank",
     },
   },
-  { title: "Resources", url: "/resources" },
+  {
+    title: "Careers",
+    url: "https://paragon.zohorecruit.com/jobs/Careers/",
+    attributes: {
+      target: "_blank",
+    },
+  },
   {
     title: "Let's Talk",
     url: "https://topmate.io/paragonconsulting",
@@ -80,7 +98,14 @@ export const RESOURCES_HERO_NAVIGATION_ITEMS = [
     attributes: {
       target: "_blank",
     },
-  }, { title: "Resources", url: "/resources" },
+  },
+  {
+    title: "Careers",
+    url: "https://paragon.zohorecruit.com/jobs/Careers/",
+    attributes: {
+      target: "_blank",
+    },
+  },
   {
     title: "Let's Talk",
     url: "https://topmate.io/paragonconsulting",
